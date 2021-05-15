@@ -1,9 +1,12 @@
 import "../styles/index.css";
 import Head from "next/head";
 import Navbar from "../conponents/Navbar";
+import useStore from "../store";
 
 const App = ({ Component, pageProps }) => {
   const appName = `glab`;
+  const theme = useStore(state => state.theme);
+
   return (
     <>
       <Head>
@@ -27,7 +30,7 @@ const App = ({ Component, pageProps }) => {
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
         <meta name="theme-color" content="#317EFB" />
       </Head>
-      <main className="text-gray-900">
+      <main className={`${theme === `light` ? `text-gray-900` : `text-white`}`}>
         <Navbar appName={appName} />
         <div className="pt-40 md:pt-20">
           <Component {...pageProps} />
