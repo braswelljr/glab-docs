@@ -1,0 +1,25 @@
+{
+  "name": "GLAB",
+  "short_name": "GLAB",
+  "orientation": "portrait",
+  "start_url": ".",
+  "theme_color": "#ff7b00",
+  "background_color": "#ffffff00",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "./favicon.ico",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "./icons/logo192.png",
+      "sizes": "192x199",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/logo512.png",
+      "sizes": "512x531",
+      "type": "image/png"
+    }
+  ]
+}

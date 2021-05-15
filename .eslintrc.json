@@ -1,0 +1,55 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/no-unescaped-entities": "off",
+    "react/jsx-props-no-spreading": "off",
+    "max-len": "off",
+    "prefer-promise-reject-errors": "off",
+    "react/jsx-filename-extension": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/jsx-no-target-blank": "off",
+    "react/prop-types": "off",
+    "no-return-assign": "off",
+    "global-require": "off",
+    "no-unused-vars": "warn",
+    "no-multi-spaces": "warn",
+    "eslint-disable-next-line": "off",
+    "import/no-unresolved": "off",
+    "indent": ["warn", 2],
+    "prettier/prettier": [
+      "warn",
+      {
+        "endOfLine": "auto",
+        "trailingComma": "none",
+        "printWidth": 100,
+        "tabWidth": 2,
+        "semi": true,
+        "singleQuote": false,
+        "jsxBracketSameLine": false,
+        "bracketSpacing": true,
+        "arrowParens": "avoid"
+      }
+    ]
+  }
+}
+  
