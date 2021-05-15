@@ -28,24 +28,24 @@ const Navbar = ({ appName }) => {
   }, []);
 
   return (
-    <nav className="fixed inset-x-0 top-0 grid grid-cols-2 gap-3 px-8 py-4 shadow rounded-b-xl md:px-20 xl:px-40 lg:px-32 md:grid-cols-nav">
+    <nav className="fixed inset-x-0 top-0 grid grid-cols-2 gap-3 px-8 py-4 bg-white shadow rounded-b-xl md:px-20 xl:px-40 lg:px-32 md:grid-cols-nav">
       <div className="flex items-center space-x-2">
         <img src={glab} alt="glab icon" className="w-auto h-8" />
         <h1 className="text-xl font-semibold">{appName}</h1>
       </div>
       <div className="flex items-center justify-end space-x-3 md:col-start-3 md:row-start-1 md:col-end-4">
         <a href="https://twitter.com/glab_cli" target="_blank">
-          <FaTwitter className="w-auto h-8 text-current" />
+          <FaTwitter className="w-auto h-8 text-current hover:text-yellow-600" />
         </a>
         <a href="https://github.com/profclems/glab" target="_blank">
-          <FaGithub className="w-auto h-8 text-current" />
+          <FaGithub className="w-auto h-8 text-current hover:text-yellow-600" />
         </a>
 
         {/* menu button */}
         <Switch
           checked={open}
           onChange={setOpen}
-          className="bg-gray-800 relative inline-flex flex-shrink-0 h-[30px] w-[60px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75"
+          className="bg-current relative inline-flex flex-shrink-0 h-[30px] w-[60px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75"
         >
           <span className="sr-only">Use setting</span>
           <span

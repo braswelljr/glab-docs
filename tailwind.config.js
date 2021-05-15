@@ -16,7 +16,7 @@ module.exports = {
     extend: {
       colors: {},
       gridTemplateColumns: {
-        nav: `minmax(0, 1.5fr) minmax(0, 8fr) minmax(0, 2fr)`
+        nav: `minmax(0, 1.25fr) minmax(0, 6.5fr) minmax(0, 2.25fr)`
       },
       animations: {
         slide: `slide 2s ease`,

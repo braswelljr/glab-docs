@@ -30,7 +30,7 @@ const App = ({ Component, pageProps }) => {
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
         <meta name="theme-color" content="#317EFB" />
       </Head>
-      <main className={`${theme === `light` ? `text-gray-900` : `text-white`}`}>
+      <main className={`${theme === `light` ? `text-black` : `text-white`}`}>
         <Navbar appName={appName} />
         <div className="pt-40 md:pt-20">
           <Component {...pageProps} />
