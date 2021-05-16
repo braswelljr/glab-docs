@@ -56,7 +56,11 @@ const Navbar = ({ appName }) => {
             className={`${open ? "translate-x-7" : "translate-x-0"}
             pointer-events-none h-[26px] w-[26px] rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200 inline-flex items-center justify-center`}
           >
-            {open ? <FaMoon className="w-auto h-4" /> : <FaSun className="w-auto h-4" />}
+            {open ? (
+              <FaMoon className="w-auto h-4" />
+            ) : (
+              <FaSun className="w-auto h-4" />
+            )}
           </span>
         </Switch>
       </div>

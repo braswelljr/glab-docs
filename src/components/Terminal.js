@@ -19,11 +19,15 @@ const TerminalControl = () => {
       {/* terminal body */}
       <div className="px-5 py-4 min-h-[20rem] text-white">
         <div className="grid grid-cols-[0.2fr,9.8fr] auto-rows-auto gap-4">
-          <span className="col-start-1 col-end-2 row-start-1 row-end-2 text-green-500">$</span>
+          <span className="col-start-1 col-end-2 row-start-1 row-end-2 text-green-500">
+            $
+          </span>
           <Typewriter
             onInit={typewriter => {
               typewriter
-                .typeString(`<span class="col-start-2 col-end-3 w-full">glab list issues</span>`)
+                .typeString(
+                  `<span class="col-start-2 col-end-3 w-full">glab list issues</span>`
+                )
                 .pasteString(
                   `<div class="col-start-2 col-end-3 w-full">Showing issues 1 of 1 on glab</div>`
                 )
