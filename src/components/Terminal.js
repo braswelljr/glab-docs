@@ -18,7 +18,7 @@ const TerminalControl = () => {
 
       {/* terminal body */}
       <div className="px-5 py-4 min-h-[20rem] text-white">
-        <div className="grid grid-cols-[0.2fr,9.8fr] auto-rows-auto gap-4">
+        <div className="grid grid-cols-[0.2fr,9.8fr] auto-rows-auto gap-2 md:gap-4">
           <span className="col-start-1 col-end-2 row-start-1 row-end-2 text-green-500">
             $
           </span>

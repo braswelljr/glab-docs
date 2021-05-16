@@ -9,16 +9,22 @@
   "icons": [
     {
       "src": "./favicon.ico",
+      "sizes": "194x194",
       "type": "image/x-icon"
     },
     {
       "src": "./icons/logo192.png",
-      "sizes": "192x199",
+      "sizes": "194x194",
       "type": "image/png"
     },
     {
       "src": "./icons/logo512.png",
-      "sizes": "512x531",
+      "sizes": "194x194",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/apple-touch-icon.png",
+      "sizes": "194x194",
       "type": "image/png"
     }
   ]
