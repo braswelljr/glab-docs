@@ -18,18 +18,19 @@ const TerminalControl = () => {
 
       {/* terminal body */}
       <div className="px-5 py-4 min-h-[22.5rem] text-white">
-        <div className="flex space-x-3 ">
-          <span className="text-green-500">$</span>
+        <div className="grid grid-cols-[0.2fr,9.8fr] grid-rows-2 space-x-3">
+          <span className="col-span-1 text-green-500">$</span>
           <Typewriter
-            options={{
-              strings: ["glab issue list"],
-              autoStart: true,
-              loop: true,
-              pauseFor: 10000
+            onInit={typewriter => {
+              typewriter
+                .typeString(`<span class="col-start-2 col-end-11 w-full">glab list issues</span>`)
+                .pasteString(`<div class="col-start-2 col-end-11 w-full">No issues found</div>`)
+                .pauseFor(1000)
+                .start(100);
             }}
+            options={{ loop: true }}
           />
         </div>
-        <div className="ml-5">No issues found</div>
       </div>
     </div>
   );
