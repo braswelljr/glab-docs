@@ -32,6 +32,8 @@
     "no-return-assign": "off",
     "global-require": "off",
     "no-unused-vars": "warn",
+    "no-plusplus": "off",
+    "prefer-const": "off",
     "no-multi-spaces": "warn",
     "eslint-disable-next-line": "off",
     "import/no-unresolved": "off",
