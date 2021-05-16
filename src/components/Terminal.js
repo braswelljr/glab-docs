@@ -3,7 +3,7 @@ import Typewriter from "typewriter-effect";
 
 const TerminalControl = () => {
   return (
-    <div className="w-full max-w-3xl mx-auto overflow-hidden bg-gray-800 rounded">
+    <div className="w-full max-w-3xl mx-auto overflow-hidden text-xs bg-gray-800 rounded md:text-sm">
       {/* terminal header */}
       <div className="relative px-5 py-4 bg-gray-900">
         <span className="flex space-x-2">
@@ -12,7 +12,7 @@ const TerminalControl = () => {
           <span className="block w-3 h-3 bg-red-500 rounded-full" />
         </span>
         <span className="absolute font-semibold text-white transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-          bash ~ <span className="text-green-500">braswelljr</span>
+          bash ~ <span className="text-green-500">usr</span>
         </span>
       </div>
 
@@ -32,7 +32,7 @@ const TerminalControl = () => {
                   `<div class="col-start-2 col-end-3 w-full">Showing issues 1 of 1 on glab</div>`
                 )
                 .pasteString(
-                  `<div class="col-start-2 col-end-3 w-full flex space-x-3 text-sm"><span class="text-green-500">#21</span><span>Update Documentation</span><span class="text-blue-300">[enhancement]</span><span class="text-gray-300 text-opacity-60">30 mins ago</span></div>`
+                  `<div class="col-start-2 col-end-3 w-full flex space-x-3"><span class="text-green-500">#21</span><span>Update Documentation</span><span class="text-blue-300">[enhancement]</span><span class="text-gray-300 text-opacity-60">30 mins ago</span></div>`
                 )
                 .pauseFor(10000)
                 .start(100);
