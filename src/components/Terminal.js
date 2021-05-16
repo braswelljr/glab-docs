@@ -17,20 +17,20 @@ const TerminalControl = () => {
       </div>
 
       {/* terminal body */}
-      <div className="px-5 py-4 min-h-[22.5rem] text-white">
-        <div className="grid grid-cols-[0.2fr,9.8fr] auto-rows-auto space-x-3">
-          <span className="col-span-1 text-green-500">$</span>
+      <div className="px-5 py-4 min-h-[20rem] text-white">
+        <div className="grid grid-cols-[0.2fr,9.8fr] auto-rows-auto gap-4">
+          <span className="col-start-1 col-end-2 row-start-1 row-end-2 text-green-500">$</span>
           <Typewriter
             onInit={typewriter => {
               typewriter
-                .typeString(`<span class="col-start-2 col-end-11 w-full">glab list issues</span>`)
+                .typeString(`<span class="col-start-2 col-end-3 w-full">glab list issues</span>`)
                 .pasteString(
-                  `<div class="col-start-2 col-end-11 w-full">Showing issues 1 of 1 on glab</div>`
+                  `<div class="col-start-2 col-end-3 w-full">Showing issues 1 of 1 on glab</div>`
                 )
                 .pasteString(
-                  `<div class="col-start-2 col-end-11 w-full flex space-x-3 text-sm"><span class="text-green-500">#21</span><span>Update Documentation</span><span class="text-blue-300">[enhancement]</span><span class="text-gray-300 text-opacity-60">30 minutes ago</span></div>`
+                  `<div class="col-start-2 col-end-3 w-full flex space-x-3 text-sm"><span class="text-green-500">#21</span><span>Update Documentation</span><span class="text-blue-300">[enhancement]</span><span class="text-gray-300 text-opacity-60">30 mins ago</span></div>`
                 )
-                .pauseFor(5000)
+                .pauseFor(10000)
                 .start(100);
             }}
             options={{ loop: true }}

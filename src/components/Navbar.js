@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import { FaGithub, FaTwitter, FaMoon, FaSun } from "react-icons/fa";
 import { Switch } from "@headlessui/react";
 import glab from "../assets/glab.png";
@@ -29,10 +30,12 @@ const Navbar = ({ appName }) => {
 
   return (
     <nav className="fixed inset-x-0 top-0 z-10 grid grid-cols-2 gap-3 px-8 py-4 bg-white shadow rounded-b-xl md:px-20 xl:px-40 lg:px-32 md:grid-cols-nav">
-      <div className="flex items-center space-x-2">
-        <img src={glab} alt="glab icon" className="w-auto h-8" />
-        <h1 className="text-xl font-semibold">{appName}</h1>
-      </div>
+      <Link href="/">
+        <div className="flex items-center space-x-2 cursor-pointer">
+          <img src={glab} alt="glab icon" className="w-auto h-8" />
+          <h1 className="text-xl font-semibold">{appName}</h1>
+        </div>
+      </Link>
       <div className="flex items-center justify-end space-x-3 md:col-start-3 md:row-start-1 md:col-end-4">
         <a href="https://twitter.com/glab_cli" target="_blank">
           <FaTwitter className="w-auto h-8 text-current hover:text-yellow-600" />

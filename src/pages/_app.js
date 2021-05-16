@@ -1,6 +1,7 @@
 import "../styles/index.css";
 import Head from "next/head";
-import Navbar from "../conponents/Navbar";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import useStore from "../store";
 
 const App = ({ Component, pageProps }) => {
@@ -18,10 +19,7 @@ const App = ({ Component, pageProps }) => {
         />
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
-        <title>
-          GLAB - An open-source GitLab command line tool bringing GitLab's cool features to your
-          command line
-        </title>
+        <title>GLAB - GitLab command line tool.</title>
 
         <link rel="manifest" href="/manifest.json" />
         <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
@@ -35,6 +33,7 @@ const App = ({ Component, pageProps }) => {
         <div className="pt-40 md:pt-20">
           <Component {...pageProps} />
         </div>
+        <Footer />
       </main>
     </>
   );
