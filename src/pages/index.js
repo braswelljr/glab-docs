@@ -1,6 +1,6 @@
-import React from "react";
-import { ticTacToe } from "../backgrounds/background";
-import Terminal from "../components/Terminal";
+import React from 'react'
+import { ticTacToe } from '@/backgrounds/background'
+import Terminal from '@/components/Terminal'
 
 const Index = () => {
   const terminalContext = [
@@ -28,7 +28,7 @@ const Index = () => {
       name: `Contribute to glab`,
       link: `https://github.com/profclems/glab`
     }
-  ];
+  ]
   return (
     <>
       {/* Topper */}
@@ -96,7 +96,7 @@ const Index = () => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index

@@ -1,12 +1,15 @@
-import "../styles/index.css";
-import Head from "next/head";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import useStore from "../store";
+import '../styles/index.css'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+import SideNav from '@/components/SideNav'
+import useStore from '@/store/index'
 
 const App = ({ Component, pageProps }) => {
-  const appName = `glab`;
-  const theme = useStore(state => state.theme);
+  const appName = `glab`
+  const theme = useStore(state => state.theme)
+  const router = useRouter()
 
   return (
     <>
@@ -36,7 +39,7 @@ const App = ({ Component, pageProps }) => {
         <Footer />
       </main>
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App

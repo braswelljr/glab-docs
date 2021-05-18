@@ -1,16 +1,16 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  mode: "jit",
-  purge: ["./public/index.html", "./src/**/*.{js, jsx, ts, tsx, vue}"],
+  mode: 'jit',
+  purge: ['./public/index.html', './src/**/*.{js, jsx, ts, tsx, vue}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
       sans: ["'Mulish'", ...defaultTheme.fontFamily.sans]
     },
     screens: {
-      xs: "475px",
-      "3xl": "1920px",
+      xs: '475px',
+      '3xl': '1920px',
       ...defaultTheme.screens
     },
     extend: {
@@ -24,14 +24,14 @@ module.exports = {
       },
       keyframes: {
         slide: {
-          "0%": {
-            opacity: ".2"
+          '0%': {
+            opacity: '.2'
           },
-          "50%": {
-            opacity: ".5"
+          '50%': {
+            opacity: '.5'
           },
-          "100%": {
-            opacity: "1"
+          '100%': {
+            opacity: '1'
           }
         }
       }
@@ -40,5 +40,5 @@ module.exports = {
   variants: {
     extend: {}
   },
-  plugins: [require("@tailwindcss/aspect-ratio")]
-};
+  plugins: [require('@tailwindcss/aspect-ratio')]
+}

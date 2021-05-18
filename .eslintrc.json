@@ -34,6 +34,7 @@
     "no-unused-vars": "warn",
     "no-plusplus": "off",
     "prefer-const": "off",
+    "no-constant-condition":"off",
     "no-multi-spaces": "warn",
     "eslint-disable-next-line": "off",
     "import/no-unresolved": "off",
@@ -45,11 +46,13 @@
         "trailingComma": "none",
         "printWidth": 80,
         "tabWidth": 2,
-        "semi": true,
-        "singleQuote": false,
+        "semi": false,
+        "singleQuote": true,
         "jsxBracketSameLine": false,
         "bracketSpacing": true,
-        "arrowParens": "avoid"
+        "arrowParens": "avoid",
+        "useTabs": false,
+        "quoteProps": "as-needed"
       }
     ]
   }

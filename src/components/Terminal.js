@@ -1,5 +1,5 @@
-import React from "react";
-import Typewriter from "typewriter-effect";
+import React from 'react'
+import Typewriter from 'typewriter-effect'
 
 const TerminalControl = () => {
   return (
@@ -26,7 +26,7 @@ const TerminalControl = () => {
             onInit={typewriter => {
               typewriter
                 .typeString(
-                  `<span class="col-start-2 col-end-3 w-full">glab list issues</span>`
+                  `<span class="col-start-2 col-end-3 w-full">glab issue list</span>`
                 )
                 .pasteString(
                   `<div class="col-start-2 col-end-3 w-full">Showing issues 1 of 1 on glab</div>`
@@ -35,14 +35,14 @@ const TerminalControl = () => {
                   `<div class="col-start-2 col-end-3 w-full flex space-x-3"><span class="text-green-500">#21</span><span>Update Documentation</span><span class="text-blue-300">[enhancement]</span><span class="text-gray-300 text-opacity-60">30 mins ago</span></div>`
                 )
                 .pauseFor(10000)
-                .start(100);
+                .start(100)
             }}
             options={{ loop: true }}
           />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TerminalControl;
+export default TerminalControl

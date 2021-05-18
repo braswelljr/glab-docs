@@ -1,32 +1,34 @@
-import { useState, useRef, useEffect } from "react";
-import Link from "next/link";
-import { FaGithub, FaTwitter, FaMoon, FaSun } from "react-icons/fa";
-import { Switch } from "@headlessui/react";
-import glab from "../assets/glab.png";
+import { useState, useRef, useEffect } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { FaGithub, FaTwitter, FaMoon, FaSun } from 'react-icons/fa'
+import { Switch } from '@headlessui/react'
+import glab from '@/img/glab.png'
 
 const Navbar = ({ appName }) => {
-  const [open, setOpen] = useState(false);
-  const searchInputRef = useRef();
+  const [open, setOpen] = useState(false)
+  const searchInputRef = useRef()
+  const router = useRouter()
 
   useEffect(() => {
     function onKeyDown(e) {
       if (
-        e.key !== "/" ||
-        e.target.tagName === "INPUT" ||
-        e.target.tagName === "SELECT" ||
-        e.target.tagName === "TEXTAREA" ||
+        e.key !== '/' ||
+        e.target.tagName === 'INPUT' ||
+        e.target.tagName === 'SELECT' ||
+        e.target.tagName === 'TEXTAREA' ||
         e.target.isContentEditable
       ) {
-        return;
+        return
       }
-      e.preventDefault();
-      searchInputRef.current.focus();
+      e.preventDefault()
+      searchInputRef.current.focus()
     }
-    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener('keydown', onKeyDown)
     return () => {
-      window.removeEventListener("keydown", onKeyDown);
-    };
-  }, []);
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [])
 
   return (
     <nav className="fixed inset-x-0 top-0 z-10 grid grid-cols-2 gap-3 px-8 py-4 bg-white shadow rounded-b-xl md:px-20 xl:px-40 lg:px-32 md:grid-cols-nav">
@@ -53,7 +55,7 @@ const Navbar = ({ appName }) => {
           <span className="sr-only">Use setting</span>
           <span
             aria-hidden="true"
-            className={`${open ? "translate-x-7" : "translate-x-0"}
+            className={`${open ? 'translate-x-7' : 'translate-x-0'}
             pointer-events-none h-[26px] w-[26px] rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200 inline-flex items-center justify-center`}
           >
             {open ? (
@@ -66,8 +68,24 @@ const Navbar = ({ appName }) => {
       </div>
       <div className="flex flex-col space-y-3 md:space-y-0 md:items-center md:flex-row-reverse col-span-full md:col-start-2 md:col-end-3">
         <div className="space-x-1 font-semibold md:ml-2">
-          <a className="p-3 rounded cursor-pointer hover:bg-gray-200">Docs</a>
-          <a className="p-3 rounded cursor-pointer hover:bg-gray-200">Donate</a>
+          <Link href="/docs">
+            <a
+              className={`p-3 rounded cursor-pointer ${
+                router.asPath.match(/(\/docs)/ || /(\/docs\/\*\*)/)
+                  ? `text-yellow-500`
+                  : ``
+              } hover:bg-gray-200`}
+            >
+              Docs
+            </a>
+          </Link>
+          <a
+            href="https://opencollective.com/glab"
+            target="_blank"
+            className="p-3 rounded cursor-pointer hover:bg-gray-200"
+          >
+            Donate
+          </a>
         </div>
         <form method="post" className="w-full">
           <input
@@ -82,7 +100,7 @@ const Navbar = ({ appName }) => {
         </form>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
