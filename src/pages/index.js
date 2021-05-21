@@ -89,7 +89,7 @@ const Index = () => {
           <a
             href="https://github.com/profclems/glab#installation"
             type="button"
-            className="py-3 mx-auto text-xl font-semibold text-white bg-black border border-current rounded px-7"
+            className="inline-block py-3 mx-auto text-xl font-semibold text-white bg-black border border-current rounded px-7"
           >
             Installation Guide
           </a>

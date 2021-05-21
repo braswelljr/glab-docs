@@ -3,7 +3,10 @@ import Typewriter from 'typewriter-effect'
 
 const TerminalControl = () => {
   return (
-    <div className="w-full max-w-3xl mx-auto overflow-hidden text-xs bg-gray-800 rounded md:text-sm">
+    <div
+      style={{ fontFamily: `Consolas, monospace` }}
+      className="w-full max-w-3xl mx-auto overflow-hidden text-xs bg-gray-800 rounded md:text-sm"
+    >
       {/* terminal header */}
       <div className="relative px-5 py-4 bg-gray-900">
         <span className="flex space-x-2">
@@ -18,7 +21,7 @@ const TerminalControl = () => {
 
       {/* terminal body */}
       <div className="px-5 py-4 min-h-[20rem] text-white">
-        <div className="grid grid-cols-[0.2fr,9.8fr] auto-rows-auto gap-2 md:gap-4">
+        <div className="grid grid-cols-[0.2fr,9.8fr] auto-rows-auto gap-x-2 md:gap-x-4 gap-y-6">
           <span className="col-start-1 col-end-2 row-start-1 row-end-2 text-green-500">
             $
           </span>
