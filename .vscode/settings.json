@@ -22,7 +22,7 @@
   "diffEditor.wordWrap": "on",
   "scss.validate": false,
   "editor.quickSuggestions": {
-      "strings": true
+    "strings": true
   },
   "editor.autoClosingQuotes": "always",
   "tailwindCSS.experimental.classRegex": [
@@ -34,6 +34,7 @@
   ],
   "tailwindCSS.includeLanguages": {
     "typescript": "javascript",
-    "typescriptreact": "javascript"
+    "typescriptreact": "javascript",
+    "javascriptreact": "javascript"
   }
 }

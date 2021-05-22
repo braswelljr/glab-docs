@@ -1,11 +1,12 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import { FaGithub, FaTwitter, FaMoon, FaSun } from 'react-icons/fa'
 import { Switch } from '@headlessui/react'
 import glab from '@/img/glab.png'
 
-const Navbar = ({ appName }) => {
+function Navbar({ appName }) {
   const [open, setOpen] = useState(false)
   const searchInputRef = useRef()
   const router = useRouter()
@@ -70,11 +71,10 @@ const Navbar = ({ appName }) => {
         <div className="space-x-1 font-semibold md:ml-2">
           <Link href="/docs">
             <a
-              className={`p-3 rounded cursor-pointer ${
-                router.asPath.match(/(\/docs)/ || /(\/docs\/\*\*)/)
-                  ? `text-yellow-500`
-                  : ``
-              } hover:bg-gray-200`}
+              className={clsx(
+                'p-3 rounded cursor-pointer hover:bg-gray-200',
+                router.asPath.split('/')[1] === 'docs' && 'text-yellow-400'
+              )}
             >
               Docs
             </a>

@@ -1,8 +1,9 @@
 import React from 'react'
 import { ticTacToe } from '@/backgrounds/background'
 import Terminal from '@/components/Terminal'
+import Link from 'next/link'
 
-const Index = () => {
+function Index() {
   const terminalContext = [
     {
       title: `Your entire GitLab workflow`,
@@ -43,12 +44,14 @@ const Index = () => {
           GLab is an open source GitLab CLI tool bringing GitLab to your
           terminal next to where you are already working with git and your code.
         </p>
-        <button
-          type="button"
-          className="block py-3 mx-auto text-xl font-semibold text-white bg-black border border-current rounded px-7"
-        >
-          Get Started
-        </button>
+        <Link href="/docs">
+          <button
+            type="button"
+            className="block py-3 mx-auto text-xl font-semibold text-white transition-all transform bg-black border border-current rounded hover:-translate-y-0.5 px-7"
+          >
+            Get Started
+          </button>
+        </Link>
         <p className="text-lg font-medium text-center">
           <a
             href="https://github.com/profclems/glab#installation"
@@ -71,9 +74,11 @@ const Index = () => {
             <div key={feat.title} className="space-y-2 text-center">
               <h3 className="text-xl font-black">{feat.title}</h3>
               <p className="">{feat.workflow}.</p>
-              <a href={feat.link} className="text-yellow-500 hover:underline">
-                {feat.name} →
-              </a>
+              <Link href={feat.link}>
+                <a className="inline-block text-yellow-500 hover:underline">
+                  {feat.name} →{' '}
+                </a>
+              </Link>
             </div>
           ))}
         </div>
@@ -89,7 +94,7 @@ const Index = () => {
           <a
             href="https://github.com/profclems/glab#installation"
             type="button"
-            className="inline-block py-3 mx-auto text-xl font-semibold text-white bg-black border border-current rounded px-7"
+            className="inline-block py-3 mx-auto text-xl font-semibold text-white transition-all transform bg-black border border-current rounded px-7 hover:-translate-y-0.5"
           >
             Installation Guide
           </a>

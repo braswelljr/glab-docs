@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import useStore from '@/store/index'
 
-const App = ({ Component, pageProps }) => {
+function App({ Component, pageProps }) {
   const appName = `glab`
   const theme = useStore(state => state.theme)
 
