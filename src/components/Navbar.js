@@ -6,7 +6,7 @@ import { FaGithub, FaTwitter, FaMoon, FaSun } from 'react-icons/fa'
 import { Switch } from '@headlessui/react'
 import glab from '@/img/glab.png'
 
-function Navbar({ appName }) {
+const Navbar = ({ appName }) => {
   const [open, setOpen] = useState(false)
   const searchInputRef = useRef()
   const router = useRouter()
@@ -32,7 +32,7 @@ function Navbar({ appName }) {
   }, [])
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-10 grid grid-cols-2 gap-3 px-8 py-4 bg-white shadow rounded-b-xl md:px-20 xl:px-40 lg:px-32 md:grid-cols-nav">
+    <nav className="fixed inset-x-0 top-0 z-10 grid grid-cols-2 gap-3 px-8 py-4 bg-white rounded-b shadow md:px-20 xl:px-40 lg:px-32 md:grid-cols-nav">
       <Link href="/">
         <div className="flex items-center space-x-2 cursor-pointer">
           <img src={glab} alt="glab icon" className="w-auto h-8" />

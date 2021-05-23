@@ -1,7 +1,7 @@
 import React from 'react'
 import Typewriter from 'typewriter-effect'
 
-function TerminalControl() {
+const TerminalControl = () => {
   return (
     <div
       style={{ fontFamily: `Consolas, monospace` }}

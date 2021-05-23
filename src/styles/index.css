@@ -1,7 +1,17 @@
-@font-face{
+@font-face {
   font-family: 'Mulish';
   src: url('../fonts/mulish.ttf') format('truetype');
 }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer utilities{
+  @responsive{
+    .scrollbars-hidden-f{
+      scrollbar-width: none;
+    }
+    .scrollbars-hidden::-webkit-scrollbar{
+      display: none;
+    }
+  }
+}
