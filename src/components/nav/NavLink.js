@@ -10,7 +10,7 @@ const NavLink = forwardRef(({ children, href, className }, linkRef) => {
     <Link href={`${encodeURI(`/docs/${href}`)}`} ref={linkRef}>
       <a
         className={clsx('block rounded', className, {
-          'bg-yellow-200': decodeURI(router.asPath.split('/')[2]) === href
+          'bg-yellow-200': decodeURI(router.pathname).split('/')[2] === href
         })}
       >
         {children}

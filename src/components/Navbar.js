@@ -84,8 +84,8 @@ const Navbar = ({ appName }) => {
           <div className="space-x-1 font-semibold lg:ml-2">
             <Link href="/docs">
               <a
-                className={clsx('p-3 rounded cursor-pointer', {
-                  'bg-yellow-200': router.asPath.split('/')[1] === 'docs'
+                className={clsx('px-3 py-2 rounded cursor-pointer', {
+                  'bg-yellow-200': router.pathname.split('/')[1] === 'docs'
                 })}
               >
                 Docs
@@ -94,7 +94,7 @@ const Navbar = ({ appName }) => {
             <a
               href="https://opencollective.com/glab"
               target="_blank"
-              className="p-3 rounded cursor-pointer"
+              className="px-3 py-2 rounded cursor-pointer"
             >
               Donate
             </a>
@@ -102,11 +102,11 @@ const Navbar = ({ appName }) => {
           <button
             type="button"
             ref={searchButtonRef}
-            className="flex w-full px-4 py-2 bg-yellow-200 rounded focus:outline-none"
+            className="flex w-full px-4 py-2 text-xs font-semibold bg-yellow-200 rounded md:text-base focus:outline-none"
             onClick={() => setOpen(true)}
           >
             <span>
-              Search Docs (Click or Press “
+              Search Docs (Press “
               <abbr title={actionKey[1]} className="no-underline">
                 {actionKey[0]}
               </abbr>{' '}
