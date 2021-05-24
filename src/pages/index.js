@@ -47,7 +47,7 @@ function Index() {
         <Link href="/docs">
           <button
             type="button"
-            className="block py-3 mx-auto text-xl font-semibold text-white transition-all transform bg-black border border-current rounded hover:-translate-y-0.5 px-7"
+            className="block py-3 mx-auto text-xl font-semibold text-white transition-all transform bg-yellow-900 border border-current rounded hover:-translate-y-0.5 px-7"
           >
             Get Started
           </button>
@@ -94,7 +94,7 @@ function Index() {
           <a
             href="https://github.com/profclems/glab#installation"
             type="button"
-            className="inline-block py-3 mx-auto text-xl font-semibold text-white transition-all transform bg-black border border-current rounded px-7 hover:-translate-y-0.5"
+            className="inline-block py-3 mx-auto text-xl font-semibold text-white transition-all transform bg-yellow-900 border border-current rounded px-7 hover:-translate-y-0.5"
           >
             Installation Guide
           </a>

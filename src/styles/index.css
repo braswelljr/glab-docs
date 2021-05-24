@@ -5,12 +5,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer utilities{
-  @responsive{
-    .scrollbars-hidden-f{
+@layer utilities {
+  @responsive {
+    .scrollbar-hidden-f {
       scrollbar-width: none;
     }
-    .scrollbars-hidden::-webkit-scrollbar{
+    .scrollbar-hidden::-webkit-scrollbar {
       display: none;
     }
   }

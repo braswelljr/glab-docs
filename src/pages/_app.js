@@ -34,7 +34,7 @@ function App({ Component, pageProps }) {
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
         <meta name="theme-color" content="#317EFB" />
       </Head>
-      <main className={`${theme === `light` ? `text-black` : `text-white`}`}>
+      <main className={clsx('text-yellow-900')}>
         <Navbar appName={appName} />
         {Component == Index ? (
           <section className="pt-40 md:pt-20">
