@@ -43,5 +43,8 @@
     "javascript": "javascriptreact",
     "typescript": "typescriptreact",
     "markdown": "mdx"
-  }
+  },
+  "importCost.largePackageColor": "#ff1900",
+  "importCost.mediumPackageColor": "#fff200",
+  "importCost.smallPackageColor": "#00ffee"
 }

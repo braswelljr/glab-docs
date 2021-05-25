@@ -3,7 +3,7 @@ import { devtools } from 'zustand/middleware'
 
 const useStore = create(
   devtools(set => ({
-    theme: `light`,
+    theme: false,
     setTheme: color => set({ theme: color })
   }))
 )

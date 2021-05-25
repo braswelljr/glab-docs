@@ -7,7 +7,7 @@ import useStore from '@/store/index'
 import Index from './index'
 import SideNav from '@/components/nav/SideNav'
 import clsx from 'clsx'
-import { HiPlus, HiX } from 'react-icons/hi'
+import { HiPlus } from 'react-icons/hi'
 
 function App({ Component, pageProps }) {
   const appName = `glab`
@@ -34,10 +34,15 @@ function App({ Component, pageProps }) {
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
         <meta name="theme-color" content="#317EFB" />
       </Head>
-      <main className={clsx('text-yellow-900')}>
+      <main
+        className={clsx('', {
+          'text-yellow-900': theme,
+          'text-yellow-200 bg-black': !theme
+        })}
+      >
         <Navbar appName={appName} />
         {Component == Index ? (
-          <section className="pt-40 md:pt-20">
+          <section className="pt-40 lg:pt-20">
             <Component {...pageProps} />
             <Footer />
           </section>
@@ -45,7 +50,11 @@ function App({ Component, pageProps }) {
           <>
             <section
               className={clsx(
-                'px-8 h-full grid pt-[calc(10rem-0.25rem)] fixed inset-0 md:pt-[calc(5rem-0.25rem)] lg:grid-cols-[2.5fr,7.5fr] xl:grid-cols-[2fr,8fr] gap-x-4 md:px-20 xl:px-40 lg:px-32'
+                'px-8 h-full grid pt-40 lg:pt-16 fixed inset-0  lg:grid-cols-[2.5fr,7.5fr] xl:grid-cols-[2fr,8fr] md:px-20 xl:px-40 lg:px-32',
+                {
+                  'text-yellow-900': theme,
+                  'text-yellow-200 bg-black': !theme
+                }
               )}
             >
               <SideNav doc={doc} />
@@ -54,14 +63,14 @@ function App({ Component, pageProps }) {
             <button
               type="button"
               tabIndex={-1}
-              className="fixed p-2 bg-yellow-200 rounded-full shadow lg:hidden focus:outline-none bottom-10 right-10"
+              className="fixed p-2 bg-yellow-200 border-0 rounded-full shadow lg:hidden focus:outline-none bottom-10 right-10"
               onClick={() => setDoc(!doc)}
             >
               <HiPlus
-                className={clsx(
-                  'w-auto h-10 text-current transition-all transform',
-                  { 'rotate-45': doc }
-                )}
+                className={clsx('w-auto h-10 transition-all transform', {
+                  'rotate-45': doc,
+                  'text-yellow-900': !theme
+                })}
               />
             </button>
           </>

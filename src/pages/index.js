@@ -2,34 +2,13 @@ import React from 'react'
 import { ticTacToe } from '@/backgrounds/background'
 import Terminal from '@/components/Terminal'
 import Link from 'next/link'
+import clsx from 'clsx'
+import useStore from '@/store/index'
+import { terminalD } from '@/components/context/terminal'
 
 function Index() {
-  const terminalContext = [
-    {
-      title: `Your entire GitLab workflow`,
-      workflow: `Work with issues, merge requests, GitLab CI pipelines and jobs, releases and more`,
-      name: `View all glab commands`,
-      link: ``
-    },
-    {
-      title: `Script and customize`,
-      workflow: `Call the GitLab API to script almost any action, and set a custom alias for any command`,
-      name: `Learn about aliases and API`,
-      link: ``
-    },
-    {
-      title: `Supports all GitLab instances`,
-      workflow: `Available for repositories hosted on GitLab.com and self-hosted GitLab Instances`,
-      name: `Learn how to authenticate`,
-      link: ``
-    },
-    {
-      title: `We <3 Community`,
-      workflow: `GLab is open source, Licensed under MIT and ready for your contributions`,
-      name: `Contribute to glab`,
-      link: `https://github.com/profclems/glab`
-    }
-  ]
+  const themed = useStore(state => state.theme)
+
   return (
     <>
       {/* Topper */}
@@ -47,7 +26,10 @@ function Index() {
         <Link href="/docs">
           <button
             type="button"
-            className="block py-3 mx-auto text-xl font-semibold text-white transition-all transform bg-yellow-900 border border-current rounded hover:-translate-y-0.5 px-7"
+            className={clsx(
+              'block py-3 mx-auto text-xl font-semibold transition-all transform bg-yellow-900 border-0 rounded hover:-translate-y-0.5 px-7',
+              { 'text-current': !themed, 'text-yellow-200': themed }
+            )}
           >
             Get Started
           </button>
@@ -63,14 +45,19 @@ function Index() {
       </section>
 
       {/* Terminal section */}
-      <section className="px-8 py-12 space-y-16 bg-yellow-50 md:px-20 xl:px-40 lg:px-32">
+      <section
+        className={clsx('px-8 py-12 space-y-16 md:px-20 xl:px-40 lg:px-32', {
+          'bg-yellow-50': themed,
+          'bg-black': !themed
+        })}
+      >
         <p className="mx-auto text-2xl font-medium text-center md:w-3/5">
           <span className="block">Good bye context switching.</span>
           <span className="block">Hello, Terminal</span>
         </p>
         <Terminal />
         <div className="grid justify-center max-w-3xl grid-cols-1 mx-auto gap-x-4 gap-y-10 md:grid-cols-2">
-          {terminalContext.map(feat => (
+          {terminalD.map(feat => (
             <div key={feat.title} className="space-y-2 text-center">
               <h3 className="text-xl font-black">{feat.title}</h3>
               <p className="">{feat.workflow}.</p>
@@ -94,7 +81,10 @@ function Index() {
           <a
             href="https://github.com/profclems/glab#installation"
             type="button"
-            className="inline-block py-3 mx-auto text-xl font-semibold text-white transition-all transform bg-yellow-900 border border-current rounded px-7 hover:-translate-y-0.5"
+            className={clsx(
+              'inline-block py-3 mx-auto text-xl font-semibold transition-all transform bg-yellow-900 border-0 rounded px-7 hover:-translate-y-0.5',
+              { 'text-current': !themed, 'text-yellow-200': themed }
+            )}
           >
             Installation Guide
           </a>

@@ -28,6 +28,9 @@ module.exports = withPlugins(
   ],
   {
     pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+    async redirects() {
+      return require('./redirects.json')
+    },
     wepack: config => {
       config.resolve.modules.push(path.resolve(`./`))
       return config

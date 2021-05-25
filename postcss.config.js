@@ -4,14 +4,3 @@ module.exports = {
     autoprefixer: {}
   }
 }
-
-// cssnano: {
-//   preset: [
-//     'default',
-//     {
-//       discardComments: {
-//         removeAll: true
-//       }
-//     }
-//   ]
-// }

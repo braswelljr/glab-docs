@@ -7,17 +7,31 @@ import { HiSun, HiMoon } from 'react-icons/hi'
 import { Switch } from '@headlessui/react'
 import glab from '@/img/glab.png'
 import Search from './Search'
+import useStore from '@/store/index'
 
 const Navbar = ({ appName }) => {
   const ACTION_KEY_DEFAULT = ['Ctrl', 'Control', 'CONTROL']
   const ACTION_KEY_APPLE = ['⌘', 'Command']
-  const [theme, setTheme] = useState(false)
+  const theme = useStore(state => state.theme)
+  const setTheme = useStore(state => state.setTheme)
   const [open, setOpen] = useState(false)
   const [actionKey, setActionKey] = useState(ACTION_KEY_DEFAULT)
   const router = useRouter()
   const searchButtonRef = useRef(null)
   const searchInputRef = useRef(null)
 
+  // check theme
+  useEffect(() => {
+    window.addEventListener('load', () => {
+      if (typeof Storage !== 'undefined') {
+        localStorage.getItem(appName) === null
+          ? localStorage.setItem(appName, theme)
+          : localStorage.getItem(appName)
+      }
+    })
+  }, [appName])
+
+  // checking for platform
   useEffect(() => {
     if (typeof navigator !== 'undefined') {
       ;/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)
@@ -26,6 +40,7 @@ const Navbar = ({ appName }) => {
     }
   }, [])
 
+  // setting check action
   useEffect(() => {
     function onKeyDown(e) {
       e.preventDefault()
@@ -43,14 +58,27 @@ const Navbar = ({ appName }) => {
 
   return (
     <>
-      <nav className="fixed inset-x-0 top-0 z-10 grid grid-cols-2 gap-3 px-8 py-4 text-yellow-900 bg-white rounded-b shadow md:px-20 xl:px-40 lg:px-32 md:grid-cols-nav">
+      <nav
+        className={clsx(
+          'fixed inset-x-0 top-0 z-10 grid grid-cols-2 gap-3 px-8 py-4 shadow md:px-20 xl:px-40 lg:px-32 md:grid-cols-nav',
+          {
+            'text-yellow-900 bg-white': theme,
+            'text-yellow-200 bg-black border-b-[0.5px] border-current': !theme
+          }
+        )}
+      >
         <Link href="/">
           <div className="flex items-center space-x-2 cursor-pointer">
             <img src={glab} alt="glab icon" className="w-auto h-8" />
             <h1 className="text-xl font-semibold">{appName}</h1>
           </div>
         </Link>
-        <div className="flex items-center justify-end space-x-3 text-yellow-500 md:col-start-3 md:row-start-1 md:col-end-4">
+        <div
+          className={clsx(
+            'flex items-center justify-end space-x-3 md:col-start-3 md:row-start-1 md:col-end-4',
+            { 'text-yellow-500': theme, 'text-yellow-200': !theme }
+          )}
+        >
           <a href="https://twitter.com/glab_cli" target="_blank">
             <FaTwitter className="w-auto h-8 text-current transition-colors hover:text-yellow-300" />
           </a>
@@ -61,15 +89,24 @@ const Navbar = ({ appName }) => {
           {/* menu button */}
           <Switch
             checked={theme}
-            onChange={setTheme}
-            className="bg-yellow-500 relative inline-flex flex-shrink-0 h-[30px] w-[60px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75"
+            onChange={() => {
+              setTheme(!theme)
+              localStorage.setItem(appName, theme)
+            }}
+            className={clsx(
+              'relative inline-flex flex-shrink-0 h-[30px] w-[60px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75',
+              { 'bg-yellow-500': theme, 'bg-yellow-200': !theme }
+            )}
           >
             <span className="sr-only">Use setting</span>
             <span
               aria-hidden="true"
               className={clsx(
-                'pointer-events-none h-[26px] w-[26px] rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200 inline-flex items-center justify-center',
-                { 'translate-x-7': theme }
+                'pointer-events-none h-[26px] w-[26px] rounded-full shadow-lg transform ring-0 transition ease-in-out duration-200 inline-flex items-center justify-center',
+                {
+                  'translate-x-7 bg-black': !theme,
+                  'bg-white': theme
+                }
               )}
             >
               {theme ? (
@@ -85,7 +122,9 @@ const Navbar = ({ appName }) => {
             <Link href="/docs">
               <a
                 className={clsx('px-3 py-2 rounded cursor-pointer', {
-                  'bg-yellow-200': router.pathname.split('/')[1] === 'docs'
+                  'bg-yellow-200': router.pathname.split('/')[1] === 'docs',
+                  'text-yellow-900':
+                    !theme && router.pathname.split('/')[1] === 'docs'
                 })}
               >
                 Docs
@@ -102,7 +141,12 @@ const Navbar = ({ appName }) => {
           <button
             type="button"
             ref={searchButtonRef}
-            className="flex w-full px-4 py-2 text-xs font-semibold bg-yellow-200 rounded md:text-base focus:outline-none"
+            className={clsx(
+              'flex w-full px-4 py-2 text-xs font-semibold bg-yellow-200 rounded sm:text-sm md:text-base focus:outline-none',
+              {
+                'text-yellow-900': !theme
+              }
+            )}
             onClick={() => setOpen(true)}
           >
             <span>

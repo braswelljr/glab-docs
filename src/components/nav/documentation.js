@@ -1,5 +1,5 @@
 const documentation = {
-  Prologue: ['installation', 'introduction', 'usage'],
+  Prologue: ['introduction', 'installation', 'usage'],
   Commands: {
     alias: [
       'synopsis',
