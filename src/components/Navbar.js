@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
-import { FaGithub, FaTwitter } from 'react-icons/fa'
+import { FaGithub, FaSyringe, FaTwitter } from 'react-icons/fa'
 import { HiSun, HiMoon } from 'react-icons/hi'
 import { Switch } from '@headlessui/react'
 import glab from '@/img/glab.png'
@@ -12,24 +12,26 @@ import useStore from '@/store/index'
 const Navbar = ({ appName }) => {
   const ACTION_KEY_DEFAULT = ['Ctrl', 'Control', 'CONTROL']
   const ACTION_KEY_APPLE = ['⌘', 'Command']
-  const theme = useStore(state => state.theme)
-  const setTheme = useStore(state => state.setTheme)
   const [open, setOpen] = useState(false)
   const [actionKey, setActionKey] = useState(ACTION_KEY_DEFAULT)
   const router = useRouter()
   const searchButtonRef = useRef(null)
   const searchInputRef = useRef(null)
+  const theme = useStore(state => state.theme)
+  const setTheme = useStore(state => state.setTheme)
 
-  // check theme
+  // watch and uses the system theme
   useEffect(() => {
-    window.addEventListener('load', () => {
-      if (typeof Storage !== 'undefined') {
-        localStorage.getItem(appName) === null
-          ? localStorage.setItem(appName, theme)
-          : localStorage.getItem(appName)
-      }
-    })
-  }, [appName])
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', event => {
+        if (event.matches) {
+          setTheme(!theme)
+        } else {
+          setTheme(theme)
+        }
+      })
+  }, [theme])
 
   // checking for platform
   useEffect(() => {
@@ -60,7 +62,7 @@ const Navbar = ({ appName }) => {
     <>
       <nav
         className={clsx(
-          'fixed inset-x-0 top-0 z-10 grid grid-cols-2 gap-3 px-8 py-4 shadow md:px-20 xl:px-40 lg:px-32 md:grid-cols-nav',
+          'fixed inset-x-0 top-0 z-10 grid grid-cols-[auto,auto] gap-3 px-8 py-4 shadow md:px-20 xl:px-40 lg:px-32 md:grid-cols-nav',
           {
             'text-yellow-900 bg-white': theme,
             'text-yellow-200 bg-black border-b-[0.5px] border-current': !theme
@@ -68,10 +70,10 @@ const Navbar = ({ appName }) => {
         )}
       >
         <Link href="/">
-          <div className="flex items-center space-x-2 cursor-pointer">
-            <img src={glab} alt="glab icon" className="w-auto h-8" />
-            <h1 className="text-xl font-semibold">{appName}</h1>
-          </div>
+          <a className="inline-flex items-center w-auto space-x-">
+            <img src={glab} alt="glab icon" className="inline w-auto h-8" />
+            <h1 className="inline w-auto text-xl font-semibold">{appName}</h1>
+          </a>
         </Link>
         <div
           className={clsx(
@@ -89,10 +91,7 @@ const Navbar = ({ appName }) => {
           {/* menu button */}
           <Switch
             checked={theme}
-            onChange={() => {
-              setTheme(!theme)
-              localStorage.setItem(appName, theme)
-            }}
+            onChange={setTheme}
             className={clsx(
               'relative inline-flex flex-shrink-0 h-[30px] w-[60px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75',
               { 'bg-yellow-500': theme, 'bg-yellow-200': !theme }

@@ -8,9 +8,6 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    fontFamily: {
-      sans: ["'Mulish'", ...defaultTheme.fontFamily.sans]
-    },
     screens: {
       xs: '475px',
       '3xl': '1920px',
@@ -18,8 +15,11 @@ module.exports = {
     },
     extend: {
       colors: {},
+      fontFamily: {
+        sans: ["'Mulish'", ...defaultTheme.fontFamily.sans]
+      },
       gridTemplateColumns: {
-        nav: `minmax(0, 1.25fr) minmax(0, 6.5fr) minmax(0, 2.25fr)`
+        nav: `auto minmax(0, 6.5fr) auto`
       },
       animations: {
         slide: `slide 2s ease`,

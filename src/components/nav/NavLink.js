@@ -11,8 +11,8 @@ const NavLink = forwardRef(
       <Link href={encodeURI(href)} ref={linkRef}>
         <a
           className={clsx('block rounded', className, {
-            'bg-yellow-200': isActive === true,
-            'text-yellow-900': isActive === true && !theme
+            'bg-yellow-300 lg:bg-yellow-200': isActive === true && theme,
+            'text-yellow-900 bg-yellow-200': isActive === true && !theme
           })}
         >
           {children}
