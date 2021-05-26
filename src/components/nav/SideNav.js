@@ -18,7 +18,7 @@ const SideNav = ({ doc }) => {
           {
             '-translate-x-full': !doc,
             'text-yellow-900 bg-yellow-200 lg:bg-white': theme,
-            'bg-black text-yellow-200': !theme
+            'bg-gray-900 text-yellow-200': !theme
           }
         )}
       >
@@ -38,8 +38,8 @@ const SideNav = ({ doc }) => {
                       item === 'introduction'
                         ? true
                         : router.pathname.split('/')[2] === decodeURI(item)
-                        ? true
-                        : false
+                          ? true
+                          : false
                     }
                     key={item}
                   >

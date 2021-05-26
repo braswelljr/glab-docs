@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
-import { FaGithub, FaSyringe, FaTwitter } from 'react-icons/fa'
+import { FaGithub, FaTwitter } from 'react-icons/fa'
 import { HiSun, HiMoon } from 'react-icons/hi'
 import { Switch } from '@headlessui/react'
 import glab from '@/img/glab.png'
@@ -65,7 +65,7 @@ const Navbar = ({ appName }) => {
           'fixed inset-x-0 top-0 z-10 grid grid-cols-[auto,auto] gap-3 px-8 py-4 shadow md:px-20 xl:px-40 lg:px-32 md:grid-cols-nav',
           {
             'text-yellow-900 bg-white': theme,
-            'text-yellow-200 bg-black border-b-[0.5px] border-current': !theme
+            'text-yellow-200 bg-gray-900 border-b-[0.5px] border-current': !theme
           }
         )}
       >
@@ -103,7 +103,7 @@ const Navbar = ({ appName }) => {
               className={clsx(
                 'pointer-events-none h-[26px] w-[26px] rounded-full shadow-lg transform ring-0 transition ease-in-out duration-200 inline-flex items-center justify-center',
                 {
-                  'translate-x-7 bg-black': !theme,
+                  'translate-x-7 bg-gray-900': !theme,
                   'bg-white': theme
                 }
               )}

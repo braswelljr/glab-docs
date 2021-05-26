@@ -5,10 +5,10 @@ const TerminalControl = () => {
   return (
     <div
       style={{ fontFamily: `Consolas, monospace` }}
-      className="w-full max-w-3xl mx-auto overflow-hidden text-xs bg-gray-800 rounded md:text-sm"
+      className="w-full max-w-3xl mx-auto overflow-hidden text-xs bg-black rounded md:text-sm"
     >
       {/* terminal header */}
-      <div className="relative px-5 py-4 bg-gray-900">
+      <div className="relative px-5 py-4 bg-gray-800">
         <span className="flex space-x-2">
           <span className="block w-3 h-3 bg-green-500 rounded-full" />
           <span className="block w-3 h-3 bg-yellow-400 rounded-full" />

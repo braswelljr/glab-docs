@@ -37,7 +37,7 @@ function App({ Component, pageProps }) {
       <main
         className={clsx('', {
           'text-yellow-900': theme,
-          'text-yellow-200 bg-black': !theme
+          'text-yellow-200 bg-gray-900': !theme
         })}
       >
         <Navbar appName={appName} />
@@ -53,7 +53,7 @@ function App({ Component, pageProps }) {
                 'px-8 h-full grid pt-40 lg:pt-16 fixed inset-0  lg:grid-cols-[2.5fr,7.5fr] xl:grid-cols-[2fr,8fr] md:px-20 xl:px-40 lg:px-32',
                 {
                   'text-yellow-900': theme,
-                  'text-yellow-200 bg-black': !theme
+                  'text-yellow-200 bg-gray-900': !theme
                 }
               )}
             >

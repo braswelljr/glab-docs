@@ -1,3 +1,4 @@
+const color = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
@@ -14,7 +15,9 @@ module.exports = {
       ...defaultTheme.screens
     },
     extend: {
-      colors: {},
+      colors: {
+        gray: color.trueGray
+      },
       fontFamily: {
         sans: ["'Mulish'", ...defaultTheme.fontFamily.sans]
       },
