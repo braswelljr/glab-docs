@@ -7,7 +7,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:mdx/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -53,7 +54,13 @@
           "bracketSpacing": true,
           "arrowParens": "avoid",
           "useTabs": false,
-          "quoteProps": "as-needed"
+          "quoteProps": "as-needed",
+          "plugins": [
+            "preset-lint-consistent",
+            "preset-lint-recommended",
+            "preset-lint-markdown-style-guide",
+            "preset-prettier"
+          ]
         }, {
         "usePrettierrc": true
       }

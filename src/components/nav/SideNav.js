@@ -1,5 +1,5 @@
 import React from 'react'
-import documentation from './documentation'
+import { documentation } from './documentation'
 import NavLink from './NavLink'
 import clsx from 'clsx'
 import { toArray } from '@/utils/toArray'
@@ -29,17 +29,17 @@ const SideNav = ({ doc }) => {
               <div className="">
                 {toArray(categoryItems).map(item => (
                   <NavLink
-                    href={`/docs/${item}`}
+                    href={item === 'introduction' ? `/docs` : `/docs/${item}`}
                     className={clsx(
                       'font-medium hover:pl-8 transition-all px-3 py-0.5'
                     )}
                     isActive={
-                      router.pathname.split('/')[1] === 'docs' &&
-                      item === 'introduction'
+                      (router.pathname.split('/')[2] === decodeURI(item)
                         ? true
-                        : router.pathname.split('/')[2] === decodeURI(item)
-                          ? true
-                          : false
+                        : false) ||
+                      (router.pathname === '/docs' && item === 'introduction'
+                        ? true
+                        : false)
                     }
                     key={item}
                   >

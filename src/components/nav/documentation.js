@@ -1,5 +1,5 @@
-const documentation = {
-  Prologue: ['introduction', 'installation', 'usage'],
+export const documentation = {
+  'Getting Started': ['introduction', 'installation', 'usage'],
   Commands: {
     alias: [
       'synopsis',
@@ -44,7 +44,7 @@ const documentation = {
         ]
       }
     ],
-    'check update': ['synopsis', 'options-inherited-from-parent-commands'],
+    'check-update': ['synopsis', 'options-inherited-from-parent-commands'],
     completion: [
       'synopsis',
       'options',
@@ -562,5 +562,3 @@ const documentation = {
   },
   Help: ['how-to-update', 'trouble-shooting', 'FAQ']
 }
-
-export default documentation

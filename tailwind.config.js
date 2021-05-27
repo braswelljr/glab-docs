@@ -22,7 +22,7 @@ module.exports = {
         sans: ["'Mulish'", ...defaultTheme.fontFamily.sans]
       },
       gridTemplateColumns: {
-        nav: `auto minmax(0, 6.5fr) auto`
+        nav: `minmax(auto, 1.5fr) minmax(0, 6.5fr) minmax(auto, 2.5fr)`
       },
       animations: {
         slide: `slide 2s ease`,

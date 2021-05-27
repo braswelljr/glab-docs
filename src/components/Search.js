@@ -24,8 +24,8 @@ const Search = ({ open, setOpen, searchInputRef }) => {
   return (
     <div
       className={clsx(
-        'inset-0 z-[11] fixed justify-center bg-opacity-80 transition-all w-full h-full bg-yellow-200',
-        { ' hidden': !open }
+        'inset-0 z-[11] fixed justify-center bg-opacity-80 transition-all w-full h-full',
+        { ' hidden': !open, 'bg-gray-400': theme, 'bg-yellow-200': !theme }
       )}
     >
       <button
@@ -36,7 +36,7 @@ const Search = ({ open, setOpen, searchInputRef }) => {
       <section
         className={clsx(
           'w-5/6 md:w-3/4 lg:w-7/12 shadow rounded-xl transform absolute top-28 left-1/2 -translate-x-1/2 px-4 md:px-8 py-5 min-h-[20vh]',
-          { 'bg-white': theme, 'bg-black': !theme }
+          { 'bg-white': theme, 'bg-gray-900': !theme }
         )}
       >
         <form
@@ -58,7 +58,7 @@ const Search = ({ open, setOpen, searchInputRef }) => {
               'flex-1 w-full px-12 py-2 text-base leading-6 text-current placeholder-yellow-100 border-b border-yellow-100 rounded focus:border-yellow-100 focus:outline-none',
               {
                 'placeholder-yellow-400': theme,
-                'placeholder-yellow-100 bg-black': !theme
+                'placeholder-yellow-100 bg-gray-900': !theme
               }
             )}
           />

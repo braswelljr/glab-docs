@@ -69,12 +69,14 @@ const Navbar = ({ appName }) => {
           }
         )}
       >
-        <Link href="/">
-          <a className="inline-flex items-center w-auto space-x-">
-            <img src={glab} alt="glab icon" className="inline w-auto h-8" />
-            <h1 className="inline w-auto text-xl font-semibold">{appName}</h1>
-          </a>
-        </Link>
+        <div className="">
+          <Link href="/">
+            <a className="inline-flex items-center w-auto space-x-">
+              <img src={glab} alt="glab icon" className="inline w-auto h-8" />
+              <h1 className="inline w-auto text-xl font-semibold">{appName}</h1>
+            </a>
+          </Link>
+        </div>
         <div
           className={clsx(
             'flex items-center justify-end space-x-3 md:col-start-3 md:row-start-1 md:col-end-4',
