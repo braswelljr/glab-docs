@@ -6,7 +6,7 @@ import { toArray } from '@/utils/toArray'
 import { useRouter } from 'next/router'
 import useStore from '@/store/index'
 
-const SideNav = ({ doc }) => {
+const SideNav = ({ doc, setDoc }) => {
   const router = useRouter()
   const theme = useStore(state => state.theme)
 
@@ -32,9 +32,7 @@ const SideNav = ({ doc }) => {
                 {toArray(categoryItems).map(item => (
                   <NavLink
                     href={item === 'introduction' ? `/docs` : `/docs/${item}`}
-                    className={clsx(
-                      'font-semibold hover:pl-8 transition-all px-3 py-0.5'
-                    )}
+                    className={clsx('font-semibold')}
                     isActive={
                       (router.pathname.split('/')[2] === decodeURI(item)
                         ? true
@@ -45,7 +43,12 @@ const SideNav = ({ doc }) => {
                     }
                     key={item}
                   >
-                    {item.replace(/(-)/g, ' ')}
+                    <span
+                      className="block w-full h-full px-3 py-0.5 transition-all hover:pl-8"
+                      onClick={() => setDoc(false)}
+                    >
+                      {item.replace(/(-)/g, ' ')}
+                    </span>
                   </NavLink>
                 ))}
               </div>

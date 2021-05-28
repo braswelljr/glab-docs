@@ -43,7 +43,7 @@ function App({ Component, pageProps }) {
                 }
               )}
             >
-              <SideNav doc={doc} />
+              <SideNav doc={doc} setDoc={setDoc} />
               <DocsLayout>
                 <Component {...pageProps} />
               </DocsLayout>
