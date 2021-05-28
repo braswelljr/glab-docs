@@ -1,19 +1,21 @@
-import { useRef, useEffect } from 'react'
-import clsx from 'clsx'
+import { useState, useRef, useEffect } from 'react'
 import { HiSearch } from 'react-icons/hi'
 import useStore from '@/store/index'
 
 const Search = ({ open, setOpen, searchInputRef }) => {
-  const searchCloseRef = useRef(null)
+  const [searchQuery, setSearchQuery] = useState('')
+  const searchCloseRef = useRef()
   const theme = useStore(state => state.theme)
+  const query = useStore(state => state.query)
 
   useEffect(() => {
     function onKeyClose(e) {
-      e.preventDefault()
-
-      if (e.which == 27) {
-        searchCloseRef.current.click()
+      if (e.which !== 27) {
+        return
       }
+      e.preventDefault()
+      setSearchQuery('')
+      searchCloseRef.current.click()
     }
     window.addEventListener('keydown', onKeyClose)
     return () => {
@@ -23,58 +25,62 @@ const Search = ({ open, setOpen, searchInputRef }) => {
 
   return (
     <div
-      className={clsx(
-        'inset-0 z-[11] fixed justify-center bg-opacity-80 transition-all w-full h-full',
-        {
-          ' hidden': !open,
-          'bg-gray-400': theme,
-          'bg-yellow-200': !theme
-        }
-      )}
+      className={`inset-0 z-[11] fixed justify-center bg-opacity-50 transition-all w-full h-full ${
+        theme ? 'bg-gray-400' : 'bg-yellow-200'
+      } ${!open ? 'hidden' : ''}
+      `}
     >
       <button
         type="button"
-        className={clsx('absolute focus:outline-none inset-0 w-full h-full')}
+        className={'absolute focus:outline-none inset-0 w-full h-full'}
         onClick={() => setOpen(false)}
       ></button>
       <section
-        className={clsx(
-          'w-5/6 md:w-3/4 lg:w-7/12 shadow rounded-xl transform absolute top-28 left-1/2 -translate-x-1/2 px-4 md:px-8 py-5 min-h-[20vh]',
-          { 'bg-white': theme, 'bg-gray-900': !theme }
-        )}
+        className={`w-[90%] md:w-3/4 lg:w-7/12 shadow rounded-xl transform absolute top-28 left-1/2 -translate-x-1/2 px-4 md:px-8 py-5 min-h-[20vh]
+          ${theme ? 'bg-white' : 'bg-gray-800'}
+        `}
       >
-        <form
-          method="post"
-          className={clsx('flex items-center w-full', {
-            'text-yellow-900': theme,
-            'text-yellow-200': !theme
-          })}
+        <div
+          className={`flex items-center w-full mx-auto ${
+            theme ? 'text-yellow-900' : 'text-yellow-200'
+          }`}
         >
-          <HiSearch className="relative block w-auto h-6 opacity-70 -mr-9" />
-          <input
-            ref={searchInputRef}
-            type="text"
-            name="search"
-            id="search-input"
-            autoComplete="off"
-            placeholder="Search Docs"
-            className={clsx(
-              'flex-1 w-full px-12 py-2 text-base leading-6 text-current placeholder-yellow-100 border-b border-yellow-100 rounded focus:border-yellow-100 focus:outline-none',
-              {
-                'placeholder-yellow-400': theme,
-                'placeholder-yellow-100 bg-gray-900': !theme
-              }
-            )}
-          />
-          <button
-            ref={searchCloseRef}
-            type="button"
-            className="relative block px-1 py-0.5 rounded-lg text-yellow-900 bg-yellow-200 focus:outline-none -ml-10"
-            onClick={() => setOpen(false)}
+          <label
+            htmlFor="search-input"
+            className="flex items-center flex-none p-1"
           >
-            Esc
-          </button>
-        </form>
+            <span className="sr-only">Search Docs</span>
+            <HiSearch className="relative block w-auto h-6 opacity-70 -mr-9" />
+          </label>
+          <div className="flex w-full mx-auto">
+            <input
+              type="text"
+              id="search-input"
+              autoComplete="off"
+              ref={searchInputRef}
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              placeholder="Search Docs"
+              className={`flex-auto w-full px-7 py-2 text-base leading-6 text-current placeholder-yellow-100 border-b border-yellow-100 focus:border-yellow-100 focus:outline-none ${
+                theme
+                  ? 'placeholder-yellow-400'
+                  : 'placeholder-yellow-10 bg-gray-800'
+              }
+              `}
+            />
+            <button
+              ref={searchCloseRef}
+              type="button"
+              className="relative p-1 -ml-6 text-xs font-black text-yellow-900 bg-yellow-200 rounded focus:outline-none"
+              onClick={() => {
+                setSearchQuery('')
+                setOpen(false)
+              }}
+            >
+              Esc
+            </button>
+          </div>
+        </div>
       </section>
     </div>
   )

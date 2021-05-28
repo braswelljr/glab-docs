@@ -1,5 +1,4 @@
 import React from 'react'
-import { ticTacToe } from '@/backgrounds/background'
 import Terminal from '@/components/Terminal'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -12,10 +11,7 @@ function Index() {
   return (
     <>
       {/* Topper */}
-      <section
-        style={{ backgroundImage: ticTacToe }}
-        className="px-8 py-12 space-y-12 md:px-20 xl:px-40 lg:px-32"
-      >
+      <section className="px-8 py-12 space-y-12 md:px-20 xl:px-40 lg:px-32 bg-ticTacToe">
         <h3 className="mx-auto text-5xl font-black tracking-wide text-center md:text-7xl md:w-3/5">
           Take GitLab to the command line
         </h3>
@@ -72,7 +68,7 @@ function Index() {
       </section>
 
       {/* bot */}
-      <section className="px-8 py-12 space-y-16 md:px-20 xl:px-40 lg:px-32">
+      <section className="px-8 py-12 space-y-16 md:px-20 xl:px-40 lg:px-32 bg-ticTacToe">
         <div className="mx-auto space-y-5 text-center">
           <h3 className="text-3xl font-bold">Try GitLab on the command line</h3>
           <p className="text-lg font-medium">

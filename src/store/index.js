@@ -4,7 +4,8 @@ import { devtools } from 'zustand/middleware'
 const useStore = create(
   devtools(set => ({
     theme: true,
-    setTheme: t => set({ theme: t })
+    setTheme: t => set({ theme: t }),
+    query: ''
   }))
 )
 

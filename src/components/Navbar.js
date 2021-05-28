@@ -15,8 +15,8 @@ const Navbar = ({ appName, appId }) => {
   const [open, setOpen] = useState(false)
   const [actionKey, setActionKey] = useState(ACTION_KEY_DEFAULT)
   const router = useRouter()
-  const searchButtonRef = useRef(null)
-  const searchInputRef = useRef(null)
+  const searchButtonRef = useRef()
+  const searchInputRef = useRef()
   const theme = useStore(state => state.theme)
   const setTheme = useStore(state => state.setTheme)
 
@@ -43,9 +43,8 @@ const Navbar = ({ appName, appId }) => {
   // setting check action
   useEffect(() => {
     function onKeyDown(e) {
-      e.preventDefault()
-
       if (actionKey.map(k => e.key === k.toString()) && e.key === '/') {
+        e.preventDefault()
         searchButtonRef.current.click()
         searchInputRef.current.focus()
       }
