@@ -6,24 +6,31 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format": "prettier src/**/*.{css,jsx,tsx,ts,js,mdx} --write"
+    "format": "prettier src/**/*.{css,jsx,tsx,ts,js} --write"
   },
   "dependencies": {
     "@headlessui/react": "^1.2.0",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@next/bundle-analyzer": "^10.2.3",
     "@next/mdx": "^10.2.3",
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/forms": "^0.3.2",
+    "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.2.6",
     "clsx": "^1.1.1",
     "cssnano": "^5.0.4",
+    "file-loader": "^6.2.0",
+    "front-matter": "^4.0.2",
+    "github-markdown-css": "^4.0.0",
     "match-sorter": "^6.3.0",
+    "minimatch": "^3.0.4",
     "next": "^10.2.3",
     "next-compose-plugins": "^2.2.1",
     "next-images": "^1.7.0",
     "next-pwa": "^5.2.21",
     "postcss": "^8.3.0",
+    "querystring": "^0.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
@@ -33,20 +40,18 @@
     "zustand": "^3.5.1"
   },
   "devDependencies": {
-    "eslint": "^7.26.0",
+    "eslint": "^7.27.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-mdx": "^1.13.0",
+    "eslint-plugin-mdx": "^1.4.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.2.1",
-    "pretty-quick": "^3.1.0",
-    "remark-cli": "^9.0.0",
-    "remark-preset-lint-recommended": "^5.0.0"
+    "pretty-quick": "^3.1.0"
   }
 }

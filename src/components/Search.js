@@ -25,7 +25,11 @@ const Search = ({ open, setOpen, searchInputRef }) => {
     <div
       className={clsx(
         'inset-0 z-[11] fixed justify-center bg-opacity-80 transition-all w-full h-full',
-        { ' hidden': !open, 'bg-gray-400': theme, 'bg-yellow-200': !theme }
+        {
+          ' hidden': !open,
+          'bg-gray-400': theme,
+          'bg-yellow-200': !theme
+        }
       )}
     >
       <button

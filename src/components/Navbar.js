@@ -9,7 +9,7 @@ import glab from '@/img/glab.png'
 import Search from './Search'
 import useStore from '@/store/index'
 
-const Navbar = ({ appName }) => {
+const Navbar = ({ appName, appId }) => {
   const ACTION_KEY_DEFAULT = ['Ctrl', 'Control', 'CONTROL']
   const ACTION_KEY_APPLE = ['⌘', 'Command']
   const [open, setOpen] = useState(false)
@@ -20,18 +20,16 @@ const Navbar = ({ appName }) => {
   const theme = useStore(state => state.theme)
   const setTheme = useStore(state => state.setTheme)
 
-  // watch and uses the system theme
   useEffect(() => {
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', event => {
-        if (event.matches) {
-          setTheme(!theme)
-        } else {
-          setTheme(theme)
-        }
-      })
-  }, [theme])
+    window.addEventListener('load', () => {
+      if (typeof Storage !== 'undefined') {
+        localStorage.getItem(appId) === null
+          ? localStorage.setItem(appName, theme)
+          : localStorage.getItem(appName)
+      }
+      localStorage.getItem(appName) === true ? setTheme(true) : setTheme(false)
+    })
+  }, [])
 
   // checking for platform
   useEffect(() => {
@@ -65,7 +63,8 @@ const Navbar = ({ appName }) => {
           'fixed inset-x-0 top-0 z-10 grid grid-cols-[auto,auto] gap-3 px-8 py-4 shadow md:px-20 xl:px-40 lg:px-32 md:grid-cols-nav',
           {
             'text-yellow-900 bg-white': theme,
-            'text-yellow-200 bg-gray-900 border-b-[0.5px] border-current': !theme
+            'text-yellow-200 bg-gray-900 border-b-[0.5px] border-current':
+              !theme
           }
         )}
       >
@@ -80,23 +79,29 @@ const Navbar = ({ appName }) => {
         <div
           className={clsx(
             'flex items-center justify-end space-x-3 md:col-start-3 md:row-start-1 md:col-end-4',
-            { 'text-yellow-500': theme, 'text-yellow-200': !theme }
+            {
+              'text-yellow-900': theme,
+              'text-yellow-200': !theme
+            }
           )}
         >
           <a href="https://twitter.com/glab_cli" target="_blank">
-            <FaTwitter className="w-auto h-8 text-current transition-colors hover:text-yellow-300" />
+            <FaTwitter className="w-auto h-8 text-current transition-colors" />
           </a>
           <a href="https://github.com/profclems/glab" target="_blank">
-            <FaGithub className="w-auto h-8 text-current transition-colors hover:text-yellow-300" />
+            <FaGithub className="w-auto h-8 text-current transition-colors" />
           </a>
 
           {/* menu button */}
           <Switch
             checked={theme}
-            onChange={setTheme}
+            onChange={theme => {
+              setTheme(theme)
+              localStorage.setItem(appId, theme)
+            }}
             className={clsx(
               'relative inline-flex flex-shrink-0 h-[30px] w-[60px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75',
-              { 'bg-yellow-500': theme, 'bg-yellow-200': !theme }
+              { 'bg-yellow-900': theme, 'bg-yellow-200': !theme }
             )}
           >
             <span className="sr-only">Use setting</span>
@@ -110,7 +115,7 @@ const Navbar = ({ appName }) => {
                 }
               )}
             >
-              {theme ? (
+              {!theme ? (
                 <HiMoon className="w-auto h-4" />
               ) : (
                 <HiSun className="w-auto h-4" />

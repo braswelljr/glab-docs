@@ -1,5 +1,5 @@
 import '../styles/index.css'
-import { useState, Children } from 'react'
+import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import useStore from '@/store/index'
@@ -11,7 +11,8 @@ import { useRouter } from 'next/router'
 import DocsLayout from '@/components/layouts/DocsLayout'
 
 function App({ Component, pageProps }) {
-  const appName = `glab`
+  const appName = 'glab'
+  const appId = 'gitlabcli'
   const theme = useStore(state => state.theme)
   const [doc, setDoc] = useState(false)
   const router = useRouter()
@@ -29,13 +30,8 @@ function App({ Component, pageProps }) {
           ? router.pathname.split('/')[2].toUpperCase()
           : router.pathname.split('/')[1].toUpperCase()}
       </Title>
-      <main
-        className={clsx('', {
-          'text-yellow-900': theme,
-          'text-yellow-200 bg-gray-900': !theme
-        })}
-      >
-        <Navbar appName={appName} />
+      <main>
+        <Navbar appName={appName} appId={appId} />
         {router.pathname.split('/')[1] === 'docs' ? (
           <>
             <section
@@ -67,7 +63,12 @@ function App({ Component, pageProps }) {
             </button>
           </>
         ) : (
-          <section className="pt-40 lg:pt-20">
+          <section
+            className={clsx('pt-40 lg:pt-20', {
+              'text-yellow-900': theme,
+              'text-yellow-200 bg-gray-900': !theme
+            })}
+          >
             <Component {...pageProps} />
             <Footer />
           </section>
@@ -78,3 +79,8 @@ function App({ Component, pageProps }) {
 }
 
 export default App
+
+// className={clsx('', {
+//   'text-yellow-900': theme,
+//   'text-yellow-200 bg-gray-900': !theme
+// })}

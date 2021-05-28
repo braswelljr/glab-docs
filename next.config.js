@@ -6,18 +6,22 @@ const withPlugins = require('next-compose-plugins')
 const withMdx = require('@next/mdx')({
   extension: /\.(md|mdx)$/
 })
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true'
+})
 
 module.exports = withPlugins(
   [
-     [
-        withPWA,
-        {
-          pwa: {
-            dest: 'public',
-            runtimeCaching
-          }
+    [
+      withPWA,
+      {
+        pwa: {
+          dest: 'public',
+          runtimeCaching
         }
-      ], 
+      }
+    ],
+    [withBundleAnalyzer],
     [withImages],
     [withMdx]
   ],
@@ -27,6 +31,19 @@ module.exports = withPlugins(
       if (!options.dev) {
         options.defaultLoaders.babel.options.cache = false
       }
+
+      config.module.rules.push({
+        test: /\.(png|jpe?g|gif|webp)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              publicPath: '/_next',
+              name: 'static/media/[name].[hash].[ext]'
+            }
+          }
+        ]
+      })
 
       config.resolve.modules.push(path.resolve(`./`))
 
