@@ -61,13 +61,13 @@ module.exports = {
               th: {
                 fontSize: '1rem'
               },
-              strong: {
+              'em, strong': {
                 color: 'currentColor'
               },
               p: {
                 fontWeight: 500
               },
-              'pre > code': {
+              'pre, code': {
                 color: theme('color.yellow.600')
               },
               'ul > li': {
