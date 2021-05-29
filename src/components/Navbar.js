@@ -20,17 +20,6 @@ const Navbar = ({ appName, appId }) => {
   const theme = useStore(state => state.theme)
   const setTheme = useStore(state => state.setTheme)
 
-  useEffect(() => {
-    window.addEventListener('load', () => {
-      if (typeof Storage !== 'undefined') {
-        localStorage.getItem(appId) === null
-          ? localStorage.setItem(appName, theme)
-          : localStorage.getItem(appName)
-      }
-      localStorage.getItem(appName) === true ? setTheme(true) : setTheme(false)
-    })
-  }, [])
-
   // checking for platform
   useEffect(() => {
     if (typeof navigator !== 'undefined') {

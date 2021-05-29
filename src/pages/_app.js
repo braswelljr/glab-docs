@@ -1,5 +1,5 @@
 import '../styles/index.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import useStore from '@/store/index'
@@ -16,6 +16,19 @@ function App({ Component, pageProps }) {
   const theme = useStore(state => state.theme)
   const [doc, setDoc] = useState(false)
   const router = useRouter()
+  const setTheme = useStore(state => state.setTheme)
+
+  useEffect(() => {
+    window.addEventListener('load', () => {
+      if (typeof Storage !== 'undefined') {
+        localStorage.getItem(appId) === null
+          ? localStorage.setItem(appId, theme)
+          : localStorage.getItem(appId) == theme
+          ? setTheme(theme)
+          : setTheme(!theme)
+      }
+    })
+  }, [appId])
 
   return (
     <>
@@ -36,7 +49,7 @@ function App({ Component, pageProps }) {
           <>
             <section
               className={clsx(
-                'px-8 h-full grid pt-40 lg:pt-16 fixed inset-0  lg:grid-cols-[2.5fr,6fr,1.5fr] xl:grid-cols-[2fr,6fr,2fr] md:px-20 xl:px-40 lg:px-32',
+                'px-8 h-full grid pt-40 lg:pt-16 fixed inset-0  lg:grid-cols-[2.5fr,6fr,1.5fr] grid-rows-[auto,max-content] lg:grid-rows-[auto,auto] xl:grid-cols-[2fr,6fr,2fr] md:px-20 xl:px-40 lg:px-32',
                 {
                   'text-yellow-900': theme,
                   'text-yellow-200 bg-gray-900': !theme
@@ -47,6 +60,28 @@ function App({ Component, pageProps }) {
               <DocsLayout>
                 <Component {...pageProps} />
               </DocsLayout>
+              <p
+                className={clsx(
+                  'py-3 px-5 lg:row-start-2 row-end-auto row-start-2 col-start-1 lg:col-start-2 col-end-3 text-center font-semibold'
+                )}
+              >
+                © Copyright 2020,{' '}
+                <a
+                  href="https://github.com/profclems"
+                  target="_blank"
+                  className={clsx('text-blue-500 hover:underline')}
+                >
+                  Clement Sam
+                </a>{' '}
+                and docs by{' '}
+                <a
+                  href="https://github.com/braswelljr"
+                  target="_blank"
+                  className={clsx('text-blue-500 hover:underline')}
+                >
+                  Braswell Kenneth Azu Junior
+                </a>
+              </p>
             </section>
             <button
               type="button"

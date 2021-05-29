@@ -38,24 +38,79 @@ module.exports = {
               'h1, h2, h3, h4, h5, h6, thead, th, code, blockquote, p': {
                 color: 'currentColor'
               },
-              'h1::before': {
-                content: '#',
-                display: 'inline'
+              'p, blockquote, ul, ol, dl, li, table, pre': {
+                margin: '15px 0'
               },
               'h1, h2': {
                 letterSpacing: '-0.025em'
+              },
+              h1: {
+                fontSize: '28px'
+              },
+              h2: {
+                fontSize: '24px'
+              },
+              h3: {
+                fontSize: '18px'
+              },
+              h4: {
+                fontSize: '16px'
+              },
+              h5: {
+                fontSize: '14px'
+              },
+              h6: {
+                fontSize: '14px'
               },
               'h2, h3': {
                 'scroll-margin-top': `${(70 + 40) / 16}rem`
               },
               blockquote: {
-                borderLeft: '4px solid currentColor'
+                borderLeft: '4px solid #dddddd',
+                padding: '0 15px',
+                color: '#777777'
+              },
+              'blockquote > :first-child': {
+                marginTop: 0
+              },
+              'blockquote > :last-child': {
+                marginBottom: 0
+              },
+              a: {
+                color: '#4183C4',
+                textDecoration: 'none'
+              },
+              'a:hover': {
+                textDecoration: 'underline'
+              },
+              'pre code': {
+                margin: '0',
+                padding: '0',
+                whiteSpace: 'pre',
+                border: 'none',
+                background: 'transparent'
+              },
+              tt: {
+                margin: '0 2px',
+                padding: '0 5px',
+                whiteSpace: 'nowrap',
+                border: '1px solid #eaeaea',
+                backgroundColor: '#f8f8f8',
+                borderRadius: '3px'
               },
               pre: {
                 color: theme('colors.yellow.200'),
                 borderRadius: '.5rem',
                 marginTop: 0,
-                marginBottom: 0
+                marginBottom: 0,
+                fontSize: '13px',
+                lineHeight: '19px',
+                overflow: 'auto',
+                padding: '15px 12px'
+              },
+              'pre code, pre tt': {
+                backgroundColor: 'transparent',
+                border: 'none'
               },
               code: {
                 paddingLeft: '4px',
