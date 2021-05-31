@@ -48,7 +48,7 @@ function App({ Component, pageProps }) {
           <>
             <section
               className={clsx(
-                'px-8 h-full grid pt-40 lg:pt-16 fixed inset-0  lg:grid-cols-[2.5fr,6fr,1.5fr] grid-rows-[auto,max-content] lg:grid-rows-[auto,auto] xl:grid-cols-[2fr,6fr,2fr] md:px-20 xl:px-40 lg:px-32',
+                'px-8 h-full grid pt-40 lg:pt-16 fixed inset-0  lg:grid-cols-[2.5fr,6fr,1.5fr] xl:grid-cols-[2fr,6fr,2fr] md:px-20 xl:px-40 lg:px-32',
                 {
                   'text-yellow-900': theme,
                   'text-yellow-200 bg-gray-900': !theme
@@ -58,7 +58,7 @@ function App({ Component, pageProps }) {
               <SideNav doc={doc} setDoc={setDoc} />
               <DocsLayout>
                 <Component {...pageProps} />
-                <p className={clsx('mt-4 py-3 px-5 text-center font-semibold')}>
+                <p className={clsx('mt-4 text-center font-semibold')}>
                   © Copyright 2020,{' '}
                   <a
                     href="https://github.com/profclems"
@@ -77,28 +77,6 @@ function App({ Component, pageProps }) {
                   </a>
                 </p>
               </DocsLayout>
-              {/* <p
-                className={clsx(
-                  'py-3 px-5 lg:row-start-2 row-end-auto row-start-2 col-start-1 lg:col-start-2 col-end-3 text-center font-semibold'
-                )}
-              >
-                © Copyright 2020,{' '}
-                <a
-                  href="https://github.com/profclems"
-                  target="_blank"
-                  className={clsx('text-blue-500 hover:underline')}
-                >
-                  Clement Sam
-                </a>{' '}
-                and docs by{' '}
-                <a
-                  href="https://github.com/braswelljr"
-                  target="_blank"
-                  className={clsx('text-blue-500 hover:underline')}
-                >
-                  Braswell Kenneth Azu Junior
-                </a>
-              </p> */}
             </section>
             <button
               type="button"

@@ -19,9 +19,11 @@ const CopyCommand = forwardRef(({ children }, commandRef) => {
       <pre
         className={clsx('flex group justify-between space-x-2 items-center')}
       >
-        <span className="px-0.5 overflow-x-auto scrollbar-hidden scrolbarhidden-f">
-          {children}
-        </span>
+        <div className="overflow-hidden">
+          <span className="px-0.5 overflow-x-auto scrollbar-hidden scrolbarhidden-f">
+            {children}
+          </span>
+        </div>
         <button
           type="button"
           className={clsx(

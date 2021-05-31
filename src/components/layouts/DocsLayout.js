@@ -8,16 +8,13 @@ const DocsLayout = ({ children }) => {
   return (
     <section
       className={clsx(
-        'py-8 lg:px-5 overflow-y-auto col-start-1 col-end-3 lg:col-start-2 scrollbar-hidden scrollbar-hidden-f'
+        'py-8 lg:px-5 overflow-y-auto scrollbar-hidden scrollbar-hidden-f prose font-semibold',
+        {
+          'text-gray-900': theme
+        }
       )}
     >
-      <section
-        className={clsx('prose mx-auto font-semibold', {
-          'text-gray-900': theme
-        })}
-      >
-        {children}
-      </section>
+      {children}
     </section>
   )
 }
