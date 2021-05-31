@@ -1,3 +1,87 @@
+import CopyCommand from '@/components/CopyCommand'
+import SnapCraft from "@/components/Snapcraft"
+
 # Installation
 
+Download a binary suitable for your OS at the [releases page](https://github.com/profclems/glab/releases/latest)
 
+## Quick Install (shell)
+
+*** Supported Platforms *** : LInux and MacOS.
+You can install or update `glab` with
+<CopyCommand>
+  curl -sL https://j.mp/glab-cli | sudo sh
+</CopyCommand>
+
+or
+
+<CopyCommand>
+  curl -s https://raw.githubusercontent.com/profclems/glab/trunk/scripts/install.sh | sudo sh
+</CopyCommand>
+Installs into `usr/bin`
+
+***Note*** : Please take care when running scripts in this fashion. Consider peaking at the install script itself and verify that it works as intended.
+
+## Windows
+
+Available for download via [WinGet](https://github.com/microsoft/winget-cli), [scoop](https://scoop.sh/) or the downloadable `exe` installer file.
+
+### Winget
+
+<CopyCommand>
+  winget install glab
+</CopyCommand>
+
+***Updating*** :
+<CopyCommand>
+  winget install glab
+</CopyCommand>
+
+### Scoop
+<CopyCommand>
+  scoop install glab
+</CopyCommand>
+
+### `exe` Installer
+`exe` installers are available for download on the [releases page](https://github.com/profclems/glab/releases/latest).
+
+***
+
+## Linux
+
+Prebuilt binaries available at the [releases page](https://github.com/profclems/glab/releases/latest).
+
+### Linuxbrew (Homebrew)
+
+<CopyCommand>
+  brew install glab
+</CopyCommand>
+
+***Updating*** :
+<CopyCommand>
+  brew upgrade glab
+</CopyCommand>
+
+### Snapcraft
+
+<SnapCraft />
+
+Make sure you have snap installed on your Linux Distro <https://snapcraft.io/docs/installing-snapd>
+
+  1. `sudo snap install --edge glab`
+  2. `sudo snap connect glab:ssh-keys` to grant ssh access.
+
+### Arch Linux
+
+`glab` is available through the [gitlab-glab-bin](https://aur.archlinux.org/packages/gitlab-glab-bin/) package on th AUR or download and install an archive from the [releases page](https://github.com/profclems/glab/releases/latest). Arch Linux also supports [snap](https://snapcraft.io/docs/installing-snap-on-arch-linux).
+<CopyCommand>
+  yay -Sy gitlab-glab-bin
+</CopyCommand>
+or any other [AUR Helper](https://wiki.archlinux.org/index.php/AUR_helpers) of your choice.
+
+### KISS Linux
+
+`glab` is also available on the [KISS Linux Community Repo](https://github.com/kisslinux/community) as `gitlab-glab`. If you already have the community repo configured in your `KISS_PATH` you can install `glab` through your terminal.
+<CopyCommand>
+  kiss b gitlab-glab && kiss i gitlab-glab
+</CopyCommand>

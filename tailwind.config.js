@@ -112,13 +112,14 @@ module.exports = {
                 backgroundColor: 'transparent',
                 border: 'none'
               },
-              code: {
-                paddingLeft: '4px',
-                paddingRight: '4px',
-                backgroundColor: theme('color.trueGray.600')
-              },
               'code::before': {
                 content: ''
+              },
+              hr: {
+                backgroundColor: 'currentColor'
+              },
+              'ol, ul': {
+                fontWeight: theme('fontWeight.normal')
               },
               'code::after': {
                 content: ''

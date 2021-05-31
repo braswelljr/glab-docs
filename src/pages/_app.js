@@ -23,10 +23,9 @@ function App({ Component, pageProps }) {
       if (typeof Storage !== 'undefined') {
         localStorage.getItem(appId) === null
           ? localStorage.setItem(appId, theme)
-          : localStorage.getItem(appId) == theme
-          ? setTheme(theme)
-          : setTheme(!theme)
+          : localStorage.getItem(appId)
       }
+      localStorage.getItem(appId) == theme ? setTheme(theme) : setTheme(!theme)
     })
   }, [appId])
 
@@ -59,8 +58,26 @@ function App({ Component, pageProps }) {
               <SideNav doc={doc} setDoc={setDoc} />
               <DocsLayout>
                 <Component {...pageProps} />
+                <p className={clsx('mt-4 py-3 px-5 text-center font-semibold')}>
+                  © Copyright 2020,{' '}
+                  <a
+                    href="https://github.com/profclems"
+                    target="_blank"
+                    className={clsx('text-blue-500 hover:underline')}
+                  >
+                    Clement Sam
+                  </a>{' '}
+                  and docs by{' '}
+                  <a
+                    href="https://github.com/braswelljr"
+                    target="_blank"
+                    className={clsx('text-blue-500 hover:underline')}
+                  >
+                    Braswell Kenneth Azu Junior
+                  </a>
+                </p>
               </DocsLayout>
-              <p
+              {/* <p
                 className={clsx(
                   'py-3 px-5 lg:row-start-2 row-end-auto row-start-2 col-start-1 lg:col-start-2 col-end-3 text-center font-semibold'
                 )}
@@ -81,7 +98,7 @@ function App({ Component, pageProps }) {
                 >
                   Braswell Kenneth Azu Junior
                 </a>
-              </p>
+              </p> */}
             </section>
             <button
               type="button"
@@ -114,8 +131,3 @@ function App({ Component, pageProps }) {
 }
 
 export default App
-
-// className={clsx('', {
-//   'text-yellow-900': theme,
-//   'text-yellow-200 bg-gray-900': !theme
-// })}
