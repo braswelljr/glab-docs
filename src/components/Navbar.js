@@ -48,7 +48,7 @@ const Navbar = ({ appName, appId }) => {
     <>
       <nav
         className={clsx(
-          'fixed inset-x-0 top-0 z-10 grid grid-cols-[auto,auto] gap-3 px-8 py-4 shadow md:px-20 xl:px-40 lg:px-32 md:grid-cols-nav',
+          'fixed inset-x-0 top-0 z-10 grid grid-cols-[auto,auto] gap-3 px-8 py-4 shadow md:px-16 xl:px-36 lg:px-28 md:grid-cols-nav',
           {
             'text-yellow-900 bg-white': theme,
             'text-yellow-200 bg-gray-900 border-b-[0.5px] border-current':
@@ -136,20 +136,18 @@ const Navbar = ({ appName, appId }) => {
             type="button"
             ref={searchButtonRef}
             className={clsx(
-              'flex w-full px-4 py-2 text-xs font-semibold bg-yellow-200 rounded sm:text-sm md:text-base focus:outline-none',
+              'block w-full px-4 py-2 text-xs font-semibold bg-yellow-200 rounded sm:text-sm md:text-base focus:outline-none',
               {
                 'text-yellow-900': !theme
               }
             )}
             onClick={() => setOpen(true)}
           >
-            <span>
-              Search Docs (Press “
-              <abbr title={actionKey[1]} className="no-underline">
-                {actionKey[0]}
-              </abbr>{' '}
-              + /” to focus)
-            </span>
+            Search Docs (Press “
+            <abbr title={actionKey[1]} className="no-underline">
+              {actionKey[0]}
+            </abbr>{' '}
+            + /” to focus)
           </button>
         </div>
       </nav>

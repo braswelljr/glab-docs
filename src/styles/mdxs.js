@@ -58,7 +58,10 @@ export function mdxStyle() {
         {...props}
         className={clsx(
           'block px-4 py-3 my-4 text-base font-medium rounded-lg',
-          { 'bg-gray-100 text-gray-900': theme, 'bg-gray-800': !theme }
+          {
+            'bg-gray-100 text-gray-900': theme,
+            'bg-gray-800': !theme
+          }
         )}
       />
     ),

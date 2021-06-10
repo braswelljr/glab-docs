@@ -1,4 +1,4 @@
-export const documentation = {
+module.exports = {
   'getting-started': ['introduction', 'installation', 'usage'],
   Commands: {
     alias: [

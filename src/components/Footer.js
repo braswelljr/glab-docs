@@ -1,41 +1,25 @@
 import React from 'react'
 import clsx from 'clsx'
-import useStore from '@/store/index'
 
 const Footer = () => {
-  const theme = useStore(state => state.theme)
   return (
     <div className="px-8 py-5 border-t border-current md:text-xl md:px-20 xl:px-40 lg:px-32">
-      <div className="max-w-2xl mx-auto text-center">
-        Powered by{' '}
+      <div className={clsx('max-w-2xl mx-auto text-center text-sm')}>
+        © Copyright 2020,{' '}
         <a
-          href="https://nextjs.org/"
+          href="https://github.com/profclems"
           target="_blank"
-          className={clsx('text-yellow-500 font-semibold', {
-            'text-gray-900': theme
-          })}
+          className={clsx('text-blue-500 hover:underline')}
         >
-          Next.js
-        </a>
-        ,{' '}
-        <a
-          href="https://vercel.com/"
-          target="_blank"
-          className={clsx('text-yellow-500 font-semibold', {
-            'text-gray-900': theme
-          })}
-        >
-          Vercel
+          Clement Sam
         </a>{' '}
-        and{' '}
+        and docs by{' '}
         <a
-          href="https://tailwindcss.com/"
+          href="https://github.com/braswelljr"
           target="_blank"
-          className={clsx('text-yellow-500 font-semibold', {
-            'text-gray-900': theme
-          })}
+          className={clsx('text-blue-500 hover:underline')}
         >
-          Tailwindcss
+          Braswell Kenneth Azu Junior
         </a>
       </div>
     </div>

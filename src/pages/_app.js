@@ -9,6 +9,7 @@ import { HiPlus } from 'react-icons/hi'
 import { Title } from '@/components/Title'
 import { useRouter } from 'next/router'
 import DocsLayout from '@/components/layouts/DocsLayout'
+import PageMenu from '@/components/nav/PageMenu'
 
 function App({ Component, pageProps }) {
   const appName = 'glab'
@@ -48,7 +49,7 @@ function App({ Component, pageProps }) {
           <>
             <section
               className={clsx(
-                'px-8 h-full grid pt-40 lg:pt-16 fixed inset-0  lg:grid-cols-[2.5fr,6fr,1.5fr] xl:grid-cols-[2fr,6fr,2fr] md:px-20 xl:px-40 lg:px-32',
+                'px-8 h-full grid pt-40 lg:pt-16 fixed inset-0  lg:grid-cols-[2fr,6fr,2fr] xl:grid-cols-[1.8fr,6fr,2.2fr] md:px-16 xl:px-36 lg:px-28',
                 {
                   'text-yellow-900': theme,
                   'text-yellow-200 bg-gray-900': !theme
@@ -58,25 +59,8 @@ function App({ Component, pageProps }) {
               <SideNav doc={doc} setDoc={setDoc} />
               <DocsLayout>
                 <Component {...pageProps} />
-                <p className={clsx('mt-4 text-center font-semibold')}>
-                  © Copyright 2020,{' '}
-                  <a
-                    href="https://github.com/profclems"
-                    target="_blank"
-                    className={clsx('text-blue-500 hover:underline')}
-                  >
-                    Clement Sam
-                  </a>{' '}
-                  and docs by{' '}
-                  <a
-                    href="https://github.com/braswelljr"
-                    target="_blank"
-                    className={clsx('text-blue-500 hover:underline')}
-                  >
-                    Braswell Kenneth Azu Junior
-                  </a>
-                </p>
               </DocsLayout>
+              {router.pathname !== '/docs' && <PageMenu />}
             </section>
             <button
               type="button"

@@ -2,11 +2,30 @@ import React from 'react'
 import Terminal from '@/components/Terminal'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { IoLogoVercel } from 'react-icons/io5'
+import { SiNextDotJs, SiTailwindcss } from 'react-icons/si'
 import useStore from '@/store/index'
 import { terminalD } from '@/components/context/terminal'
 
 function Index() {
   const themed = useStore(state => state.theme)
+  const poweredBy = [
+    {
+      name: 'Next.js',
+      link: 'https://nextjs.org/',
+      logo: <SiNextDotJs className="w-auto h-10" />
+    },
+    {
+      name: 'Tailwindcss',
+      link: 'https://tailwindcss.com/',
+      logo: <SiTailwindcss className="w-auto h-10" />
+    },
+    {
+      name: 'Vercel',
+      link: 'https://vercel.com/',
+      logo: <IoLogoVercel className="w-auto h-10" />
+    }
+  ]
 
   return (
     <>
@@ -84,6 +103,30 @@ function Index() {
           >
             Installation Guide
           </a>
+        </div>
+      </section>
+      <section className="px-8 py-12 space-y-16 md:px-20 xl:px-40 lg:px-32">
+        <div className="max-w-2xl mx-auto text-center">
+          <h1 className="text-xl font-bold uppercase">Powered by</h1>
+          <div className="grid mt-6 mx-auto justify-center grid-cols-[repeat(auto-fit,minmax(3rem,5rem))] gap-6">
+            {poweredBy.map(brand => (
+              <a
+                href={brand.link}
+                target="_blank"
+                key={brand.name}
+                className={clsx(
+                  'w-auto flex flex-col items-center text-center transition-colors',
+                  {
+                    'hover:text-yellow-600': !themed,
+                    'hover:text-yellow-500': themed
+                  }
+                )}
+              >
+                <div>{brand.logo}</div>
+                <div className="text-sm font-extrabold">{brand.name}</div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
     </>

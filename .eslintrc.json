@@ -44,19 +44,7 @@
     "import/no-unresolved": "off",
     "indent": ["warn", 2],
     "prettier/prettier": [
-        "warn", {
-          "endOfLine": "auto",
-          "trailingComma": "none",
-          "printWidth": 80,
-          "tabWidth": 2,
-          "semi": false,
-          "singleQuote": true,
-          "jsxBracketSameLine": false,
-          "bracketSpacing": true,
-          "arrowParens": "avoid",
-          "useTabs": false,
-          "quoteProps": "as-needed"
-        }, {
+        "warn", {}, {
         "usePrettierrc": true
       }
     ]
