@@ -10,6 +10,7 @@ import { Title } from '@/components/Title'
 import { useRouter } from 'next/router'
 import DocsLayout from '@/components/layouts/DocsLayout'
 import PageMenu from '@/components/nav/PageMenu'
+import PrevNext from '@/components/PrevNext'
 
 function App({ Component, pageProps }) {
   const appName = 'glab'
@@ -66,6 +67,7 @@ function App({ Component, pageProps }) {
               <SideNav doc={doc} setDoc={setDoc} />
               <DocsLayout>
                 <Component {...pageProps} />
+                <PrevNext />
               </DocsLayout>
               {pathway == true && <PageMenu />}
             </section>
