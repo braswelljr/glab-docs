@@ -19,7 +19,7 @@ const SideNav = ({ doc, setDoc }) => {
           if (
             router.pathname.split('/')[2] === category.toLowerCase() &&
             router.pathname.split('/')[3] ===
-              (Array.isArray(item) ? item[0] : item).toLowerCase()
+              (Array.isArray(item) ? item[0] : item)
           ) {
             setPageStruct(item)
           }
@@ -58,8 +58,8 @@ const SideNav = ({ doc, setDoc }) => {
                       item === 'introduction'
                         ? `/docs`
                         : `/docs/${category.toLowerCase()}/${
-                            Array.isArray(item) ? item[0] : item
-                          }`
+                          Array.isArray(item) ? item[0] : item
+                        }`
                     }
                     className={clsx('font-semibold text-sm')}
                     isActive={
