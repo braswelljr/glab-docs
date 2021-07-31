@@ -16,7 +16,7 @@ function PageMenu() {
         )}
       >
         {/* Header */}
-        <h2 className={clsx('capitalize font-semibold text-yellow-600')}>
+        <h2 className={clsx('font-semibold text-yellow-600')}>
           {router.pathname.split('/')[3] ===
             (Array.isArray(pageStruct) ? pageStruct[0] : pageStruct) &&
             router.pathname.split('/')[3].replace(/-/g, ' ')}
@@ -34,10 +34,9 @@ function PageMenu() {
                           router.pathname.split('/')[3]
                         }/${typeof item === 'object' ? item.title : item}`
                   }
-                  className={clsx(
-                    'font-semibold text-sm capitalize text-yellow-400',
-                    { 'disabled:block': item.title }
-                  )}
+                  className={clsx('font-semibold text-sm text-yellow-400', {
+                    'disabled:block': item.title
+                  })}
                   isActive={
                     (router.pathname.split('/')[4] ===
                     decodeURI(typeof item === 'object' ? item.title : item)
@@ -45,7 +44,7 @@ function PageMenu() {
                       : false) || (router.pathname === '/docs' ? true : false)
                   }
                 >
-                  <span className="block w-full h-full text-sm py-0.5 transition-all hover:pl-5">
+                  <span className="block w-full h-full text-sm py-0.5 transition-all pl-5">
                     {typeof item === 'object'
                       ? item.title.replace(/(-)/g, ' ')
                       : item.replace(/(-)/g, ' ')}
@@ -64,7 +63,7 @@ function PageMenu() {
                                 typeof item === 'object' ? item.title : item
                               }/${command.title}`
                         }
-                        className={clsx('font-semibold text-sm ml-2')}
+                        className={clsx('font-semibold text-sm ml-6')}
                         isActive={
                           (router.pathname.split('/')[5] ===
                           decodeURI(
@@ -78,7 +77,7 @@ function PageMenu() {
                           typeof command === 'object' ? command.title : command
                         }
                       >
-                        <span className="block w-full h-full text-sm py-0.5 transition-all hover:pl-5">
+                        <span className="block w-full h-full text-sm py-0.5 transition-all pl-4">
                           {typeof command === 'object'
                             ? command.title.replace(/(-)/g, ' ')
                             : command.replace(/(-)/g, ' ')}

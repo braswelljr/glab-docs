@@ -14,6 +14,10 @@ const NavLink = forwardRef(
             'bg-yellow-300 lg:bg-yellow-200': isActive === true && theme,
             'bg-yellow-200 bg-opacity-20': isActive === true && !theme
           })}
+          onClick={() =>
+            (document.documentElement.scrollTop = 0) &&
+            (document.body.scrollTop = 0)
+          }
         >
           {children}
         </a>
