@@ -1,564 +1,127 @@
 export const documentation = {
-  'getting-started': ['introduction', 'installation', 'usage'],
+  'getting-started': ['introduction', 'installation'],
   Commands: {
     alias: [
-      'synopsis',
-      'options-inherited-from-parent-commands',
-      {
-        title: 'sub-commands',
-        commands: [
-          { title: 'delete', commands: [] },
-          { title: 'list', commands: [] },
-          { title: 'set', commands: [] }
-        ]
-      }
+      { title: 'delete', commands: [] },
+      { title: 'list', commands: [] },
+      { title: 'set', commands: [] }
     ],
+    api: [],
     auth: [
-      'synopsis',
-      'options-inherited-from-parent-commands',
-      {
-        title: 'sub-commands',
-        commands: [
-          {
-            title: 'git-credentials',
-            commands: ['synopsis', 'options-inherited-from-parent-commands']
-          },
-          {
-            title: 'login',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'status',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          }
-        ]
-      }
+      { title: 'login', commands: [] },
+      { title: 'status', commands: [] }
     ],
-    'check-update': ['synopsis', 'options-inherited-from-parent-commands'],
-    completion: [
-      'synopsis',
-      'options',
-      'options-inherited-from-parent-commands'
+    'check-update': [],
+    ci: [
+      { title: 'delete', commands: [] },
+      { title: 'lint', commands: [] },
+      { title: 'list', commands: [] },
+      { title: 'run', commands: [] },
+      { title: 'status', commands: [] },
+      { title: 'trace', commands: [] },
+      { title: 'view', commands: [] }
     ],
+    completion: [],
     config: [
-      'synopsis',
-      'options',
-      'options-inherited-from-parent-commands',
-      {
-        title: 'sub-commands',
-        commands: [
-          {
-            title: 'get',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'init',
-            commands: ['synopsis', 'options-inherited-from-parent-commands']
-          },
-          {
-            title: 'set',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          }
-        ]
-      }
+      { title: 'get', commands: [] },
+      { title: 'set', commands: [] }
     ],
     issue: [
-      'synopsis',
-      'examples',
-      'options',
-      'options-inherited-from-parent-commands',
       {
-        title: 'sub-commands',
+        title: 'board',
         commands: [
-          {
-            title: 'board',
-            commands: [
-              'synopsis',
-              'options-inherited-from-parent-commands',
-              'subcommands'
-            ]
-          },
-          {
-            title: 'close',
-            commands: [
-              'synopsis',
-              'examples',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'create',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'delete',
-            commands: [
-              'synopsis',
-              'examples',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'list',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'note',
-            commands: [
-              'synopsis',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'reopen',
-            commands: [
-              'synopsis',
-              'examples',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'subscribe',
-            commands: [
-              'synopsis',
-              'examples',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'unsubcribe',
-            commands: [
-              'synopsis',
-              'examples',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'update',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'view',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          }
+          { title: 'create', commands: [] },
+          { title: 'view', commands: [] }
         ]
+      },
+      {
+        title: 'close',
+        commands: []
+      },
+      {
+        title: 'create',
+        commands: []
+      },
+      {
+        title: 'delete',
+        commands: []
+      },
+      {
+        title: 'list',
+        commands: []
+      },
+      {
+        title: 'note',
+        commands: []
+      },
+      {
+        title: 'reopen',
+        commands: []
+      },
+      {
+        title: 'subscribe',
+        commands: []
+      },
+      {
+        title: 'unsubcribe',
+        commands: []
+      },
+      {
+        title: 'update',
+        commands: []
+      },
+      {
+        title: 'view',
+        commands: []
       }
     ],
     label: [
-      'synopsis',
-      'options',
-      'options-inherited-from-parent-commands',
-      {
-        title: 'sub-commands',
-        commands: [
-          {
-            title: 'create',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'list',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          }
-        ]
-      }
+      { title: 'create', commands: [] },
+      { title: 'list', commands: [] }
     ],
     mr: [
-      'synopsis',
-      'examples',
-      'options',
-      'options-inherited-from-parent-commands',
-      {
-        title: 'sub-commands',
-        commands: [
-          {
-            title: 'approve',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'approvers',
-            commands: ['synopsis', 'options-inherited-from-parent-commands']
-          },
-          {
-            title: 'checkout',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'close',
-            commands: [
-              'synopsis',
-              'examples',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'create',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'delete',
-            commands: [
-              'synopsis',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'diff',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'for',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'issues',
-            commands: [
-              'synopsis',
-              'examples',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'list',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'merge',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'note',
-            commands: [
-              'synopsis',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'rebase',
-            commands: [
-              'synopsis',
-              'examples',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'reopen',
-            commands: [
-              'synopsis',
-              'examples',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'revoke',
-            commands: [
-              'synopsis',
-              'examples',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'subscribe',
-            commands: [
-              'synopsis',
-              'examples',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'todo',
-            commands: ['synopsis', 'options-inherited-from-parent-commands']
-          },
-          {
-            title: 'unsubscribe',
-            commands: [
-              'synopsis',
-              'examples',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'update',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'view',
-            commands: [
-              'synopsis',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          }
-        ]
-      }
+      { title: 'approve', commands: [] },
+      { title: 'approvers', commands: [] },
+      { title: 'checkout', commands: [] },
+      { title: 'close', commands: [] },
+      { title: 'create', commands: [] },
+      { title: 'delete', commands: [] },
+      { title: 'diff', commands: [] },
+      { title: 'for', commands: [] },
+      { title: 'issues', commands: [] },
+      { title: 'list', commands: [] },
+      { title: 'merge', commands: [] },
+      { title: 'note', commands: [] },
+      { title: 'rebase', commands: [] },
+      { title: 'reopen', commands: [] },
+      { title: 'revoke', commands: [] },
+      { title: 'subscribe', commands: [] },
+      { title: 'todo', commands: [] },
+      { title: 'unsubscribe', commands: [] },
+      { title: 'update', commands: [] },
+      { title: 'view', commands: [] }
     ],
     release: [
-      'synopsis',
-      'options',
-      'options-inherited-from-parent-commands',
-      {
-        title: 'sub-commands',
-        commands: [
-          {
-            title: 'list',
-            commands: [
-              'synopsis',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          }
-        ]
-      }
+      { title: 'create', commands: [] },
+      { title: 'delete', commands: [] },
+      { title: 'download', commands: [] },
+      { title: 'list', commands: [] },
+      { title: 'upload', commands: [] },
+      { title: 'view', commands: [] }
     ],
     repo: [
-      'synopsis',
-      'options-inherited-from-parent-commands',
-      {
-        title: 'sub-commands',
-        commands: [
-          {
-            title: 'archive',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'clone',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'contributors',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'create',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'delete',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'fork',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'search',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          }
-        ]
-      }
+      { title: 'archive', commands: [] },
+      { title: 'clone', commands: [] },
+      { title: 'contributors', commands: [] },
+      { title: 'create', commands: [] },
+      { title: 'delete', commands: [] },
+      { title: 'fork', commands: [] },
+      { title: 'search', commands: [] },
+      { title: 'view', commands: [] }
     ],
-    pipeline: [
-      'synopsis',
-      'options-inherited-from-parent-commands',
-      {
-        title: 'sub-commands',
-        commands: [
-          {
-            title: 'ci',
-            commands: [
-              'synopsis',
-              'examples',
-              'options-inherited-from-parent-commands',
-              {
-                title: 'sub-commands',
-                commands: [
-                  {
-                    title: 'lint',
-                    commands: [
-                      'synopsis',
-                      'examples',
-                      'options-inherited-from-parent-commands'
-                    ]
-                  },
-                  {
-                    title: 'trace',
-                    commands: [
-                      'synopsis',
-                      'examples',
-                      'options',
-                      'options-inherited-from-parent-commands'
-                    ]
-                  },
-                  {
-                    title: 'view',
-                    commands: [
-                      'synopsis',
-                      'examples',
-                      'options',
-                      'options-inherited-from-parent-commands'
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            title: 'delete',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'list',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'run',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          },
-          {
-            title: 'status',
-            commands: [
-              'synopsis',
-              'examples',
-              'options',
-              'options-inherited-from-parent-commands'
-            ]
-          }
-        ]
-      }
-    ],
-    version: ['synopsis', 'options-inherited-from-parent-commands']
+    user: [{ title: 'events', commands: [] }],
+    variable: [{ title: 'set', commands: [] }],
+    version: []
   },
-  Help: ['how-to-update', 'trouble-shooting', 'FAQ']
+  Help: []
 }

@@ -58,8 +58,8 @@ const SideNav = ({ doc, setDoc }) => {
                       item === 'introduction'
                         ? `/docs`
                         : `/docs/${category.toLowerCase()}/${
-                          Array.isArray(item) ? item[0] : item
-                        }`
+                            Array.isArray(item) ? item[0] : item
+                          }`
                     }
                     className={clsx('font-semibold text-sm')}
                     isActive={
@@ -74,7 +74,7 @@ const SideNav = ({ doc, setDoc }) => {
                     key={Array.isArray(item) ? item[0] : item}
                   >
                     <span
-                      className="block w-full h-full px-3 text-sm py-0.5 transition-all hover:pl-5"
+                      className="block w-full h-full px-3 text-sm py-0.5 transition-all pl-5"
                       onClick={() => {
                         setDoc(false)
                         setPageStruct(item)

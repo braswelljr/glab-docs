@@ -19,7 +19,7 @@ module.exports = {
         sans: ["'Mulish'", ...defaultTheme.fontFamily.sans]
       },
       gridTemplateColumns: {
-        nav: `minmax(auto, 1.5fr) minmax(0, 6.5fr) minmax(auto, 2.5fr)`
+        nav: `minmax(auto, 1.5fr) minmax(0, 6.5fr) minmax(auto, 2fr)`
       },
       typography: theme => {
         return {

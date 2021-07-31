@@ -58,7 +58,7 @@ function App({ Component, pageProps }) {
                 {
                   'text-yellow-900': theme,
                   'text-yellow-200 bg-gray-900': !theme,
-                  'lg:grid-cols-[2fr,6fr,2fr] xl:grid-cols-[1.8fr,6fr,2.2fr]':
+                  'lg:grid-cols-[2fr,6fr,2fr] xl:grid-cols-[1.8fr,6.4fr,1.8fr]':
                     pathway == true,
                   'lg:grid-cols-[2.5fr,7.5fr]': pathway != true
                 }

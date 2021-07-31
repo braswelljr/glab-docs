@@ -1,6 +1,6 @@
 const path = require('path')
-const withPWA = require('next-pwa')
-const runtimeCaching = require('next-pwa/cache')
+// const withPWA = require('next-pwa')
+// const runtimeCaching = require('next-pwa/cache')
 const withImages = require('next-images')
 const withPlugins = require('next-compose-plugins')
 const withMdx = require('@next/mdx')({
@@ -12,15 +12,15 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withPlugins(
   [
-    [
-      withPWA,
-      {
-        pwa: {
-          dest: 'public',
-          runtimeCaching
-        }
-      }
-    ],
+    // [
+    //   withPWA,
+    //   {
+    //     pwa: {
+    //       dest: 'public',
+    //       runtimeCaching
+    //     }
+    //   }
+    // ],
     [withBundleAnalyzer],
     [withImages],
     [withMdx]
@@ -38,7 +38,7 @@ module.exports = withPlugins(
           {
             loader: 'file-loader',
             options: {
-              publicPath: '/_next',
+              publicPath: '/.next',
               name: 'static/media/[name].[hash].[ext]'
             }
           }
