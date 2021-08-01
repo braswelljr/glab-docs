@@ -6,17 +6,21 @@ import useStore from '@/store/index'
 import SideNav from '@/components/nav/SideNav'
 import clsx from 'clsx'
 import { HiPlus } from 'react-icons/hi'
+import { IoIosList } from 'react-icons/io'
 import { Title } from '@/components/Title'
 import { useRouter } from 'next/router'
 import DocsLayout from '@/components/layouts/DocsLayout'
 import PageMenu from '@/components/nav/PageMenu'
 import PrevNext from '@/components/PrevNext'
+import { documentation } from '@/components/nav/documentation'
+import { flattenArray } from '@/utils/flattenArray'
 
 function App({ Component, pageProps }) {
   const appName = 'glab'
   const appId = 'gitlabcli'
   const theme = useStore(state => state.theme)
   const [doc, setDoc] = useState(false)
+  const [pageList, setPageList] = useState(false)
   const router = useRouter()
   const setTheme = useStore(state => state.setTheme)
 
@@ -31,9 +35,21 @@ function App({ Component, pageProps }) {
     })
   }, [appId])
 
-  const pathway = /(\/docs\/commands\/[a-zA-Z0-9_-_-.,~#])+/i.test(
-    router.pathname
+  const pathway = flattenArray(
+    Object.entries(documentation.Commands).map(([key, value]) => {
+      if (value.length > 0)
+        return [
+          `/docs/commands/${key}`,
+          value.map(v => `/docs/commands/${key}/${v.title}`),
+          value.map(v =>
+            v.commands.map(c => `/docs/commands/${key}/${v.title}/${c.title}`)
+          )
+        ]
+      else null
+    })
   )
+    .filter(item => item != null || item != undefined)
+    .includes(router.pathname)
 
   return (
     <>
@@ -69,18 +85,61 @@ function App({ Component, pageProps }) {
                 <Component {...pageProps} />
                 <PrevNext />
               </DocsLayout>
-              {pathway == true && <PageMenu />}
+              {pathway == true && (
+                <>
+                  <PageMenu pageList={pageList} setPageList={setPageList} />
+                  <button
+                    type="button"
+                    className={clsx(
+                      'bg-yellow-300 bg-opacity-10 absolute h-full w-full lg:hidden z-[5] inset-0',
+                      { hidden: !pageList }
+                    )}
+                    onClick={() => setPageList(!pageList)}
+                  />
+                  <button
+                    type="button"
+                    tabIndex={-1}
+                    className={clsx(
+                      'absolute p-2 border-0 z-[6] rounded-l shadow-xl  duration-300 lg:hidden focus:outline-none top-44 right-0 transform transition-all',
+                      {
+                        'bg-yellow-200': !theme,
+                        'bg-yellow-900': theme,
+                        '-translate-x-72 md:-translate-x-96': pageList === true
+                      }
+                    )}
+                    onClick={() => setPageList(!pageList)}
+                  >
+                    <IoIosList
+                      className={clsx('w-auto h-5', {
+                        'text-yellow-900': !theme,
+                        'text-yellow-200': theme
+                      })}
+                    />
+                  </button>
+                </>
+              )}
             </section>
+
             <button
               type="button"
               tabIndex={-1}
-              className="fixed p-2 bg-yellow-200 border-0 rounded-full shadow-xl lg:hidden focus:outline-none bottom-10 right-10"
-              onClick={() => setDoc(!doc)}
+              className={clsx(
+                'fixed p-2 z-[8] border-0 rounded-full shadow-xl lg:hidden focus:outline-none bottom-10 right-10',
+                {
+                  'bg-yellow-200': !theme,
+                  'bg-yellow-900': theme
+                }
+              )}
+              onClick={() => {
+                setDoc(!doc)
+                setPageList(false)
+              }}
             >
               <HiPlus
                 className={clsx('w-auto h-10 transition-all transform', {
                   'rotate-45': doc,
-                  'text-yellow-900': !theme
+                  'text-yellow-900': !theme,
+                  'text-yellow-200': theme
                 })}
               />
             </button>
