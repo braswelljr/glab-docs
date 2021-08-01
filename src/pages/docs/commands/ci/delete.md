@@ -11,7 +11,6 @@ glab ci delete <id> [flags]
 ```bash
 glab ci delete 34
 glab ci delete 12,34,2
-
 ```
 
 ## Options

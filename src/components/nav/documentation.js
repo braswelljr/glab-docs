@@ -34,46 +34,16 @@ export const documentation = {
           { title: 'view', commands: [] }
         ]
       },
-      {
-        title: 'close',
-        commands: []
-      },
-      {
-        title: 'create',
-        commands: []
-      },
-      {
-        title: 'delete',
-        commands: []
-      },
-      {
-        title: 'list',
-        commands: []
-      },
-      {
-        title: 'note',
-        commands: []
-      },
-      {
-        title: 'reopen',
-        commands: []
-      },
-      {
-        title: 'subscribe',
-        commands: []
-      },
-      {
-        title: 'unsubcribe',
-        commands: []
-      },
-      {
-        title: 'update',
-        commands: []
-      },
-      {
-        title: 'view',
-        commands: []
-      }
+      { title: 'close', commands: [] },
+      { title: 'create', commands: [] },
+      { title: 'delete', commands: [] },
+      { title: 'list', commands: [] },
+      { title: 'note', commands: [] },
+      { title: 'reopen', commands: [] },
+      { title: 'subscribe', commands: [] },
+      { title: 'unsubcribe', commands: [] },
+      { title: 'update', commands: [] },
+      { title: 'view', commands: [] }
     ],
     label: [
       { title: 'create', commands: [] },
@@ -122,6 +92,6 @@ export const documentation = {
     user: [{ title: 'events', commands: [] }],
     variable: [{ title: 'set', commands: [] }],
     version: []
-  },
-  Help: []
+  }
+  // Help: []
 }
