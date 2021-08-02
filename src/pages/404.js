@@ -11,7 +11,7 @@ const Custom404 = () => {
     <>
       <section
         className={clsx(
-          'w-full min-h-[71.4vh] flex items-center justify-center lg:min-h-[81.5vh]',
+          'w-full h-screen absolute inset-0 flex items-center justify-center',
           {
             'text-gray-800': theme,
             'text-yellow-200 bg-gray-900': !theme
