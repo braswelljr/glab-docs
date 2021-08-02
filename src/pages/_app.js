@@ -145,8 +145,8 @@ function App({ Component, pageProps }) {
               ) : (
                 <HiX
                   className={clsx('w-auto h-10 transition-all transform', {
-                    'text-yellow-900': !theme,
-                    'text-yellow-200': theme
+                    'text-yellow-900': theme === 'light',
+                    'text-yellow-200': theme === 'dark'
                   })}
                 />
               )}
