@@ -1,6 +1,5 @@
 import create from 'zustand'
 import { devtools } from 'zustand/middleware'
-import { matchSorter } from 'match-sorter'
 
 const useStore = create(
   devtools(set => ({
