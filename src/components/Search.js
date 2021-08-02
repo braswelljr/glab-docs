@@ -2,13 +2,11 @@ import { useState, useRef, useEffect } from 'react'
 import { HiSearch } from 'react-icons/hi'
 import useStore from '@/store/index'
 import clsx from 'clsx'
-import { documentation } from './nav/documentation'
 
 const Search = ({ open, setOpen, searchInputRef }) => {
   const [searchQuery, setSearchQuery] = useState('')
   const searchCloseRef = useRef()
   const theme = useStore(state => state.theme)
-  const search = useStore(state => state.search)
 
   useEffect(() => {
     function onKeyClose(e) {
@@ -22,16 +20,6 @@ const Search = ({ open, setOpen, searchInputRef }) => {
     window.addEventListener('keydown', onKeyClose)
     return () => {
       window.removeEventListener('keydown', onKeyClose)
-    }
-  }, [])
-
-  useEffect(() => {
-    const handler = window.setTimeout(() => {
-      search(documentation, searchQuery)
-    }, 100)
-
-    return () => {
-      window.clearTimeout(handler)
     }
   }, [])
 

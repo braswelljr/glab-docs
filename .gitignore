@@ -33,6 +33,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# editor configs
+/.vscode/
+/.idea/
+
 # locks
 package-lock.json
 tailwindfull.config.js
