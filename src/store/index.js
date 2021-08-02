@@ -3,8 +3,9 @@ import { devtools } from 'zustand/middleware'
 
 const useStore = create(
   devtools(set => ({
-    theme: false,
-    setTheme: type => set({ theme: type }),
+    theme: 'dark',
+    themeDark: () => set({ theme: 'dark' }),
+    themeLight: () => set({ theme: 'light' }),
     pageStruct: undefined,
     setPageStruct: struct => set({ pageStruct: struct }),
     query: ''

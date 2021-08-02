@@ -1,7 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
 import useStore from '../store'
-import fof from '../assets/404.png'
 import Typewriter from 'typewriter-effect'
 
 const Custom404 = () => {
@@ -19,7 +18,11 @@ const Custom404 = () => {
         )}
       >
         <div className="space-y-10">
-          <img src={fof} alt="404 image" className={clsx('h-80 w-auto')} />
+          <img
+            src={require('@/img/404.png')}
+            alt="404 image"
+            className={clsx('h-80 w-auto')}
+          />
           <section className="px-8 text-xl font-black text-center">
             <Typewriter
               options={{

@@ -39,7 +39,7 @@ module.exports = withPlugins(
             loader: 'file-loader',
             options: {
               publicPath: '/.next',
-              name: 'static/media/[name].[hash].[ext]'
+              name: 'static/image/src/img/[name].[hash].[ext]'
             }
           }
         ]
@@ -48,9 +48,6 @@ module.exports = withPlugins(
       config.resolve.modules.push(path.resolve(`./`))
 
       return config
-    },
-    future: {
-      webpack5: true
     }
   }
 )

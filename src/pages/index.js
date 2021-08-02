@@ -1,5 +1,6 @@
 import React from 'react'
 import Terminal from '@/components/Terminal'
+import Footer from '@/components/Footer'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { IoLogoVercel } from 'react-icons/io5'
@@ -62,8 +63,8 @@ function Index() {
       {/* Terminal section */}
       <section
         className={clsx('px-8 py-12 space-y-16 md:px-20 xl:px-40 lg:px-32', {
-          'bg-yellow-50': themed,
-          'bg-gray-900': !themed
+          'bg-yellow-50': themed === 'dark',
+          'bg-gray-900': themed === 'light'
         })}
       >
         <p className="mx-auto text-2xl font-medium text-center md:w-3/5">
@@ -98,7 +99,10 @@ function Index() {
             type="button"
             className={clsx(
               'inline-block py-3 mx-auto text-xl font-semibold transition-all transform bg-yellow-900 border-0 rounded px-7 hover:-translate-y-0.5',
-              { 'text-current': !themed, 'text-yellow-200': themed }
+              {
+                'text-current': themed === 'light',
+                'text-yellow-200': themed === 'dark'
+              }
             )}
           >
             Installation Guide
@@ -117,8 +121,8 @@ function Index() {
                 className={clsx(
                   'w-auto flex flex-col items-center text-center transition-colors',
                   {
-                    'hover:text-yellow-600': !themed,
-                    'hover:text-yellow-500': themed
+                    'hover:text-yellow-600': themed === 'light',
+                    'hover:text-yellow-500': themed === 'dark'
                   }
                 )}
               >
@@ -129,6 +133,7 @@ function Index() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   )
 }
