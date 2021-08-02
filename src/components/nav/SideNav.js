@@ -40,8 +40,8 @@ const SideNav = ({ doc, setDoc }) => {
           'w-full transition-all pt-40 z-10 pb-5 md:px-16 lg:px-0 lg:pt-0 fixed inset-0 duration-300 lg:translate-x-0 transform lg:relative h-full overflow-y-auto scrollbar-hidden scrollbar-hidden-f border-current lg:border-r',
           {
             '-translate-x-full': !doc,
-            'text-yellow-900 bg-yellow-200 lg:bg-white': theme,
-            'bg-gray-900 text-yellow-200': !theme
+            'text-yellow-900 bg-yellow-200 lg:bg-white': theme === 'dark',
+            'bg-gray-900 text-yellow-200': theme === 'light'
           }
         )}
       >

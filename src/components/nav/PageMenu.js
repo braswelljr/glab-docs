@@ -16,8 +16,8 @@ function PageMenu({ pageList, setPageList }) {
         {
           'translate-x-full': !pageList,
           'translate-x-0': pageList,
-          'bg-yellow-200 lg:bg-white': theme,
-          'bg-gray-900': !theme
+          'bg-yellow-200 lg:bg-white': theme === 'dark',
+          'bg-gray-900': theme === 'light'
         }
       )}
     >
@@ -42,8 +42,8 @@ function PageMenu({ pageList, setPageList }) {
               }
               className={clsx('font-semibold text-sm', {
                 'disabled:block': item.title,
-                ' text-yellow-200': !theme,
-                'text-gray-800': theme
+                ' text-yellow-200': theme === 'light',
+                'text-gray-800': theme === 'dark'
               })}
               isActive={
                 (router.pathname.split('/')[4] ===

@@ -1,11 +1,10 @@
 import '../styles/index.css'
 import { useState, useEffect } from 'react'
 import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
 import useStore from '@/store/index'
 import SideNav from '@/components/nav/SideNav'
 import clsx from 'clsx'
-import { HiPlus } from 'react-icons/hi'
+import { HiMenuAlt4, HiX } from 'react-icons/hi'
 import { IoIosList } from 'react-icons/io'
 import { Title } from '@/components/Title'
 import { useRouter } from 'next/router'
@@ -22,7 +21,8 @@ function App({ Component, pageProps }) {
   const [doc, setDoc] = useState(false)
   const [pageList, setPageList] = useState(false)
   const router = useRouter()
-  const setTheme = useStore(state => state.setTheme)
+  const setDark = useStore(state => state.themeDark)
+  const setLight = useStore(state => state.themeLight)
 
   useEffect(() => {
     window.addEventListener('load', () => {
@@ -31,7 +31,7 @@ function App({ Component, pageProps }) {
           ? localStorage.setItem(appId, theme)
           : localStorage.getItem(appId)
       }
-      localStorage.getItem(appId) == theme ? setTheme(theme) : setTheme(!theme)
+      localStorage.getItem(appId) === 'light' ? setLight() : setDark()
     })
   }, [appId])
 
@@ -72,8 +72,8 @@ function App({ Component, pageProps }) {
               className={clsx(
                 'px-8 h-full grid pt-40 lg:pt-16 fixed inset-0 md:px-16 xl:px-36 lg:px-28',
                 {
-                  'text-yellow-900': theme,
-                  'text-yellow-200 bg-gray-900': !theme,
+                  'text-yellow-900': theme === 'dark',
+                  'text-yellow-200 bg-gray-900': theme === 'light',
                   'lg:grid-cols-[2fr,6fr,2fr] xl:grid-cols-[1.8fr,6.4fr,1.8fr]':
                     pathway == true,
                   'lg:grid-cols-[2.5fr,7.5fr]': pathway != true
@@ -102,8 +102,8 @@ function App({ Component, pageProps }) {
                     className={clsx(
                       'absolute p-2 border-0 z-[6] rounded-l shadow-xl  duration-300 lg:hidden focus:outline-none top-44 right-0 transform transition-all',
                       {
-                        'bg-yellow-200': !theme,
-                        'bg-yellow-900': theme,
+                        'bg-yellow-200': theme === 'light',
+                        'bg-yellow-900': theme === 'dark',
                         '-translate-x-72 md:-translate-x-96': pageList === true
                       }
                     )}
@@ -111,8 +111,8 @@ function App({ Component, pageProps }) {
                   >
                     <IoIosList
                       className={clsx('w-auto h-5', {
-                        'text-yellow-900': !theme,
-                        'text-yellow-200': theme
+                        'text-yellow-900': theme === 'light',
+                        'text-yellow-200': theme === 'dark'
                       })}
                     />
                   </button>
@@ -126,8 +126,8 @@ function App({ Component, pageProps }) {
               className={clsx(
                 'fixed p-2 z-[8] border-0 rounded-full shadow-xl lg:hidden focus:outline-none bottom-10 right-10',
                 {
-                  'bg-yellow-200': !theme,
-                  'bg-yellow-900': theme
+                  'bg-yellow-200': theme === 'light',
+                  'bg-yellow-900': theme === 'dark'
                 }
               )}
               onClick={() => {
@@ -135,24 +135,31 @@ function App({ Component, pageProps }) {
                 setPageList(false)
               }}
             >
-              <HiPlus
-                className={clsx('w-auto h-10 transition-all transform', {
-                  'rotate-45': doc,
-                  'text-yellow-900': !theme,
-                  'text-yellow-200': theme
-                })}
-              />
+              {!doc ? (
+                <HiMenuAlt4
+                  className={clsx('w-auto h-10 transition-all transform', {
+                    'text-yellow-900': theme === 'light',
+                    'text-yellow-200': theme === 'dark'
+                  })}
+                />
+              ) : (
+                <HiX
+                  className={clsx('w-auto h-10 transition-all transform', {
+                    'text-yellow-900': theme === 'light',
+                    'text-yellow-200': theme === 'dark'
+                  })}
+                />
+              )}
             </button>
           </>
         ) : (
           <section
             className={clsx('pt-40 lg:pt-20', {
-              'text-yellow-900': theme,
-              'text-yellow-200 bg-gray-900': !theme
+              'text-yellow-900': theme === 'dark',
+              'text-yellow-200 bg-gray-900': theme === 'light'
             })}
           >
             <Component {...pageProps} />
-            <Footer />
           </section>
         )}
       </main>

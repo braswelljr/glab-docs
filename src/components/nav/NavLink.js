@@ -11,8 +11,10 @@ const NavLink = forwardRef(
       <Link href={encodeURI(href)} ref={linkRef}>
         <a
           className={clsx('block rounded', className, {
-            'bg-yellow-300 lg:bg-yellow-200': isActive === true && theme,
-            'bg-yellow-200 bg-opacity-20': isActive === true && !theme
+            'bg-yellow-300 lg:bg-yellow-200':
+              isActive === true && theme === 'dark',
+            'bg-yellow-200 bg-opacity-20':
+              isActive === true && theme === 'light'
           })}
           onClick={() =>
             (document.documentElement.scrollTop = 0) &&

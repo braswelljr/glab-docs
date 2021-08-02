@@ -8,7 +8,7 @@
       "@/docs/*": ["src/pages/docs/*"],
       "@/utils/*": ["src/utils/*"],
       "@/hooks/*": ["src/hooks/*"],
-      "@/img/*": ["src/assets/img/*","src/assets/logo/*","src/assets/*"],
+      "@/img/*": ["src/img/*"],
       "@/store/*": ["src/store/*"]
     }
   }

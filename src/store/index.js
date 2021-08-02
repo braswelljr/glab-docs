@@ -1,11 +1,11 @@
 import create from 'zustand'
 import { devtools } from 'zustand/middleware'
-import { matchSorter } from 'match-sorter'
 
 const useStore = create(
   devtools(set => ({
-    theme: false,
-    setTheme: type => set({ theme: type }),
+    theme: 'light',
+    themeDark: () => set({ theme: 'dark' }),
+    themeLight: () => set({ theme: 'light' }),
     pageStruct: undefined,
     setPageStruct: struct => set({ pageStruct: struct }),
     query: ''

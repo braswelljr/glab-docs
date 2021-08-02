@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 import { FaGithub, FaTwitter } from 'react-icons/fa'
 import { HiSun, HiMoon } from 'react-icons/hi'
 import { Switch } from '@headlessui/react'
-import glab from '@/img/glab.png'
 import Search from './Search'
 import useStore from '@/store/index'
 
@@ -18,7 +17,9 @@ const Navbar = ({ appName, appId }) => {
   const searchButtonRef = useRef()
   const searchInputRef = useRef()
   const theme = useStore(state => state.theme)
-  const setTheme = useStore(state => state.setTheme)
+  const setDark = useStore(state => state.themeDark)
+  const setLight = useStore(state => state.themeLight)
+  const [enabled, setEnabled] = useState(false)
 
   // checking for platform
   useEffect(() => {
@@ -52,14 +53,18 @@ const Navbar = ({ appName, appId }) => {
           {
             'text-yellow-900 bg-white': theme,
             'text-yellow-200 bg-gray-900 border-b-[0.5px] border-current':
-              !theme
+              theme === 'light'
           }
         )}
       >
         <div className="">
           <Link href="/">
             <a className="inline-flex items-center w-auto space-x-">
-              <img src={glab} alt="glab icon" className="inline w-auto h-8" />
+              <img
+                src={require('@/img/glab.png')}
+                alt="glab icon"
+                className="inline w-auto h-8"
+              />
               <h1 className="inline w-auto text-xl font-semibold">{appName}</h1>
             </a>
           </Link>
@@ -68,8 +73,8 @@ const Navbar = ({ appName, appId }) => {
           className={clsx(
             'flex items-center justify-end space-x-3 md:col-start-3 md:row-start-1 md:col-end-4',
             {
-              'text-yellow-900': theme,
-              'text-yellow-200': !theme
+              'text-yellow-900': theme === 'dark',
+              'text-yellow-200': theme === 'light'
             }
           )}
         >
@@ -82,14 +87,23 @@ const Navbar = ({ appName, appId }) => {
 
           {/* menu button */}
           <Switch
-            checked={theme}
-            onChange={theme => {
-              setTheme(theme)
-              localStorage.setItem(appId, theme)
+            checked={enabled}
+            onChange={() => {
+              setEnabled(!enabled)
+              if (theme !== 'light') {
+                setLight()
+                localStorage.setItem(appId, 'light')
+              } else {
+                setDark()
+                localStorage.setItem(appId, 'dark')
+              }
             }}
             className={clsx(
               'relative inline-flex flex-shrink-0 h-[30px] w-[60px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75',
-              { 'bg-yellow-900': theme, 'bg-yellow-200': !theme }
+              {
+                'bg-yellow-900': theme === 'dark',
+                'bg-yellow-200': theme === 'light'
+              }
             )}
           >
             <span className="sr-only">Use setting</span>
@@ -98,12 +112,12 @@ const Navbar = ({ appName, appId }) => {
               className={clsx(
                 'pointer-events-none h-[26px] w-[26px] rounded-full shadow-lg transform ring-0 transition ease-in-out duration-200 inline-flex items-center justify-center',
                 {
-                  'translate-x-7 bg-gray-900': !theme,
-                  'bg-white': theme
+                  'translate-x-7 bg-gray-900': theme === 'light',
+                  'bg-white': theme === 'dark'
                 }
               )}
             >
-              {!theme ? (
+              {theme === 'light' ? (
                 <HiMoon className="w-auto h-4" />
               ) : (
                 <HiSun className="w-auto h-4" />
@@ -118,7 +132,8 @@ const Navbar = ({ appName, appId }) => {
                 className={clsx('px-3 py-2 rounded cursor-pointer', {
                   'bg-yellow-200': router.pathname.split('/')[1] === 'docs',
                   'text-yellow-900':
-                    !theme && router.pathname.split('/')[1] === 'docs'
+                    theme === 'light' &&
+                    router.pathname.split('/')[1] === 'docs'
                 })}
               >
                 Docs
@@ -138,7 +153,7 @@ const Navbar = ({ appName, appId }) => {
             className={clsx(
               'block w-full px-4 py-2 text-xs font-semibold bg-yellow-200 rounded sm:text-sm md:text-base focus:outline-none',
               {
-                'text-yellow-900': !theme
+                'text-yellow-900': theme === 'light'
               }
             )}
             onClick={() => setOpen(true)}

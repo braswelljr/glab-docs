@@ -10,7 +10,7 @@ const DocsLayout = ({ children }) => {
       className={clsx(
         'py-8 lg:px-5 overflow-y-auto scrollbar-hidden scrollbar-hidden-f prose font-semibold',
         {
-          'text-gray-900': theme
+          'text-gray-900': theme === 'dark'
         }
       )}
     >

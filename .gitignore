@@ -34,8 +34,8 @@ yarn-error.log*
 .vercel
 
 # editor configs
-/.vscode/
-/.idea/
+.vscode
+.idea
 
 # locks
 package-lock.json
