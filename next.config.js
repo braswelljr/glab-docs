@@ -1,27 +1,23 @@
 const path = require('path')
-// const withPWA = require('next-pwa')
-// const runtimeCaching = require('next-pwa/cache')
+const withPWA = require('next-pwa')
+const runtimeCaching = require('next-pwa/cache')
 const withImages = require('next-images')
 const withPlugins = require('next-compose-plugins')
 const withMdx = require('@next/mdx')({
   extension: /\.(md|mdx)$/
 })
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true'
-})
 
 module.exports = withPlugins(
   [
-    // [
-    //   withPWA,
-    //   {
-    //     pwa: {
-    //       dest: 'public',
-    //       runtimeCaching
-    //     }
-    //   }
-    // ],
-    [withBundleAnalyzer],
+    [
+      withPWA,
+      {
+        pwa: {
+          dest: 'public',
+          runtimeCaching
+        }
+      }
+    ],
     [withImages],
     [withMdx]
   ],
