@@ -6,6 +6,7 @@ const withPlugins = require('next-compose-plugins')
 const withMdx = require('@next/mdx')({
   extension: /\.(md|mdx)$/
 })
+const { withSentryConfig } = require('@sentry/nextjs')
 
 module.exports = withPlugins(
   [
@@ -19,7 +20,8 @@ module.exports = withPlugins(
       }
     ],
     [withImages],
-    [withMdx]
+    [withMdx],
+    [withSentryConfig, { silent: true }]
   ],
   {
     pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
