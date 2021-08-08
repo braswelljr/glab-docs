@@ -31,7 +31,6 @@
     "@next/bundle-analyzer": "^10.2.3",
     "@next/mdx": "^11.0.1",
     "@reach/alert": "^0.16.0",
-    "@sentry/nextjs": "^6.11.0",
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.3.1",
