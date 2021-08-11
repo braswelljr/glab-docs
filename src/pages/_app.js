@@ -1,4 +1,5 @@
 import '../styles/index.css'
+import '../styles/docsearch.css'
 import { useState, useEffect } from 'react'
 import Navbar from '@/components/Navbar'
 import useStore from '@/store/index'

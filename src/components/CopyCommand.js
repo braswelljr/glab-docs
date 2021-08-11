@@ -7,7 +7,9 @@ const CopyCommand = forwardRef(({ children }, commandRef) => {
   const [copied, setCopied] = useState(undefined)
 
   function copy(command) {
-    return navigator.clipboard.writeText(`${command}`)
+    return navigator.clipboard.writeText(`${command}`).catch(error => {
+      console.error(error)
+    })
   }
 
   useEffect(() => {
