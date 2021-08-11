@@ -36,7 +36,6 @@ const Navbar = ({ appName, appId }) => {
       if (actionKey.map(k => e.key === k.toString()) && e.key === '/') {
         e.preventDefault()
         searchButtonRef.current.click()
-        searchInputRef.current.focus()
       }
     }
     window.addEventListener('keydown', onKeyDown)

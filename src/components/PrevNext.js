@@ -12,6 +12,7 @@ import { useRouter } from 'next/router'
 const PrevNext = () => {
   const setPageStruct = useStore(state => state.setPageStruct)
   const router = useRouter()
+  const theme = useStore(state => state.theme)
 
   function PageLayoutLoader() {
     Object.entries(documentation).map(([category, categoryItems]) => {
@@ -47,7 +48,7 @@ const PrevNext = () => {
   let l = pages.length
 
   return (
-    <div className="flex items-center justify-between mt-10">
+    <div className="relative mt-10 mb-28">
       {typeof usePrevNext().prev === 'undefined' || usePrevNext().prev < 0 ? (
         <></>
       ) : (
@@ -62,12 +63,18 @@ const PrevNext = () => {
             type="button"
             tabIndex={-1}
             className={clsx(
-              'px-2 py-0.5 rounded-sm focus:outline-none border border-current flex justify-between items-center'
+              'py-2 px-4 bg-yellow-200 font-extrabold rounded-lg absolute uppercase left-0 w-[45%]',
+              {
+                'text-gray-800': theme === 'light'
+              }
             )}
             onClick={() => PageLayoutLoader()}
           >
-            <HiChevronLeft className="w-auto h-5" />
-            <span className="">{pages[usePrevNext().prev]}</span>
+            <div className="text-xs text-right text-gray-500">Previous</div>
+            <div className="flex items-center justify-between">
+              <HiChevronLeft className="w-auto h-5" />
+              <span className="">{pages[usePrevNext().prev]}</span>
+            </div>
           </button>
         </Link>
       )}
@@ -86,12 +93,18 @@ const PrevNext = () => {
             type="button"
             tabIndex={-1}
             className={clsx(
-              'px-2 py-0.5 rounded-sm focus:outline-none border border-current flex justify-between items-center'
+              'py-2 px-4 bg-yellow-200 font-extrabold rounded-lg absolute uppercase right-0 w-[45%]',
+              {
+                'text-gray-800': theme === 'light'
+              }
             )}
             onClick={() => PageLayoutLoader()}
           >
-            <span className="">{pages[usePrevNext().next]}</span>
-            <HiChevronRight className="w-auto h-5" />
+            <div className="text-xs text-left text-gray-500">Next</div>
+            <div className="flex items-center justify-between">
+              <span className="">{pages[usePrevNext().next]}</span>
+              <HiChevronRight className="w-auto h-5" />
+            </div>
           </button>
         </Link>
       )}

@@ -25,12 +25,11 @@
     "url": "https://github.com/braswelljr/glab-docs/issues"
   },
   "dependencies": {
+    "@docsearch/react": "^1.0.0-alpha.14",
     "@headlessui/react": "^1.4.0",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@next/bundle-analyzer": "^10.2.3",
     "@next/mdx": "^11.0.1",
-    "@reach/alert": "^0.16.0",
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.3.1",

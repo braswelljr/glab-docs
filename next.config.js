@@ -14,7 +14,8 @@ module.exports = withPlugins(
       {
         pwa: {
           dest: 'public',
-          runtimeCaching
+          runtimeCaching,
+          disable: process.env.NODE_ENV === 'development'
         }
       }
     ],
@@ -23,6 +24,7 @@ module.exports = withPlugins(
   ],
   {
     pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+    reactStrictMode: true,
     wepack: (config, options) => {
       if (!options.dev) {
         options.defaultLoaders.babel.options.cache = false

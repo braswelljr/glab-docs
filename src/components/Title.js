@@ -22,12 +22,6 @@ export function Title({ suffix, children }) {
       )}
       <meta key="twitter:title" name="twitter:title" content={title} />
       <meta key="og:title" property="og:title" content={title} />
-      <link rel="manifest" href="/manifest.json" />
-      <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-      <link href="/icons/icon192.png" rel="icon" type="image/png" />
-      <link href="/icons/icon512.png" rel="icon" type="image/png" />
-      <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
-      <meta name="theme-color" content="#317EFB" />
     </Head>
   )
 }
