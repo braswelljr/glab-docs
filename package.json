@@ -35,6 +35,7 @@
     "autoprefixer": "^10.3.1",
     "clsx": "^1.1.1",
     "file-loader": "^6.2.0",
+    "framer-motion": "^4.1.17",
     "next": "^10.2.3",
     "next-compose-plugins": "^2.2.1",
     "next-images": "^1.8.1",

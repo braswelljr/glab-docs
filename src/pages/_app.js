@@ -1,6 +1,6 @@
 import '../styles/index.css'
 import '../styles/docsearch.css'
-import { useState, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Navbar from '@/components/Navbar'
 import useStore from '@/store/index'
 import SideNav from '@/components/nav/SideNav'
@@ -9,6 +9,7 @@ import { HiMenuAlt4, HiX } from 'react-icons/hi'
 import { IoIosList } from 'react-icons/io'
 import { Title } from '@/components/Title'
 import { useRouter } from 'next/router'
+import { motion } from 'framer-motion'
 import DocsLayout from '@/components/layouts/DocsLayout'
 import PageMenu from '@/components/nav/PageMenu'
 import PrevNext from '@/components/PrevNext'
@@ -24,6 +25,7 @@ function App({ Component, pageProps }) {
   const router = useRouter()
   const setDark = useStore(state => state.themeDark)
   const setLight = useStore(state => state.themeLight)
+  const constraintsRef = useRef(null)
 
   useEffect(() => {
     window.addEventListener('load', () => {
@@ -83,7 +85,7 @@ function App({ Component, pageProps }) {
             >
               <SideNav doc={doc} setDoc={setDoc} />
               <DocsLayout>
-                <Component {...pageProps} />
+                <Component {...pageProps} ref={constraintsRef} />
                 <PrevNext />
               </DocsLayout>
               {pathway == true && (
@@ -121,8 +123,15 @@ function App({ Component, pageProps }) {
               )}
             </section>
 
-            <button
+            <motion.button
               type="button"
+              drag
+              dragConstraints={{
+                top: -150,
+                left: -200,
+                right: -10,
+                bottom: -10
+              }}
               tabIndex={-1}
               className={clsx(
                 'fixed p-2 z-[8] border-0 rounded-full shadow-xl lg:hidden focus:outline-none bottom-10 right-10',
@@ -138,20 +147,20 @@ function App({ Component, pageProps }) {
             >
               {!doc ? (
                 <HiMenuAlt4
-                  className={clsx('w-auto h-10 transition-all transform', {
+                  className={clsx('w-auto h-8 transition-all transform', {
                     'text-yellow-900': theme === 'light',
                     'text-yellow-200': theme === 'dark'
                   })}
                 />
               ) : (
                 <HiX
-                  className={clsx('w-auto h-10 transition-all transform', {
+                  className={clsx('w-auto h-8 transition-all transform', {
                     'text-yellow-900': theme === 'light',
                     'text-yellow-200': theme === 'dark'
                   })}
                 />
               )}
-            </button>
+            </motion.button>
           </>
         ) : (
           <section
