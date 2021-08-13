@@ -63,15 +63,15 @@ const PrevNext = () => {
             type="button"
             tabIndex={-1}
             className={clsx(
-              'py-2 px-4 bg-yellow-200 font-extrabold rounded-lg absolute uppercase left-0 w-[45%]',
+              'py-2 px-4 bg-yellow-200 font-extrabold rounded-lg absolute left-0 w-[45%]',
               {
                 'text-gray-800': theme === 'light'
               }
             )}
             onClick={() => PageLayoutLoader()}
           >
-            <div className="text-xs text-right text-gray-500">Previous</div>
-            <div className="flex items-center justify-between">
+            <div className="text-xs text-right text-gray-500">previous</div>
+            <div className="flex items-center justify-between uppercase">
               <HiChevronLeft className="w-auto h-5" />
               <span className="">{pages[usePrevNext().prev]}</span>
             </div>
@@ -93,15 +93,15 @@ const PrevNext = () => {
             type="button"
             tabIndex={-1}
             className={clsx(
-              'py-2 px-4 bg-yellow-200 font-extrabold rounded-lg absolute uppercase right-0 w-[45%]',
+              'py-2 px-4 bg-yellow-200 font-extrabold rounded-lg absolute right-0 w-[45%]',
               {
                 'text-gray-800': theme === 'light'
               }
             )}
             onClick={() => PageLayoutLoader()}
           >
-            <div className="text-xs text-left text-gray-500">Next</div>
-            <div className="flex items-center justify-between">
+            <div className="text-xs text-left text-gray-500">next</div>
+            <div className="flex items-center justify-between uppercase">
               <span className="">{pages[usePrevNext().next]}</span>
               <HiChevronRight className="w-auto h-5" />
             </div>

@@ -4,7 +4,7 @@ import Typewriter from 'typewriter-effect'
 const TerminalControl = () => {
   return (
     <div
-      style={{ fontFamily: `Consolas, monospace` }}
+      style={{ fontFamily: `Consolas, 'Courier New', monospace` }}
       className="w-full max-w-3xl mx-auto overflow-hidden text-xs bg-black rounded md:text-sm"
     >
       {/* terminal header */}
