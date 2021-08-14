@@ -4,22 +4,10 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import clsx from 'clsx'
 import useStore from '@/store/index'
-import { terminalD } from '@/components/context/terminal'
+import { terminalD, poweredBy } from '@/components/context/contents'
 
 function Index() {
   const themed = useStore(state => state.theme)
-  const poweredBy = [
-    {
-      name: 'Fosshost',
-      link: 'https://fosshost.org/',
-      logo: (
-        <img
-          src={require('@/img/sponsors/fosshost.png')}
-          className="w-auto h-20"
-        />
-      )
-    }
-  ]
 
   return (
     <>

@@ -71,9 +71,11 @@ const PrevNext = () => {
             onClick={() => PageLayoutLoader()}
           >
             <div className="text-xs text-right text-gray-500">previous</div>
-            <div className="flex items-center justify-between uppercase">
+            <div className="flex items-center justify-between">
               <HiChevronLeft className="w-auto h-5" />
-              <span className="">{pages[usePrevNext().prev]}</span>
+              <span className="">
+                {pages[usePrevNext().prev].replace(/-/g, ' ')}
+              </span>
             </div>
           </button>
         </Link>
@@ -101,8 +103,10 @@ const PrevNext = () => {
             onClick={() => PageLayoutLoader()}
           >
             <div className="text-xs text-left text-gray-500">next</div>
-            <div className="flex items-center justify-between uppercase">
-              <span className="">{pages[usePrevNext().next]}</span>
+            <div className="flex items-center justify-between">
+              <span className="">
+                {pages[usePrevNext().next].replace(/-/g, ' ')}
+              </span>
               <HiChevronRight className="w-auto h-5" />
             </div>
           </button>
