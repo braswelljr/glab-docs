@@ -11,6 +11,7 @@ const SideNav = ({ doc, setDoc }) => {
   const router = useRouter()
   const theme = useStore(state => state.theme)
   const setPageStruct = useStore(state => state.setPageStruct)
+  const pageStruct = useStore(state => state.pageStruct)
 
   useIsomorphicLayoutEffect(() => {
     function Loader() {
@@ -31,7 +32,7 @@ const SideNav = ({ doc, setDoc }) => {
     return () => {
       window.removeEventListener('load', Loader)
     }
-  }, [router.pathname])
+  }, [router.pathname, pageStruct])
 
   return (
     <>

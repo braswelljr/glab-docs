@@ -24,3 +24,16 @@ export const terminalD = [
     link: `https://github.com/profclems/glab`
   }
 ]
+
+export const poweredBy = [
+  {
+    name: 'Fosshost',
+    link: 'https://fosshost.org/',
+    logo: (
+      <img
+        src={require('@/img/sponsors/fosshost.png')}
+        className="w-auto h-20"
+      />
+    )
+  }
+]

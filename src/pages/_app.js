@@ -1,6 +1,6 @@
 import '../styles/index.css'
 import '../styles/docsearch.css'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Navbar from '@/components/Navbar'
 import useStore from '@/store/index'
 import SideNav from '@/components/nav/SideNav'
@@ -25,7 +25,6 @@ function App({ Component, pageProps }) {
   const router = useRouter()
   const setDark = useStore(state => state.themeDark)
   const setLight = useStore(state => state.themeLight)
-  const constraintsRef = useRef(null)
 
   useEffect(() => {
     window.addEventListener('load', () => {
@@ -60,12 +59,12 @@ function App({ Component, pageProps }) {
         suffix={
           router.pathname === '/'
             ? undefined
-            : 'GLAB (GitLab command line tool)'
+            : 'glab (GitLab command line tool)'
         }
       >
         {router.pathname.split('/')[2]
-          ? router.pathname.split('/')[2].toUpperCase()
-          : router.pathname.split('/')[1].toUpperCase()}
+          ? router.pathname.split('/')[2]
+          : router.pathname.split('/')[1]}
       </Title>
       <main>
         <Navbar appName={appName} appId={appId} />
@@ -85,7 +84,7 @@ function App({ Component, pageProps }) {
             >
               <SideNav doc={doc} setDoc={setDoc} />
               <DocsLayout>
-                <Component {...pageProps} ref={constraintsRef} />
+                <Component {...pageProps} />
                 <PrevNext />
               </DocsLayout>
               {pathway == true && (

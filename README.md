@@ -27,3 +27,7 @@ npm install
 ```bash
 npm run dev
 ```
+
+## SPONSORS
+
+[![https://fosshost.org/](/src/img/sponsors/fosshost.png)](https://fosshost.org/)

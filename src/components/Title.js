@@ -16,7 +16,7 @@ export function Title({ suffix, children }) {
       <meta name="glab" content="GitLab command line tool" />
       <meta name="keywords" content="Keywords" />
       {router.pathname === '/' ? (
-        <title key="title">GLAB - GitLab command line tool</title>
+        <title key="title">glab - GitLab command line tool</title>
       ) : (
         <title key="title">{title}</title>
       )}
