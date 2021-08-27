@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import clsx from 'clsx'
 import useStore from '@/store/index'
-import { terminalD, poweredBy } from '@/components/context/contents'
+import { terminalD, poweredBy } from 'src/context/contents'
 
 function Index() {
   const themed = useStore(state => state.theme)
