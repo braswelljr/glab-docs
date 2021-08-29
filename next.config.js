@@ -1,7 +1,6 @@
 const path = require('path')
 const withPWA = require('next-pwa')
 const runtimeCaching = require('next-pwa/cache')
-const withImages = require('next-images')
 const withPlugins = require('next-compose-plugins')
 const withMdx = require('@next/mdx')({
   extension: /\.(md|mdx)$/
@@ -19,25 +18,26 @@ module.exports = withPlugins(
         }
       }
     ],
-    [withImages],
     [withMdx]
   ],
   {
     pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
     reactStrictMode: true,
-    wepack: (config, options) => {
-      if (!options.dev) {
-        options.defaultLoaders.babel.options.cache = false
+    webpack5: false,
+    webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+      if (!dev) {
+        defaultLoaders.babel.options.cache = false
       }
 
       config.module.rules.push({
-        test: /\.(png|jpe?g|gif|webp)$/i,
+        test: /\.(jpe?g|png|svg|gif|ico|eot|ttf|woff|woff2|mp4|pdf|webp|txt)$/i,
         use: [
           {
             loader: 'file-loader',
             options: {
-              publicPath: '/.next',
-              name: 'static/image/src/img/[name].[hash].[ext]'
+              esModule: false,
+              publicPath: '/_next',
+              name: 'static/media/[name].[hash].[ext]'
             }
           }
         ]
