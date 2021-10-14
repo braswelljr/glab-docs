@@ -4,7 +4,7 @@
   "private": true,
   "author": "Braswell Kenneth Junior Azu",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 4000",
     "build": "next build",
     "start": "next start",
     "format": "prettier src/**/*.{css,jsx,tsx,ts,js} --write"
@@ -29,23 +29,23 @@
     "@headlessui/react": "^1.4.0",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@next/mdx": "^11.1.0",
+    "@next/mdx": "^11.1.2",
     "@tailwindcss/aspect-ratio": "^0.2.1",
     "@tailwindcss/typography": "^0.4.1",
-    "autoprefixer": "^10.3.3",
+    "autoprefixer": "^10.3.7",
     "clsx": "^1.1.1",
     "file-loader": "^6.2.0",
     "framer-motion": "^4.1.17",
-    "next": "^11.1.0",
+    "next": "^11.1.2",
     "next-compose-plugins": "^2.2.1",
     "next-pwa": "^5.3.1",
-    "postcss": "^8.3.6",
+    "postcss": "^8.3.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
-    "tailwindcss": "^2.2.8",
+    "tailwindcss": "^2.2.16",
     "typewriter-effect": "^2.18.0",
-    "zustand": "^3.5.10"
+    "zustand": "^3.5.13"
   },
   "devDependencies": {
     "eslint": "^7.32.0",

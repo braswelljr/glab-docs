@@ -74,8 +74,9 @@ const Search = ({ open, setOpen, searchInputRef }) => {
               initialQuery={searchQuery}
               initialScrollY={window.scrollY}
               onClose={onClose}
-              apiKey="25626fae796133dc1e734c6bcaaeac3c"
-              indexName="docsearch"
+              appId="BH4D9OD16A"
+              apiKey="66cb338ddd0c4cce7d12b456c59390a6"
+              indexName="glab"
               navigator={{
                 navigate({ suggestionUrl }) {
                   setOpen(false)
