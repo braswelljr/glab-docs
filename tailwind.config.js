@@ -16,7 +16,7 @@ module.exports = {
         gray: color.trueGray
       },
       fontFamily: {
-        sans: ["'Mulish'", ...defaultTheme.fontFamily.sans]
+        sans: ["'Ubuntu'", ...defaultTheme.fontFamily.sans]
       },
       gridTemplateColumns: {
         nav: `minmax(auto, 1.5fr) minmax(0, 6.5fr) minmax(auto, 2fr)`

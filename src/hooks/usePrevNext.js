@@ -1,7 +1,7 @@
-import { toArray } from '@/utils/toArray'
+import toArray from '@/utils/toArray'
 import { documentation } from '@/components/nav/documentation'
 import { useRouter } from 'next/router'
-import { flattenArray } from '@/utils/flattenArray'
+import flattenArray from '@/utils/flattenArray'
 
 export function usePrevNext() {
   const router = useRouter()

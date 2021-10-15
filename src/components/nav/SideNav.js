@@ -2,37 +2,14 @@ import React from 'react'
 import { documentation } from './documentation'
 import NavLink from './NavLink'
 import clsx from 'clsx'
-import { toArray } from '@/utils/toArray'
+import toArray from '@/utils/toArray'
 import { useRouter } from 'next/router'
 import useStore from '@/store/index'
-import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayout'
 
 const SideNav = ({ doc, setDoc }) => {
   const router = useRouter()
   const theme = useStore(state => state.theme)
   const setPageStruct = useStore(state => state.setPageStruct)
-  const pageStruct = useStore(state => state.pageStruct)
-
-  useIsomorphicLayoutEffect(() => {
-    function Loader() {
-      Object.entries(documentation).map(([category, categoryItems]) => {
-        toArray(categoryItems).map(item => {
-          if (
-            router.pathname.split('/')[2] === category.toLowerCase() &&
-            router.pathname.split('/')[3] ===
-              (Array.isArray(item) ? item[0] : item)
-          ) {
-            setPageStruct(item)
-          }
-        })
-      })
-    }
-
-    window.addEventListener('load', Loader)
-    return () => {
-      window.removeEventListener('load', Loader)
-    }
-  }, [router.pathname, pageStruct])
 
   return (
     <>

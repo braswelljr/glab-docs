@@ -1,6 +1,6 @@
 import '../styles/index.css'
 import '../styles/docsearch.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Fragment } from 'react'
 import Navbar from '@/components/Navbar'
 import useStore from '@/store/index'
 import SideNav from '@/components/nav/SideNav'
@@ -14,7 +14,7 @@ import DocsLayout from '@/components/layouts/DocsLayout'
 import PageMenu from '@/components/nav/PageMenu'
 import PrevNext from '@/components/PrevNext'
 import { documentation } from '@/components/nav/documentation'
-import { flattenArray } from '@/utils/flattenArray'
+import flattenArray from '@/utils/flattenArray'
 
 function App({ Component, pageProps }) {
   const appName = 'glab'
@@ -37,6 +37,7 @@ function App({ Component, pageProps }) {
     })
   }, [appId])
 
+  // get specific page menus for specific paths
   const pathway = flattenArray(
     Object.entries(documentation.Commands).map(([key, value]) => {
       if (value.length > 0)
@@ -88,7 +89,7 @@ function App({ Component, pageProps }) {
                 <PrevNext />
               </DocsLayout>
               {pathway == true && (
-                <>
+                <Fragment>
                   <PageMenu pageList={pageList} setPageList={setPageList} />
                   <button
                     type="button"
@@ -118,7 +119,7 @@ function App({ Component, pageProps }) {
                       })}
                     />
                   </button>
-                </>
+                </Fragment>
               )}
             </section>
 
@@ -127,7 +128,7 @@ function App({ Component, pageProps }) {
               drag
               dragConstraints={{
                 top: -150,
-                left: -200,
+                left: -120,
                 right: -10,
                 bottom: -10
               }}

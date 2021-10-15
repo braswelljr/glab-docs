@@ -3,11 +3,37 @@ import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import useStore from '@/store/index'
 import NavLink from './NavLink'
+import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayout'
+import { documentation } from '@/components/nav/documentation'
+import toArray from '@/utils/toArray'
 
 function PageMenu({ pageList, setPageList }) {
   const router = useRouter()
   const pageStruct = useStore(state => state.pageStruct)
+  const setPageStruct = useStore(state => state.setPageStruct)
   const theme = useStore(state => state.theme)
+
+  // set page struct on page load
+  useIsomorphicLayoutEffect(() => {
+    function Loader() {
+      Object.entries(documentation).map(([category, categoryItems]) => {
+        toArray(categoryItems).map(item => {
+          if (
+            router.pathname.split('/')[2] === category.toLowerCase() &&
+            router.pathname.split('/')[3] ===
+              (Array.isArray(item) ? item[0] : item)
+          ) {
+            setPageStruct(item)
+          }
+        })
+      })
+    }
+
+    window.addEventListener('load', Loader)
+    return () => {
+      window.removeEventListener('load', Loader)
+    }
+  }, [router.pathname, pageStruct])
 
   return (
     <nav
