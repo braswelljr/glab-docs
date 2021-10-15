@@ -74,8 +74,7 @@ const Search = ({ open, setOpen, searchInputRef }) => {
               initialQuery={searchQuery}
               initialScrollY={window.scrollY}
               searchParameters={{
-                distinct: 1,
-                facetFilters: ['language:en', 'version:1.0.0']
+                distinct: 1
               }}
               onClose={onClose}
               appId="BH4D9OD16A"
