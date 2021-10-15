@@ -1,4 +1,4 @@
-export function toArray(array) {
+export default function toArray(array) {
   if (Array.isArray(array)) return array
   else if (typeof array === 'object')
     return Object.entries(array).map(([key, value]) => [key, value])
