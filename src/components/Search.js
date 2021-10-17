@@ -73,9 +73,6 @@ const Search = ({ open, setOpen, searchInputRef }) => {
             <DocSearchModal
               initialQuery={searchQuery}
               initialScrollY={window.scrollY}
-              searchParameters={{
-                distinct: 1
-              }}
               onClose={onClose}
               appId="BH4D9OD16A"
               apiKey="66cb338ddd0c4cce7d12b456c59390a6"

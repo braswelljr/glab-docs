@@ -9,7 +9,7 @@
       "@/utils/*": ["src/utils/*"],
       "@/hooks/*": ["src/hooks/*"],
       "@/img/*": ["src/img/*"],
-      "@/test/*": ["src/test/*"],
+      "@/test/*": ["src/__test__/*"],
       "@/context/*": ["src/context/*"],
       "@/store/*": ["src/store/*"]
     }
