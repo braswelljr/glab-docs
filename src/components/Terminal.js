@@ -10,9 +10,9 @@ const TerminalControl = () => {
       {/* terminal header */}
       <div className="relative px-5 py-4 bg-gray-800">
         <span className="flex space-x-2">
-          <span className="block w-3 h-3 bg-green-500 rounded-full" />
-          <span className="block w-3 h-3 bg-yellow-400 rounded-full" />
           <span className="block w-3 h-3 bg-red-500 rounded-full" />
+          <span className="block w-3 h-3 bg-yellow-400 rounded-full" />
+          <span className="block w-3 h-3 bg-green-500 rounded-full" />
         </span>
         <span className="absolute font-semibold text-white transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
           bash ~ <span className="text-green-500">usr</span>
