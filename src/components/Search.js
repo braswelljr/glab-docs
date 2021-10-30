@@ -6,14 +6,6 @@ import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'
 
-function Hit({ hit, children }) {
-  return (
-    <Link href={hit.url}>
-      <a>{children}</a>
-    </Link>
-  )
-}
-
 const Search = ({ open, setOpen, searchInputRef }) => {
   const [searchQuery, setSearchQuery] = useState(null)
   const theme = useStore(state => state.theme)
