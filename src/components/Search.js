@@ -6,14 +6,6 @@ import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'
 
-function Hit({ hit, children }) {
-  return (
-    <Link href={hit.url}>
-      <a>{children}</a>
-    </Link>
-  )
-}
-
 const Search = ({ open, setOpen, searchInputRef }) => {
   const [searchQuery, setSearchQuery] = useState(null)
   const theme = useStore(state => state.theme)
@@ -83,7 +75,13 @@ const Search = ({ open, setOpen, searchInputRef }) => {
                   router.push(suggestionUrl)
                 }
               }}
-              hitComponent={Hit}
+              hitComponent={({ hit, children }) => {
+                return (
+                  <Link href={hit.url}>
+                    <a>{children}</a>
+                  </Link>
+                )
+              }}
               transformItems={items => {
                 return items.map(item => {
                   // We transform the absolute URL into a relative URL to

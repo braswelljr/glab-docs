@@ -63,8 +63,8 @@ function PageMenu({ pageList, setPageList }) {
                 item === 'introduction'
                   ? `/docs`
                   : `/docs/${router.pathname.split('/')[2]}/${
-                    router.pathname.split('/')[3]
-                  }/${typeof item === 'object' ? item.title : item}`
+                      router.pathname.split('/')[3]
+                    }/${typeof item === 'object' ? item.title : item}`
               }
               className={clsx('font-semibold text-sm', {
                 'disabled:block': item.title,
@@ -97,12 +97,12 @@ function PageMenu({ pageList, setPageList }) {
                       item === 'introduction'
                         ? `/docs`
                         : `/docs/${router.pathname.split('/')[2]}/${
-                          router.pathname.split('/')[3]
-                        }/${typeof item === 'object' ? item.title : item}/${
-                          typeof command === 'object'
-                            ? command.title
-                            : command
-                        }`
+                            router.pathname.split('/')[3]
+                          }/${typeof item === 'object' ? item.title : item}/${
+                            typeof command === 'object'
+                              ? command.title
+                              : command
+                          }`
                     }
                     className={clsx('font-semibold text-sm ml-6', {
                       'text-yellow-800': !theme,
