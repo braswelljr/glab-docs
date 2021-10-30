@@ -83,7 +83,13 @@ const Search = ({ open, setOpen, searchInputRef }) => {
                   router.push(suggestionUrl)
                 }
               }}
-              hitComponent={Hit}
+              hitComponent={({ hit, children }) => {
+                return (
+                  <Link href={hit.url}>
+                    <a>{children}</a>
+                  </Link>
+                )
+              }}
               transformItems={items => {
                 return items.map(item => {
                   // We transform the absolute URL into a relative URL to
