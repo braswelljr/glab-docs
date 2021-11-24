@@ -8,10 +8,7 @@ export default class Document extends NextDocument {
 
   render() {
     return (
-      <Html
-        lang="en"
-        className="antialiased text-gray-800"
-      >
+      <Html lang="en" className="antialiased text-gray-800">
         <Head>
           <link rel="manifest" href="/manifest.json" />
           <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
