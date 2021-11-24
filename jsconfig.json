@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "@/backgrounds/*": ["src/backgrounds/*"],
       "@/components/*": ["src/components/*"],

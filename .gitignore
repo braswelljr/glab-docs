@@ -40,4 +40,4 @@ yarn-error.log*
 # locks
 package-lock.json
 tailwindfull.config.js
-
+yarn.lock

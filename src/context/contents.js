@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export const terminalD = [
   {
     title: `Your entire GitLab workflow`,
@@ -30,8 +32,11 @@ export const poweredBy = [
     name: 'Fosshost',
     link: 'https://fosshost.org/',
     logo: (
-      <img
+      <Image
+        alt="fosshost"
         src={require('@/img/sponsors/fosshost.png')}
+        width={220}
+        height={60}
         className="w-auto h-20"
       />
     )

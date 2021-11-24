@@ -41,7 +41,7 @@ export const documentation = {
       { title: 'note', commands: [] },
       { title: 'reopen', commands: [] },
       { title: 'subscribe', commands: [] },
-      { title: 'unsubcribe', commands: [] },
+      { title: 'unsubscribe', commands: [] },
       { title: 'update', commands: [] },
       { title: 'view', commands: [] }
     ],

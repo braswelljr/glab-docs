@@ -24,7 +24,7 @@ const Search = ({ open, setOpen, searchInputRef }) => {
       setOpen(true)
       setSearchQuery(e.key)
     },
-    [setOpen, searchQuery]
+    [setOpen]
   )
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Search = ({ open, setOpen, searchInputRef }) => {
     return () => {
       window.removeEventListener('keydown', onKeyClose)
     }
-  }, [])
+  }, [setSearchQuery, onClose])
 
   useDocSearchKeyboardEvents({
     open,
@@ -56,8 +56,8 @@ const Search = ({ open, setOpen, searchInputRef }) => {
         id="search-body"
         className={clsx('inset-0 z-[11] fixed bg-opacity-50 w-full h-full', {
           hidden: !open,
-          'bg-gray-400': theme,
-          'bg-yellow-200': !theme
+          'bg-gray-400': theme === 'light',
+          'bg-yellow-200': theme === 'dark'
         })}
       >
         {open &&
@@ -70,9 +70,9 @@ const Search = ({ open, setOpen, searchInputRef }) => {
               apiKey="66cb338ddd0c4cce7d12b456c59390a6"
               indexName="glab"
               navigator={{
-                navigate({ suggestionUrl }) {
+                navigate({ itemUrl }) {
                   setOpen(false)
-                  router.push(suggestionUrl)
+                  router.push(itemUrl)
                 }
               }}
               hitComponent={({ hit, children }) => {

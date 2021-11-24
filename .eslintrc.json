@@ -2,9 +2,11 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "extends": [
+    "next/core-web-vitals",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
@@ -17,7 +19,12 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "prettier"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/no-unescaped-entities": "off",
