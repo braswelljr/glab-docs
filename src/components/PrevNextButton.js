@@ -8,7 +8,7 @@ const PrevNextButton = forwardRef(
     const theme = useStore(state => state.theme)
 
     return (
-      <Link href={encodeURI(href)} ref={linkRef}>
+      <Link href={encodeURI(href)} ref={linkRef} passHref>
         <button
           type="button"
           tabIndex={-1}

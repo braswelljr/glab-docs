@@ -35,7 +35,7 @@ function App({ Component, pageProps }) {
       }
       localStorage.getItem(appId) === 'light' ? setLight() : setDark()
     })
-  }, [appId])
+  }, [appId, setLight, setDark, theme])
 
   // get specific page menus for specific paths
   const pathway = flattenArray(

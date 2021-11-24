@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import { FaGithub, FaTwitter } from 'react-icons/fa'
@@ -42,7 +43,7 @@ const Navbar = ({ appName, appId }) => {
     return () => {
       window.removeEventListener('keydown', onKeyDown)
     }
-  }, [])
+  }, [actionKey])
 
   return (
     <>
@@ -59,9 +60,11 @@ const Navbar = ({ appName, appId }) => {
         <div className="">
           <Link href="/">
             <a className="inline-flex items-center w-auto space-x-">
-              <img
+              <Image
                 src={require('@/img/glab.png')}
                 alt="glab icon"
+                height={40}
+                width={40}
                 className="inline w-auto h-8"
               />
               <h1 className="inline w-auto text-xl font-semibold">{appName}</h1>

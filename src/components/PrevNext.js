@@ -1,37 +1,17 @@
-import { Fragment } from 'react'
-import { usePrevNext } from '@/hooks/usePrevNext'
 import { documentation } from '@/components/nav/documentation'
 import toArray from '@/utils/toArray'
-import flattenArray from '@/utils/flattenArray'
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 import PrevNextButton from '@/components/PrevNextButton'
 import { useRouter } from 'next/router'
 import useStore from '@/store/index'
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayout'
+import { previousNext } from '@/utils/previousNext'
 
 const PrevNext = () => {
   const setPageStruct = useStore(state => state.setPageStruct)
   const router = useRouter()
 
   // flatten page names for next/prev
-  const pages = flattenArray(
-    Object.values(documentation).map(categoryItems =>
-      toArray(categoryItems).map(item => (Array.isArray(item) ? item[0] : item))
-    )
-  )
-  let l = pages.length
-
-  // flatten path conversions for next prev
-  const paths = flattenArray(
-    Object.entries(documentation).map(([category, categoryItems]) =>
-      toArray(categoryItems).map(
-        item =>
-          `/docs/${category.toLowerCase()}/${
-            Array.isArray(item) ? item[0] : item
-          }`
-      )
-    )
-  )
 
   // to update structure on page route change
   useIsomorphicLayoutEffect(() => {
@@ -48,54 +28,34 @@ const PrevNext = () => {
     })
   }, [router.pathname])
 
+  const { previous, next } = previousNext(router.pathname.split('/')[3])
+
   return (
-    <Fragment>
+    <div className="">
       <div className="relative mt-10">
-        {usePrevNext().prev === undefined || usePrevNext().prev < 0 ? (
-          <></>
-        ) : (
-          <PrevNextButton
-            className="left-0"
-            href={
-              pages[usePrevNext().prev] === 'introduction'
-                ? '/docs'
-                : paths[usePrevNext().prev]
-            }
-          >
+        {previous?.page !== undefined && previous?.path !== undefined && (
+          <PrevNextButton className="left-0" href={previous?.path}>
             <div className="text-xs text-right text-gray-500">previous</div>
             <div className="flex items-center justify-between">
               <HiChevronLeft className="w-auto h-5" />
-              <span className="">
-                {pages[usePrevNext().prev].replace(/-/g, ' ')}
-              </span>
+              <span className="">{previous?.page.replace(/-/g, ' ')}</span>
             </div>
           </PrevNextButton>
         )}
 
-        {usePrevNext().next === undefined || usePrevNext().next >= l ? (
-          <></>
-        ) : (
-          <PrevNextButton
-            className="right-0"
-            href={
-              pages[usePrevNext().next] === 'introduction'
-                ? '/docs'
-                : paths[usePrevNext().next]
-            }
-          >
+        {next?.page !== undefined && next?.path !== undefined && (
+          <PrevNextButton className="right-0" href={next.path}>
             <div className="text-xs text-left text-gray-500">next</div>
             <div className="flex items-center justify-between">
-              <span className="">
-                {pages[usePrevNext().next].replace(/-/g, ' ')}
-              </span>
+              <span className="">{next?.page.replace(/-/g, ' ')}</span>
               <HiChevronRight className="w-auto h-5" />
             </div>
           </PrevNextButton>
         )}
       </div>
-      {/* bottom space */}
+      {/* bottom space*/}
       <div className="w-full h-12" />
-    </Fragment>
+    </div>
   )
 }
 

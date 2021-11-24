@@ -1,3 +1,11 @@
-[
-  { "source": "/docs/introduction", "destination": "/docs", "permanent": true }
+[{
+    "source": "/docs/introduction",
+    "destination": "/docs",
+    "permanent": true
+  },
+  {
+    "source": "/docs/getting-started/introduction",
+    "destination": "/docs",
+    "permanent": true
+  }
 ]

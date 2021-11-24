@@ -10,13 +10,11 @@ export default class Document extends NextDocument {
     return (
       <Html
         lang="en"
-        className={`text-gray-800 antialiased ${
-          this.props.dangerousAsPath.startsWith('/examples/') ? '' : 'bg-white'
-        }`}
+        className="antialiased text-gray-800"
       >
         <Head>
           <link rel="manifest" href="/manifest.json" />
-          <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
           <link href="/icons/icon192.png" rel="icon" type="image/png" />
           <link href="/icons/icon512.png" rel="icon" type="image/png" />
           <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
