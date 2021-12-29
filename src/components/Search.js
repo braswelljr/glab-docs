@@ -56,7 +56,7 @@ const Search = ({ open, setOpen, searchInputRef }) => {
         id="search-body"
         className={clsx('inset-0 z-[11] fixed bg-opacity-50 w-full h-full', {
           hidden: !open,
-          'bg-gray-400': theme === 'light',
+          'bg-neutral-400': theme === 'light',
           'bg-yellow-200': theme === 'dark'
         })}
       >

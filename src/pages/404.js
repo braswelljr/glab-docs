@@ -12,8 +12,8 @@ const Custom404 = () => {
       className={clsx(
         'w-full min-h-screen absolute inset-0 grid place-items-center',
         {
-          'text-gray-800': theme === 'dark',
-          'text-yellow-200 bg-gray-900': theme === 'light'
+          'text-neutral-800': theme === 'dark',
+          'text-yellow-200 bg-neutral-900': theme === 'light'
         }
       )}
     >
@@ -30,7 +30,7 @@ const Custom404 = () => {
             options={{
               strings: [
                 'Hey hacker, Page not found😐',
-                'Tried <span class="bg-gray-700 px-1 text-yellow-200">searching 🔍</span> or <span class="bg-gray-700 px-1 text-yellow-200">hit 🖱️</span> the docs button yet?'
+                'Tried <span class="bg-neutral-700 px-1 text-yellow-200">searching 🔍</span> or <span class="bg-neutral-700 px-1 text-yellow-200">hit 🖱️</span> the docs button yet?'
               ],
               autoStart: true,
               loop: true

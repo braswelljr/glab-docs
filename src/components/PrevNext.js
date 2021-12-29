@@ -35,7 +35,7 @@ const PrevNext = () => {
       <div className="relative mt-10">
         {previous?.page !== undefined && previous?.path !== undefined && (
           <PrevNextButton className="left-0" href={previous?.path}>
-            <div className="text-xs text-right text-gray-500">previous</div>
+            <div className="text-xs text-right text-neutral-500">previous</div>
             <div className="flex items-center justify-between">
               <HiChevronLeft className="w-auto h-5" />
               <span className="">{previous?.page.replace(/-/g, ' ')}</span>
@@ -45,7 +45,7 @@ const PrevNext = () => {
 
         {next?.page !== undefined && next?.path !== undefined && (
           <PrevNextButton className="right-0" href={next.path}>
-            <div className="text-xs text-left text-gray-500">next</div>
+            <div className="text-xs text-left text-neutral-500">next</div>
             <div className="flex items-center justify-between">
               <span className="">{next?.page.replace(/-/g, ' ')}</span>
               <HiChevronRight className="w-auto h-5" />
