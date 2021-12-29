@@ -37,6 +37,28 @@ export default class Document extends NextDocument {
           <meta name="msapplication-TileColor" content="#2B5797" />
           <meta name="msapplication-tap-highlight" content="no" />
           <meta name="theme-color" content="#000000" />
+
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:url" content="https://glab-cli.io" />
+          <meta name="twitter:title" content="GLab" />
+          <meta
+            name="twitter:description"
+            content="Open source GitLab CLI tool"
+          />
+          <meta
+            name="twitter:image"
+            content="https://github.com/braswelljr/glab-docs/raw/main/src/img/glab.png"
+          />
+          <meta name="twitter:creator" content="@braswell_ken" />
+          <meta property="og:type" content="GitLab CLI" />
+          <meta property="og:title" content="GLab" />
+          <meta property="og:description" content="Open Source CLI tool." />
+          <meta property="og:site_name" content="GLab" />
+          <meta property="og:url" content="https://yourdomain.com" />
+          <meta
+            property="og:image"
+            content="https://github.com/braswelljr/glab-docs/raw/main/src/img/glab.png"
+          />
         </Head>
         <body>
           <Main />
