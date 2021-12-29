@@ -45,7 +45,7 @@ function Index() {
       <section
         className={clsx('px-8 py-12 space-y-16 md:px-20 xl:px-40 lg:px-32', {
           'bg-yellow-50': themed === 'dark',
-          'bg-gray-900': themed === 'light'
+          'bg-neutral-900': themed === 'light'
         })}
       >
         <p className="mx-auto text-2xl font-medium text-center md:w-3/5">

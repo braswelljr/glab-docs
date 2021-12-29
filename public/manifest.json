@@ -1,13 +1,12 @@
 {
-  "name": "GLAB",
-  "short_name": "GLAB",
+  "name": "GLab",
+  "short_name": "GLab",
   "orientation": "portrait",
   "start_url": ".",
   "theme_color": "#ff7b00",
   "background_color": "#ffffff00",
   "display": "standalone",
-  "icons": [
-    {
+  "icons": [{
       "src": "./favicon.ico",
       "sizes": "194x194",
       "type": "image/x-icon"

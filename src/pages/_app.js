@@ -76,7 +76,7 @@ function App({ Component, pageProps }) {
                 'px-8 h-full grid pt-40 lg:pt-16 fixed inset-0 md:px-16 xl:px-36 lg:px-28',
                 {
                   'text-yellow-900': theme === 'dark',
-                  'text-yellow-200 bg-gray-900': theme === 'light',
+                  'text-yellow-200 bg-neutral-900': theme === 'light',
                   'lg:grid-cols-[2fr,6fr,2fr] xl:grid-cols-[1.8fr,6.4fr,1.8fr]':
                     pathway == true,
                   'lg:grid-cols-[2.5fr,7.5fr]': pathway != true
@@ -166,7 +166,7 @@ function App({ Component, pageProps }) {
           <section
             className={clsx('pt-40 lg:pt-20', {
               'text-yellow-900': theme === 'dark',
-              'text-yellow-200 bg-gray-900': theme === 'light'
+              'text-yellow-200 bg-neutral-900': theme === 'light'
             })}
           >
             <Component {...pageProps} />

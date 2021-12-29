@@ -52,7 +52,7 @@ const Navbar = ({ appName, appId }) => {
           'fixed inset-x-0 top-0 z-10 grid grid-cols-[auto,auto] gap-3 px-8 py-4 shadow md:px-16 xl:px-36 lg:px-28 md:grid-cols-nav',
           {
             'text-yellow-900 bg-white': theme,
-            'text-yellow-200 bg-gray-900 border-b-[0.5px] border-current':
+            'text-yellow-200 bg-neutral-900 border-b-[0.5px] border-current':
               theme === 'light'
           }
         )}
@@ -114,7 +114,7 @@ const Navbar = ({ appName, appId }) => {
               className={clsx(
                 'pointer-events-none h-[26px] w-[26px] rounded-full shadow-lg transform ring-0 transition ease-in-out duration-200 inline-flex items-center justify-center',
                 {
-                  'translate-x-7 bg-gray-900': theme === 'light',
+                  'translate-x-7 bg-neutral-900': theme === 'light',
                   'bg-white': theme === 'dark'
                 }
               )}

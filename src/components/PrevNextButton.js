@@ -16,7 +16,7 @@ const PrevNextButton = forwardRef(
             'py-2 px-4 bg-yellow-200 font-extrabold rounded-lg absolute w-[45%]',
             className,
             {
-              'text-gray-800': theme === 'light'
+              'text-neutral-800': theme === 'light'
             }
           )}
           onClick={() => {

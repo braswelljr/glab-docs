@@ -19,7 +19,7 @@ const SideNav = ({ doc, setDoc }) => {
           {
             '-translate-x-full': !doc,
             'text-yellow-900 bg-yellow-200 lg:bg-white': theme === 'dark',
-            'bg-gray-900 text-yellow-200': theme === 'light'
+            'bg-neutral-900 text-yellow-200': theme === 'light'
           }
         )}
       >

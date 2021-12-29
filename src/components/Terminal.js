@@ -8,7 +8,7 @@ const TerminalControl = () => {
       className="w-full max-w-3xl mx-auto overflow-hidden text-xs bg-black rounded md:text-sm"
     >
       {/* terminal header */}
-      <div className="relative px-5 py-4 bg-gray-800">
+      <div className="relative px-5 py-4 bg-neutral-800">
         <span className="flex space-x-2">
           <span className="block w-3 h-3 bg-red-500 rounded-full" />
           <span className="block w-3 h-3 bg-yellow-400 rounded-full" />
@@ -35,7 +35,7 @@ const TerminalControl = () => {
                   `<div class="col-start-2 col-end-3 w-full">Showing issues 1 of 1 on glab</div>`
                 )
                 .pasteString(
-                  `<div class="col-start-2 col-end-3 w-full flex space-x-3"><span class="text-green-500">#21</span><span>Update Documentation</span><span class="text-blue-300">[enhancement]</span><span class="text-gray-300 text-opacity-60">30 mins ago</span></div>`
+                  `<div class="col-start-2 col-end-3 w-full flex space-x-3"><span class="text-green-500">#21</span><span>Update Documentation</span><span class="text-blue-300">[enhancement]</span><span class="text-neutral-300 text-opacity-60">30 mins ago</span></div>`
                 )
                 .pauseFor(10000)
                 .start(100)

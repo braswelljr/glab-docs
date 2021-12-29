@@ -197,7 +197,7 @@
 .DocSearch-Hit-source {
   line-height: 1.5rem;
   font-weight: bold;
-  color: theme('colors.gray.800');
+  color: theme('colors.neutral.800');
   margin-top: 0.75rem;
   margin-bottom: 0.5rem;
 }
@@ -237,7 +237,7 @@
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 500;
-  color: theme('colors.gray.800');
+  color: theme('colors.neutral.800');
 }
 
 .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-path {
@@ -276,7 +276,7 @@
 
 .DocSearch-Hit-action path {
   stroke-width: 2px;
-  stroke: theme('colors.gray.800');
+  stroke: theme('colors.neutral.800');
 }
 
 .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-action path {
@@ -285,7 +285,7 @@
 
 .DocSearch-Hit > a {
   display: block;
-  background: theme('colors.gray.50');
+  background: theme('colors.neutral.50');
   border-radius: 0.25rem;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   padding: 0 0.625rem 0 0.5rem;
@@ -295,7 +295,7 @@
   .DocSearch-Hit-source {
     line-height: 1.5rem;
     font-weight: bold;
-    color: theme('colors.gray.800');
+    color: theme('colors.neutral.800');
     margin-top: 1.5rem;
     margin-bottom: 1rem;
   }
@@ -306,7 +306,7 @@
 }
 
 .DocSearch-Hit[aria-selected='true'] > a {
-  background: theme('colors.gray.700');
+  background: theme('colors.neutral.700');
 }
 
 .DocSearch-Hit + .DocSearch-Hit {
@@ -358,7 +358,7 @@
 
 .DocSearch-Hits mark {
   background: none;
-  color: theme('colors.gray.500');
+  color: theme('colors.neutral.500');
 }
 
 .DocSearch-Hit[aria-selected='true'] mark {
@@ -416,7 +416,7 @@
 }
 
 .DocSearch-Title strong {
-  color: theme('colors.gray.900');
+  color: theme('colors.neutral.900');
   font-weight: 500;
 }
 
@@ -438,12 +438,12 @@
   text-transform: uppercase;
   font-weight: 600;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid theme('colors.gray.200');
+  border-bottom: 1px solid theme('colors.neutral.200');
 }
 
 .DocSearch-NoResults-Prefill-List li {
   padding: 0.5rem 0;
-  border-bottom: 1px solid theme('colors.gray.200');
+  border-bottom: 1px solid theme('colors.neutral.200');
 }
 
 .DocSearch-NoResults-Prefill-List button {
@@ -459,6 +459,6 @@
 
 .DocSearch-NoResults-Prefill-List + .DocSearch-Help a {
   box-shadow: theme('boxShadow.sm');
-  color: theme('colors.gray.700');
+  color: theme('colors.neutral.700');
   font-weight: 500;
 }
