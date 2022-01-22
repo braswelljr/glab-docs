@@ -1,7 +1,11 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  experimental: {
+    optimizeUniversalDefaults: true
+  },
   content: ['./public/index.html', './src/**/*.{js, jsx, ts, tsx, vue, mdx}'],
+  darkMode: 'class',
   theme: {
     screens: {
       xs: '475px',

@@ -1,15 +1,21 @@
 import { useState, useCallback, useEffect } from 'react'
 import { createPortal } from 'react-dom'
-import useStore from '@/store/index'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'
+import useStore from '@/store/index'
+import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayout'
 
 const Search = ({ open, setOpen, searchInputRef }) => {
   const [searchQuery, setSearchQuery] = useState(null)
-  const theme = useStore(state => state.theme)
   const router = useRouter()
+  const theme = useStore(state => state.theme)
+
+  useIsomorphicLayoutEffect(() => {
+    if (theme === 'light') document.documentElement.classList.add('dark')
+    else document.documentElement.classList.remove('dark')
+  }, [theme])
 
   const onOpen = useCallback(() => {
     setOpen(true)
@@ -54,11 +60,12 @@ const Search = ({ open, setOpen, searchInputRef }) => {
     <>
       <div
         id="search-body"
-        className={clsx('inset-0 z-[11] fixed bg-opacity-50 w-full h-full', {
-          hidden: !open,
-          'bg-neutral-400': theme === 'light',
-          'bg-yellow-200': theme === 'dark'
-        })}
+        className={clsx(
+          'inset-0 z-[11] fixed bg-neutral-500/80 w-full h-full',
+          {
+            hidden: !open
+          }
+        )}
       >
         {open &&
           createPortal(

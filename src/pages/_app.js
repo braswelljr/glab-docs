@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar'
 import useStore from '@/store/index'
 import SideNav from '@/components/nav/SideNav'
 import clsx from 'clsx'
-import { HiMenuAlt4, HiX } from 'react-icons/hi'
+import { HiMenu, HiX } from 'react-icons/hi'
 import { IoIosList } from 'react-icons/io'
 import { Title } from '@/components/Title'
 import { useRouter } from 'next/router'
@@ -79,7 +79,8 @@ function App({ Component, pageProps }) {
                   'text-yellow-200 bg-neutral-900': theme === 'light',
                   'lg:grid-cols-[2fr,6fr,2fr] xl:grid-cols-[1.8fr,6.4fr,1.8fr]':
                     pathway == true,
-                  'lg:grid-cols-[2.5fr,7.5fr]': pathway != true
+                  'lg:grid-cols-[2fr,8fr] xl:grid-cols-[1.8fr,8.2fr]':
+                    pathway != true
                 }
               )}
             >
@@ -89,7 +90,7 @@ function App({ Component, pageProps }) {
                 <PrevNext />
               </DocsLayout>
               {pathway == true && (
-                <Fragment>
+                <>
                   <PageMenu pageList={pageList} setPageList={setPageList} />
                   <button
                     type="button"
@@ -119,7 +120,7 @@ function App({ Component, pageProps }) {
                       })}
                     />
                   </button>
-                </Fragment>
+                </>
               )}
             </section>
 
@@ -134,7 +135,7 @@ function App({ Component, pageProps }) {
               }}
               tabIndex={-1}
               className={clsx(
-                'fixed p-2 z-[8] border-0 rounded-full shadow-xl lg:hidden focus:outline-none bottom-10 right-10',
+                'fixed p-2 z-[8] border-0 h-10 w-10 overflow-hidden rounded-full shadow-xl lg:hidden focus:outline-none bottom-10 right-10',
                 {
                   'bg-yellow-200': theme === 'light',
                   'bg-yellow-900': theme === 'dark'
@@ -145,21 +146,28 @@ function App({ Component, pageProps }) {
                 setPageList(false)
               }}
             >
-              {!doc ? (
-                <HiMenuAlt4
-                  className={clsx('w-auto h-8 transition-all transform', {
+              <HiMenu
+                className={clsx(
+                  'w-7 h-auto transition-all transform absolute -translate-y-1/2 top-1/2 right-1/2',
+                  {
                     'text-yellow-900': theme === 'light',
-                    'text-yellow-200': theme === 'dark'
-                  })}
-                />
-              ) : (
-                <HiX
-                  className={clsx('w-auto h-8 transition-all transform', {
+                    'text-yellow-200': theme === 'dark',
+                    '-translate-x-1/2 scale-50': doc,
+                    'translate-x-1/2': !doc
+                  }
+                )}
+              />
+              <HiX
+                className={clsx(
+                  'w-7 h-auto transition-all transform absolute -translate-y-1/2 top-1/2 left-1/2',
+                  {
                     'text-yellow-900': theme === 'light',
-                    'text-yellow-200': theme === 'dark'
-                  })}
-                />
-              )}
+                    'text-yellow-200': theme === 'dark',
+                    '-translate-x-1/2': doc,
+                    'translate-x-1/2 scale-50': !doc
+                  }
+                )}
+              />
             </motion.button>
           </>
         ) : (
