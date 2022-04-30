@@ -4,18 +4,34 @@ module.exports = {
   experimental: {
     optimizeUniversalDefaults: true
   },
-  content: ['./public/index.html', './src/**/*.{js, jsx, ts, tsx, vue, mdx}'],
+  content: ['./src/**/*.{js,jsx,ts,tsx,vue,mdx}'],
   darkMode: 'class',
   theme: {
     screens: {
-      xs: '475px',
+      xxs: '320px',
+      xs: '375px',
       '3xl': '1920px',
       ...defaultTheme.screens
     },
     extend: {
-      colors: {},
+      colors: {
+        brown: {
+          900: '#382519',
+          800: '#462e20',
+          700: '#63412c',
+          600: '#7f5439',
+          500: '#8d5d3f',
+          400: '#9b6646',
+          300: '#b37a56',
+          200: '#c09072',
+          100: '#cc868e',
+          50: '#d9bcab'
+        }
+      },
       fontFamily: {
-        sans: ["'Ubuntu'", ...defaultTheme.fontFamily.sans]
+        sans: ["'Ubuntu'", ...defaultTheme.fontFamily.sans],
+        serif: ["'Mulish'", ...defaultTheme.fontFamily.serif],
+        mono: ["'Jetbrains Mono'", ...defaultTheme.fontFamily.mono]
       },
       gridTemplateColumns: {
         nav: `minmax(auto, 1.5fr) minmax(0, 6.5fr) minmax(auto, 2fr)`
@@ -110,6 +126,9 @@ module.exports = {
               backgroundColor: 'transparent',
               border: 'none'
             },
+            // 'pre > * > * > p': {
+            //   display: 'inline'
+            // },
             'code::before': {
               content: ''
             },
@@ -158,6 +177,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/line-clamp'),
     require('@tailwindcss/typography')
   ]
 }

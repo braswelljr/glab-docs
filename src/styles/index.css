@@ -1,12 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @layer utilities {
-  .scrollbar-hidden-f {
+  .scrollbars-hidden {
     scrollbar-width: none;
-  }
-  .scrollbar-hidden::-webkit-scrollbar {
-    display: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+
+      @media (min-width: 1024px) {
+        display: block;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      scrollbar-width: auto;
+    }
   }
 }

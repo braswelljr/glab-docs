@@ -1,6 +1,23 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+# lint
 yarn run lint
+# lint --fix
 yarn run lint:fix
+# format code
 yarn run format
+# build
+yarn run build
+
+# test for last command executed
+if [ $? -eq 0 ]; then
+  # remove build extras
+  rm -rf public/sw.js public/sw.js.map public/workbox-*.js /.next
+  echo "Build Successful 😆!"
+  exit 0
+
+  else
+    echo "Oops! Build failed 😢."
+    exit 130
+fi

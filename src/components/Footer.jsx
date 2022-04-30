@@ -3,8 +3,8 @@ import clsx from 'clsx'
 
 const Footer = () => {
   return (
-    <div className="px-8 py-5 border-t border-current md:text-xl md:px-20 xl:px-40 lg:px-32">
-      <div className={clsx('max-w-2xl mx-auto text-center text-sm')}>
+    <div className="border-t border-current px-8 py-5 md:px-20 md:text-xl lg:px-32 xl:px-40">
+      <div className={clsx('mx-auto max-w-2xl text-center text-sm')}>
         © Copyright 2020,{' '}
         <a
           href="https://github.com/profclems"

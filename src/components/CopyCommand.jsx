@@ -7,7 +7,9 @@ const CopyCommand = forwardRef(({ children }, commandRef) => {
   const [copied, setCopied] = useState(undefined)
 
   function copy(command) {
-    return navigator.clipboard.writeText(`${command}`).catch(error => {
+    // strip string from component
+    typeof command === 'object' ? (command = command.props.children) : command
+    return navigator.clipboard.writeText(command).catch(error => {
       console.error(error)
     })
   }
@@ -19,20 +21,16 @@ const CopyCommand = forwardRef(({ children }, commandRef) => {
   return (
     <MDXProvider ref={commandRef}>
       <pre
-        className={clsx('flex group justify-between space-x-2 items-center')}
+        className={clsx('group flex items-center justify-between space-x-2')}
       >
         <div className="overflow-hidden">
-          <span className="px-0.5 overflow-x-auto scrollbar-hidden scrolbarhidden-f">
-            {children}
-          </span>
+          <span className="overflow-x-auto px-0.5">{children}</span>
         </div>
         <button
           type="button"
           className={clsx(
-            'focus:outline-none p-0.5 transition-all opacity-0 group-hover:opacity-100 border border-current rounded active:outline-none',
-            {
-              'text-green-400': copied
-            }
+            'rounded border border-current p-0.5 opacity-0 transition-all focus:outline-none active:outline-none group-hover:opacity-100',
+            copied && 'text-green-400'
           )}
           onClick={() => {
             setCopied('copied')

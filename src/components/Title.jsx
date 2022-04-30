@@ -22,6 +22,30 @@ export function Title({ suffix, children }) {
       )}
       <meta key="twitter:title" name="twitter:title" content={title} />
       <meta key="og:title" property="og:title" content={title} />
+      <link
+        rel="preload"
+        as="font"
+        crossOrigin="anonymous"
+        href={require('@/fonts/JetBrainsMono[wght].ttf')}
+      />
+      <link
+        rel="preload"
+        as="font"
+        crossOrigin="anonymous"
+        href={require('@/fonts/JetBrainsMono-Italic[wght].ttf')}
+      />
+      <link
+        rel="preload"
+        as="font"
+        crossOrigin="anonymous"
+        href={require('@/fonts/mulish.ttf')}
+      />
+      <link
+        rel="preload"
+        as="font"
+        crossOrigin="anonymous"
+        href={require('@/fonts/Ubuntu-Regular.ttf')}
+      />
     </Head>
   )
 }

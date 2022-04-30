@@ -2,15 +2,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@/backgrounds/*": ["src/backgrounds/*"],
-      "@/components/*": ["src/components/*"],
-      "@/pages/*": ["src/pages/*"],
-      "@/docs/*": ["src/pages/docs/*"],
-      "@/utils/*": ["src/utils/*"],
-      "@/hooks/*": ["src/hooks/*"],
-      "@/img/*": ["src/img/*"],
-      "@/context/*": ["src/context/*"],
-      "@/store/*": ["src/store/*"]
+      "@/*": ["src/*"]
     }
-  }
+  },
+  "include": ["**/*.js", "**/*.jsx"],
+  "exclude": ["node_modules"]
 }
