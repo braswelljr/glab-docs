@@ -13,7 +13,10 @@ const Navbar = ({ appName, appId }) => {
     () => ['Ctrl', 'Control', 'CONTROL'].map(key => key),
     []
   )
-  const ACTION_KEY_APPLE = useMemo(() => ['⌘', 'Command'].map(key => key), [])
+  const ACTION_KEY_APPLE = useMemo(
+    () => ['⌘', 'Command', 'COMMAND'].map(key => key),
+    []
+  )
   const [open, setOpen] = useState(false)
   const [actionKey, setActionKey] = useState(ACTION_KEY_DEFAULT)
   const router = useRouter()
