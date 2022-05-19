@@ -1,19 +1,25 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-# lint
+REMOVE="rm -rf public/sw.js public/sw.js.map public/workbox-*.js public/workbox-*.js.map .next"
+# remove files from previous builds
+eval $REMOVE
+
+# lint and build
 yarn run lint
-# lint --fix
+
+# lint and fix
 yarn run lint:fix
+
 # format code
 yarn run format
-# build
-yarn run build
 
+# run build and test for truthy
+yarn run build
 # test for last command executed
 if [ $? -eq 0 ]; then
-  # remove build extras
-  rm -rf public/sw.js public/sw.js.map public/workbox-*.js /.next
+  # remove build files
+  eval $REMOVE
   echo "Build Successful 😆!"
   exit 0
 

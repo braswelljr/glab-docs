@@ -178,6 +178,12 @@ module.exports = {
   plugins: [
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/typography')
+    require('@tailwindcss/typography'),
+    // direct child selector variant
+    function ({ addVariant }) {
+      addVariant('child', '& > *')
+      addVariant('not-first', '& > *:not(:first-child)')
+      addVariant('not-last', '& > *:not(:last-child)')
+    }
   ]
 }

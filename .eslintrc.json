@@ -49,14 +49,43 @@
     "no-multi-spaces": "warn",
     "eslint-disable-next-line": "off",
     "import/no-unresolved": "off",
-    "indent": ["warn", 2],
-    // next config
+    "indent": [
+      "warn",
+      2,
+      {
+        "SwitchCase": 1,
+        "MemberExpression": 1,
+        "ignoredNodes": [
+          "ConditionalExpression",
+          "flatTernaryExpressions",
+          "offsetTernaryExpressions"
+        ]
+      }
+    ],
+    "no-empty": [
+      "off",
+      {
+        "allowEmptyCatch": true,
+        "allowEmptyFunctions": true,
+        "allowEmptyReturn": true
+      }
+    ],
+    // eslint bugged rules
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
+    // next constraints
     "@next/next/no-img-element": "off",
+    "@next/next/no-html-link-for-pages": "off",
     "prettier/prettier": [
       "warn",
       {},
       {
-        "usePrettierrc": true
+        "usePrettierrc": true,
+        "ignoreFiles": [
+          "**/node_modules/**",
+          "**/dist/**",
+          "**/public/**/workbox-*.{js,js.map}"
+        ]
       }
     ]
   }

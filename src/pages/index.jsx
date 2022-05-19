@@ -5,6 +5,8 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import useStore from '@/store/index'
 import { terminalD, poweredBy } from 'src/context/contents'
+import LinkWithRef from '@/components/LinkWithRef'
+import { HiPencilAlt, HiDownload } from 'react-icons/hi'
 
 function Index() {
   const themed = useStore(state => state.theme)
@@ -20,23 +22,36 @@ function Index() {
           GLab is an open source GitLab CLI tool bringing GitLab to your
           terminal next to where you are already working with git and your code.
         </p>
-        <Link href="/docs" passHref>
-          <button
-            type="button"
+
+        <div className="mx-6 grid items-center justify-center">
+          <LinkWithRef
+            href="/docs"
             className={clsx(
-              'mx-auto block transform rounded border-0 bg-yellow-900 py-3 px-7 text-xl font-semibold transition-all hover:-translate-y-0.5',
+              'inline-block transform rounded border-0 bg-yellow-900 py-2 px-8 text-center text-xs font-semibold uppercase transition-all hover:-translate-y-0.5 md:text-lg',
               { 'text-current': !themed, 'text-yellow-200': themed }
             )}
           >
             Get Started
-          </button>
-        </Link>
-        <p className="text-center text-lg font-medium">
+          </LinkWithRef>
+        </div>
+
+        <p className="space-y-4 text-center text-lg font-medium">
           <a
             href="https://github.com/profclems/glab#installation"
-            className="hover:underline"
+            className="link-underline inline-flex items-center space-x-2"
+            target={'_blank'}
           >
-            View installation instructions →
+            <HiDownload className="h-4 w-auto" />
+            <span>View installation instructions</span>
+          </a>
+          <div className="" />
+          <a
+            href="https://github.com/braswelljr/glab-docs"
+            className="link-underline inline-flex items-center space-x-2"
+            target={'_blank'}
+          >
+            <HiPencilAlt className="h-4 w-auto" />
+            <span>Contribute or Edit Docs</span>
           </a>
         </p>
       </section>
