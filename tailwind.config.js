@@ -132,8 +132,8 @@ module.exports = {
               margin: '0 1px'
             },
             code: {
-              fontWeight: theme('fontWeight.medium'),
-              fontVariantLigatures: 'none'
+              fontWeight: theme('fontWeight.medium')
+              // fontVariantLigatures: 'none'
             },
             pre: {
               color: theme('colors.neutral.50'),
@@ -199,7 +199,7 @@ module.exports = {
               color: theme('colors.neutral.200')
             },
             code: {
-              color: theme('colors.neutral.200')
+              color: theme('colors.cyan.500')
             },
             hr: {
               borderColor: theme('colors.neutral.200'),
@@ -224,6 +224,10 @@ module.exports = {
             },
             blockQuote: {
               color: theme('colors.white')
+            },
+            'p code': {
+              color: theme('colors.yellow.500'),
+              fontFamily: theme('fontFamily.sans')[0]
             }
           }
         }
