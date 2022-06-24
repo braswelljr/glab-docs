@@ -27,10 +27,10 @@ const Layout = ({ children }: { children: JSX.Element }) => {
             v.commands.map(c => `/docs/commands/${key}/${v.title}/${c.title}`)
           )
         ]
-      else null
+      else return null
     })
   )
-    .filter((item: any) => item !== null || item !== undefined)
+    .filter((item: any) => item !== null)
     .includes(router.pathname)
 
   return (
@@ -51,7 +51,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
         {router.pathname.split('/')[1] === 'docs' ? (
           <section
             className={clsx(
-              'fixed inset-0 grid h-full px-8 pt-40 text-yellow-900 dark:bg-neutral-900 dark:text-yellow-200 md:px-16 lg:px-28 lg:pt-20 xl:px-36',
+              'fixed inset-0 grid h-full px-4 pt-40 text-yellow-900 dark:bg-neutral-900 dark:text-yellow-200 md:px-10 lg:px-20 lg:pt-16 xl:px-28',
               pathway
                 ? 'lg:grid-cols-[2fr,6fr,2fr] xl:grid-cols-[1.8fr,6.4fr,1.8fr]'
                 : 'lg:grid-cols-[2fr,8fr] xl:grid-cols-[1.8fr,8.2fr]'

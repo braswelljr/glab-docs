@@ -68,7 +68,7 @@ const Navbar = ({
     <>
       <nav
         className={clsx(
-          'fixed inset-x-0 top-0 z-10 grid grid-cols-[auto,auto] gap-3 border-b-[0.5px] border-current bg-white px-8 py-4 text-yellow-800 shadow dark:bg-neutral-900 dark:text-yellow-200 md:grid-cols-nav md:px-16 lg:px-28 xl:px-36'
+          'fixed inset-x-0 top-0 z-10 grid grid-cols-[auto,auto] gap-3 border-b-[0.5px] border-current bg-white px-4 py-4 text-yellow-800 shadow dark:bg-neutral-900 dark:text-yellow-200 md:grid-cols-nav md:px-10 lg:px-16 xl:px-28'
         )}
       >
         <div className="">
@@ -85,24 +85,26 @@ const Navbar = ({
         </div>
         <div
           className={clsx(
-            'flex items-center justify-end space-x-8 text-yellow-200 dark:text-yellow-800 md:col-start-3 md:col-end-4 md:row-start-1'
+            'flex items-center justify-end space-x-4 text-yellow-200 dark:text-yellow-800 md:col-start-3 md:col-end-4 md:row-start-1'
           )}
         >
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2">
             <a href="https://twitter.com/glab_cli" target="_blank">
-              <FaTwitter className="h-7 w-auto text-brown-800 transition-colors dark:text-yellow-200" />
+              <FaTwitter className="h-6 w-auto text-brown-800 transition-colors dark:text-yellow-200 sm:h-7" />
             </a>
             <a href="https://github.com/profclems/glab" target="_blank">
-              <FaGithub className="h-7 w-auto text-brown-800 transition-colors dark:text-yellow-200" />
+              <FaGithub className="h-6 w-auto text-brown-800 transition-colors dark:text-yellow-200 sm:h-7" />
             </a>
           </div>
 
           {/* menu button */}
           <motion.ul className={clsx('flex items-center')}>
             {Object.entries({
-              system: <HiDesktopComputer className={clsx('h-6 w-auto')} />,
-              dark: <HiMoon className={clsx('h-6 w-auto')} />,
-              light: <HiSun className={clsx('h-6 w-auto')} />
+              system: (
+                <HiDesktopComputer className={clsx('h-5 w-auto sm:h-6')} />
+              ),
+              dark: <HiMoon className={clsx('h-5 w-auto sm:h-6')} />,
+              light: <HiSun className={clsx('h-5 w-auto sm:h-6')} />
             }).map(([key, value]) => (
               <motion.li
                 key={key}
@@ -148,30 +150,32 @@ const Navbar = ({
               </a>
             </div>
             {/* menu button */}
-            <button
-              type="button"
-              tabIndex={-1}
-              className={clsx(
-                'relative h-8 w-8 overflow-hidden rounded-md border-0 bg-yellow-200 p-2 focus:outline-none dark:bg-yellow-200/20 lg:hidden'
-              )}
-              onClick={() => {
-                setDoc(!doc)
-                setPageList(false)
-              }}
-            >
-              <HiMenu
+            {router.pathname !== '/' && (
+              <button
+                type="button"
+                tabIndex={-1}
                 className={clsx(
-                  'absolute top-1/2 right-1/2 h-auto w-6 -translate-y-1/2 transform text-brown-800 transition-all dark:text-yellow-200',
-                  doc ? '-translate-x-1/2 scale-50' : 'translate-x-1/2'
+                  'relative h-8 w-8 overflow-hidden rounded-md border-0 bg-yellow-200 p-2 focus:outline-none dark:bg-yellow-200/20 lg:hidden'
                 )}
-              />
-              <HiX
-                className={clsx(
-                  'absolute top-1/2 left-1/2 h-auto w-6 -translate-y-1/2 transform text-brown-800 transition-all dark:text-yellow-200',
-                  doc ? '-translate-x-1/2' : 'translate-x-1/2 scale-50'
-                )}
-              />
-            </button>
+                onClick={() => {
+                  setDoc(!doc)
+                  setPageList(false)
+                }}
+              >
+                <HiMenu
+                  className={clsx(
+                    'absolute top-1/2 right-1/2 h-auto w-6 -translate-y-1/2 transform text-brown-800 transition-all dark:text-yellow-200',
+                    doc ? '-translate-x-1/2 scale-50' : 'translate-x-1/2'
+                  )}
+                />
+                <HiX
+                  className={clsx(
+                    'absolute top-1/2 left-1/2 h-auto w-6 -translate-y-1/2 transform text-brown-800 transition-all dark:text-yellow-200',
+                    doc ? '-translate-x-1/2' : 'translate-x-1/2 scale-50'
+                  )}
+                />
+              </button>
+            )}
           </div>
           <button
             type="button"

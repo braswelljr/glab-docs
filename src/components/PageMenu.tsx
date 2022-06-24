@@ -70,7 +70,7 @@ function PageMenu({
                     }/${typeof item === 'object' ? item.title : item}`
               }
               className={clsx(
-                'relative overflow-hidden rounded-md text-sm font-semibold text-neutral-800 dark:text-yellow-200',
+                'relative overflow-hidden rounded-md text-xs font-semibold text-neutral-800 dark:text-yellow-200',
                 item.title && 'disabled:block'
               )}
               onClick={() =>
@@ -80,7 +80,7 @@ function PageMenu({
             >
               <div
                 className={clsx(
-                  'relative flex items-center px-1 py-1 transition-all',
+                  'relative flex items-center px-1 py-0.5 transition-all',
                   {
                     'translate-x-0':
                       router.pathname.split('/')[4] ===
@@ -134,7 +134,7 @@ function PageMenu({
                           }`
                     }
                     className={clsx(
-                      'relative overflow-hidden text-sm font-semibold text-yellow-700'
+                      'relative overflow-hidden text-xs font-semibold text-yellow-700'
                     )}
                     key={typeof command === 'object' ? command.title : command}
                     onClick={() =>
