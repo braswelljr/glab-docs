@@ -36,8 +36,13 @@ yarn-error.log*
 # editor configs
 .vscode
 .idea
+.sublime
 
 # locks
 package-lock.json
 tailwindfull.config.js
 yarn.lock
+
+# registered workers
+/public/sw.js
+/public/workbox-*.js

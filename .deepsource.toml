@@ -1,7 +1,7 @@
 version = 1
 
 [[analyzers]]
-name = "javascript"
+name = "typescript"
 enabled = true
 
   [analyzers.meta]

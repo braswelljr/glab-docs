@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/** @type {import('next').NextConfig} */
 const path = require('path')
 const withPWA = require('next-pwa')
 const runtimeCaching = require('next-pwa/cache')
@@ -18,7 +20,7 @@ module.exports = withPlugins(
         }
       }
     ],
-    [withMdx, { pageExtensions: ['js', 'jsx', 'md', 'mdx'] }]
+    [withMdx, { pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'] }]
   ],
   {
     reactStrictMode: true,

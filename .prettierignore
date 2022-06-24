@@ -1,2 +1,10 @@
-**/*.mdx
+# dependencies
+/node_modules/
+
+# next compiled
 /.next/
+**/*.mdx
+
+# Ignore artifacts:
+build
+coverage

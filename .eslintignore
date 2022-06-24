@@ -1,4 +1,10 @@
+# dependencies
 /node_modules/
+
+# next compiled
 /.next/
-package-lock.json
-yarn.lock
+**/*.mdx
+
+# Ignore artifacts:
+build
+coverage

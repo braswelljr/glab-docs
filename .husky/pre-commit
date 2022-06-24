@@ -20,7 +20,13 @@ yarn run build
 if [ $? -eq 0 ]; then
   # remove build files
   eval $REMOVE
-  echo "Build Successful 😆!"
+  echo -n "Build Successful 😆!
+  Enter the file for the input to be staged for commit.
+  Separate multiple files with a space.
+  For example: ./husky.sh stage app.ts src/index.tsx or . # to stage all files.
+  Files to commit : "
+  # read files
+  eval "git add ."
   exit 0
 
   else
