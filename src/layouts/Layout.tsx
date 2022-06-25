@@ -39,7 +39,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
         suffix={
           router.pathname === '/'
             ? undefined
-            : 'glab (GitLab command line tool)'
+            : 'GLab (GitLab command line tool)'
         }
       >
         {router.pathname.split('/')[2]

@@ -3,9 +3,9 @@ import clsx from 'clsx'
 
 const Footer = () => {
   return (
-    <div className="border-t border-current px-8 py-5 md:px-20 md:text-xl lg:px-32 xl:px-40">
+    <footer className="border-t border-current px-8 py-5 md:px-20 md:text-xl lg:px-32 xl:px-40">
       <div className={clsx('mx-auto max-w-2xl text-center text-sm')}>
-        © Copyright 2020,{' '}
+        © Copyright {new Date().getFullYear()},{' '}
         <a
           href="https://github.com/profclems"
           target="_blank"
@@ -22,8 +22,12 @@ const Footer = () => {
           Braswell Kenneth Azu Junior
         </a>
       </div>
-    </div>
+    </footer>
   )
 }
 
 export default Footer
+
+export const DocsFooter = () => {
+  return <footer className={clsx()}>Docs Footer</footer>
+}
