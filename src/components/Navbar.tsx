@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import { FaGithub, FaTwitter } from 'react-icons/fa'
 import { HiSun, HiMoon, HiDesktopComputer, HiMenu, HiX } from 'react-icons/hi'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Search from '@/components/Search'
 import useTheme from '@/hooks/useTheme'
 
@@ -179,7 +179,7 @@ const Navbar = ({
               type="button"
               ref={searchButtonRef}
               className={clsx(
-                'block w-full rounded bg-yellow-200 px-4 py-2 text-xs font-semibold focus:outline-none dark:text-brown-900 md:py-3'
+                'block w-full rounded bg-yellow-200 px-4 py-2 text-xs font-semibold focus:outline-none dark:text-brown-900 md:py-3 lg:text-sm'
               )}
               onClick={() => setOpen(true)}
             >
