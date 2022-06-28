@@ -96,7 +96,7 @@ const Navbar = ({
               ),
               dark: <HiMoon className={clsx('h-5 w-auto sm:h-6')} />,
               light: <HiSun className={clsx('h-5 w-auto sm:h-6')} />
-            }).map(([key, value], i, self) => {
+            }).map(([key, value]) => {
               return (
                 <motion.li
                   key={key}
