@@ -35,9 +35,9 @@ const Navbar = ({
   // checking for platform
   useEffect(() => {
     if (typeof navigator !== 'undefined') {
-      ;/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)
-        ? setActionKey(ACTION_KEY_APPLE)
-        : setActionKey(ACTION_KEY_DEFAULT)
+      if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform))
+        setActionKey(ACTION_KEY_APPLE)
+      else setActionKey(ACTION_KEY_DEFAULT)
     }
   }, [ACTION_KEY_APPLE, ACTION_KEY_DEFAULT])
 
@@ -151,7 +151,7 @@ const Navbar = ({
                 type="button"
                 tabIndex={-1}
                 className={clsx(
-                  'relative h-8 w-8 overflow-hidden rounded-md border-0 bg-yellow-200 p-2 focus:outline-none dark:bg-yellow-200/20 lg:hidden'
+                  'relative h-8 w-8 overflow-hidden rounded-md border-0 p-2 focus:outline-none lg:hidden'
                 )}
                 onClick={() => {
                   setDoc(!doc)
@@ -179,12 +179,12 @@ const Navbar = ({
               type="button"
               ref={searchButtonRef}
               className={clsx(
-                'block w-full rounded bg-yellow-200 px-4 py-2 text-xs font-semibold focus:outline-none dark:text-brown-900 md:py-3 lg:text-sm'
+                'block w-full rounded bg-yellow-200 px-4 py-2 text-xs font-semibold focus:outline-none dark:text-brown-900 md:py-3 xl:text-sm [@media_(max-width:393px)]:[font-size:0.65rem]'
               )}
               onClick={() => setOpen(true)}
             >
               Search Docs{' '}
-              <span className={''}>
+              <span className={'[@media_(max-width:348px)]:hidden'}>
                 (Press “
                 <abbr title={actionKey[1]} className="no-underline">
                   {actionKey[0]}
@@ -193,7 +193,7 @@ const Navbar = ({
               </span>
             </button>
             {/* Github and Twitter */}
-            <div className=" hover:text-yellow-200/20hidden items-center space-x-2 xs:flex">
+            <div className=" flex items-center hover:text-yellow-200/20 sm:space-x-2">
               <a
                 href="https://twitter.com/glab_cli"
                 target="_blank"

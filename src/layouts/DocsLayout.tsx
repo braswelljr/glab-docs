@@ -2,7 +2,6 @@ import { useRef } from 'react'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayout'
-import Prism from 'prismjs'
 
 const DocsLayout = ({
   children
@@ -15,10 +14,6 @@ const DocsLayout = ({
   useIsomorphicLayoutEffect(() => {
     containerRef.current?.scrollTo(0, 0)
   }, [router.pathname])
-
-  useIsomorphicLayoutEffect(() => {
-    Prism.highlightAll()
-  }, [])
 
   return (
     <section

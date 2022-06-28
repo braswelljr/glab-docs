@@ -4,6 +4,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'
+import LinkWithRef from '@/components/LinkWithRef'
 
 const Search = ({
   open,
@@ -82,15 +83,8 @@ const Search = ({
                   router.push(itemUrl)
                 }
               }}
-              hitComponent={({ hit, children }) => {
-                return (
-                  <Link href={hit.url}>
-                    <a>{children}</a>
-                  </Link>
-                )
-              }}
               transformItems={items => {
-                return items.map(item => {
+                return items.map((item, index) => {
                   // We transform the absolute URL into a relative URL to
                   // leverage Next's preloading.
                   const a = document.createElement('a')
@@ -98,11 +92,43 @@ const Search = ({
 
                   const hash = a.hash === '#content-wrapper' ? '' : a.hash
 
+                  if (item.hierarchy?.lvl0) {
+                    item.hierarchy.lvl0 = item.hierarchy.lvl0.replace(
+                      /&amp;/g,
+                      '&'
+                    )
+                  }
+
+                  if (item._highlightResult?.hierarchy?.lvl0?.value) {
+                    item._highlightResult.hierarchy.lvl0.value =
+                      item._highlightResult.hierarchy.lvl0.value.replace(
+                        /&amp;/g,
+                        '&'
+                      )
+                  }
+
                   return {
                     ...item,
-                    url: `${a.pathname}${hash}`
+                    url: `${a.pathname}${hash}`,
+                    __is_result: () => true,
+                    __is_parent: () =>
+                      item.type === 'lvl1' && items.length > 1 && index === 0,
+                    __is_child: () =>
+                      item.type !== 'lvl1' &&
+                      items.length > 1 &&
+                      items[0].type === 'lvl1' &&
+                      index !== 0,
+                    __is_first: () => index === 1,
+                    __is_last: () => index === items.length - 1 && index !== 0
                   }
                 })
+              }}
+              hitComponent={({ hit, children }) => {
+                return (
+                  <LinkWithRef href={hit.url} className={clsx({})}>
+                    {children}
+                  </LinkWithRef>
+                )
               }}
             />,
             document.body
