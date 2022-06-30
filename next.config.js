@@ -28,9 +28,7 @@ module.exports = withPlugins(
       disableStaticImages: true
     },
     webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-      if (!dev) {
-        defaultLoaders.babel.options.cache = false
-      }
+      defaultLoaders.babel.options.cache = false
 
       config.resolve.modules.push(path.resolve(`./`))
 

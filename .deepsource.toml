@@ -1,8 +1,8 @@
 version = 1
 
 [[analyzers]]
-name = "typescript"
+name = "javascript"
 enabled = true
 
   [analyzers.meta]
-  plugins = ["react"]
+  plugins = ["react", "typescript"]
