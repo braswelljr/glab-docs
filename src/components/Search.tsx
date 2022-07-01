@@ -1,6 +1,5 @@
 import { useState, useCallback, useEffect } from 'react'
 import { createPortal } from 'react-dom'
-import Link from 'next/link'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'

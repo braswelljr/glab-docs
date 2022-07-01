@@ -11,4 +11,7 @@ format:
 	yarn run format
 
 clean:
-	rm -rf .next/ dist/ public/sw.js public/sw.js.map public/workbox-*.js public/workbox-*.js.map yarn-error.log
+	rm -rf .next/ dist/ public/sw.js public/sw.js.map public/workbox-*.js public/workbox-*.js.map yarn-error.log .swc/
+
+verbose-clean:
+	rm -rf node_modules/ .next/ dist/ public/sw.js public/sw.js.map public/workbox-*.js public/workbox-*.js.map yarn-error.log .swc/
