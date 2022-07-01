@@ -9,6 +9,7 @@ const Footer = () => {
         <a
           href="https://github.com/profclems"
           target="_blank"
+          rel="noreferrer"
           className={clsx('text-blue-500 hover:underline')}
         >
           Clement Sam
@@ -17,6 +18,7 @@ const Footer = () => {
         <a
           href="https://github.com/braswelljr"
           target="_blank"
+          rel="noreferrer"
           className={clsx('text-blue-500 hover:underline')}
         >
           Braswell Kenneth Azu Junior

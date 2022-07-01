@@ -140,6 +140,7 @@ const Navbar = ({
               <a
                 href="https://opencollective.com/glab"
                 target="_blank"
+                rel="noreferrer"
                 className="cursor-pointer rounded px-3 py-2 text-sm hover:bg-yellow-200/20"
               >
                 Donate
@@ -197,11 +198,16 @@ const Navbar = ({
               <a
                 href="https://twitter.com/glab_cli"
                 target="_blank"
+                rel="noreferrer"
                 className={'hidden sm:inline'}
               >
                 <FaTwitter className="h-6 w-auto text-brown-800 transition-colors dark:text-yellow-200 sm:h-7" />
               </a>
-              <a href="https://github.com/profclems/glab" target="_blank">
+              <a
+                href="https://github.com/profclems/glab"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaGithub className="h-6 w-auto text-brown-800 transition-colors dark:text-yellow-200 sm:h-7" />
               </a>
             </div>

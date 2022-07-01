@@ -3,7 +3,7 @@ import Terminal from '@/components/Terminal'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import clsx from 'clsx'
-import { terminalD, poweredBy } from 'src/context/contents'
+import { terminalD, poweredBy } from '@/context/contents'
 import LinkWithRef from '@/components/LinkWithRef'
 import { HiPencilAlt, HiDownload } from 'react-icons/hi'
 
@@ -35,7 +35,8 @@ function Index() {
           <a
             href="https://github.com/profclems/glab#installation"
             className="link-underline inline-flex items-center space-x-2"
-            target={'_blank'}
+            target="_blank"
+            rel="noreferrer"
           >
             <HiDownload className="h-4 w-auto" />
             <span>View installation instructions</span>
@@ -44,7 +45,8 @@ function Index() {
           <a
             href="https://github.com/braswelljr/glab-docs"
             className="link-underline inline-flex items-center space-x-2"
-            target={'_blank'}
+            target="_blank"
+            rel="noreferrer"
           >
             <HiPencilAlt className="h-4 w-auto" />
             <span>Contribute or Edit Docs</span>
@@ -88,6 +90,8 @@ function Index() {
           <a
             href="https://github.com/profclems/glab#installation"
             type="button"
+            target="_blank"
+            rel="noreferrer"
             className={clsx(
               'mx-auto inline-block rounded border-0 bg-brown-800 py-3 px-7 text-xl font-semibold text-yellow-200 transition-all motion-reduce:hover:-translate-y-0.5 dark:bg-yellow-200 dark:text-brown-800'
             )}
@@ -104,6 +108,7 @@ function Index() {
               <a
                 href={brand.link}
                 target="_blank"
+                rel="noreferrer"
                 key={brand.name}
                 className={clsx(
                   'flex w-auto flex-col items-center text-center transition-colors hover:text-yellow-600 dark:hover:text-yellow-500'
