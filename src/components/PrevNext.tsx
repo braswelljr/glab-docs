@@ -34,8 +34,6 @@ const PrevNext = () => {
 
   const { previous, next } = previousNext(router.pathname.split('/')[3])
 
-  console.log(next)
-
   return (
     <div className="">
       <div className="relative mt-10">

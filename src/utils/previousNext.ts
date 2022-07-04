@@ -26,8 +26,6 @@ export const previousNext = (pageRoute: string) => {
   paths[0] = '/docs'
 
   let pageIndex = pages.findIndex((page: string) => page === pageRoute)
-  console.log(paths)
-  console.log(pageIndex)
 
   return {
     previous: {

@@ -13,6 +13,7 @@
   flex-direction: column;
   background: rgba(0, 0, 0, 0.25);
   padding: 0;
+  font-size: theme('fontSize.sm');
 }
 
 @screen sm {
@@ -30,6 +31,7 @@
 @screen lg {
   .DocSearch-Container {
     padding: 12vh;
+    font-size: theme('fontSize.base');
   }
 }
 
@@ -166,7 +168,7 @@
   appearance: none;
   background: transparent;
   height: 3rem;
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: 500;
   color: black;
   margin-left: 0.75rem;
