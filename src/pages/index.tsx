@@ -89,7 +89,6 @@ function Index() {
           </p>
           <a
             href="https://github.com/profclems/glab#installation"
-            type="button"
             target="_blank"
             rel="noreferrer"
             className={clsx(
