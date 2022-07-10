@@ -21,4 +21,4 @@ glab issue board create [flags]
 
 ### SEE ALSO
 
-* [glab issue board](issue/board)  - Work with GitLab Issue Boards in the given project.
+- [glab issue board](issue/board) - Work with GitLab Issue Boards in the given project.

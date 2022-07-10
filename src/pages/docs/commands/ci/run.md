@@ -30,4 +30,4 @@ glab ci run -b trunk
 
 ## SEE ALSO
 
-* [glab ci](./)  - Work with GitLab CI pipelines and jobs
+- [glab ci](./) - Work with GitLab CI pipelines and jobs

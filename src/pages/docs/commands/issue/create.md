@@ -44,4 +44,4 @@ glab issue create -m release-1.0.1 -t "security fix" --label security --web
 
 ### SEE ALSO
 
-* [glab issue](./)  - Work with GitLab issues
+- [glab issue](./) - Work with GitLab issues

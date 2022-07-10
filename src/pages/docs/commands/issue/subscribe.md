@@ -24,4 +24,4 @@ glab issue subscribe https://gitlab.com/profclems/glab/-/issues/123
 
 ## SEE ALSO
 
-* [glab issue](./)  - Work with GitLab issues
+- [glab issue](./) - Work with GitLab issues

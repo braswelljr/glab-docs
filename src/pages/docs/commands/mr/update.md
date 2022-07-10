@@ -44,4 +44,4 @@ glab mr update --draft  # Updates MR related to current branch
 
 ## SEE ALSO
 
-* [glab mr](./)  - Create, view and manage merge requests
+- [glab mr](./) - Create, view and manage merge requests

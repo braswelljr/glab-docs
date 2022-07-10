@@ -27,4 +27,4 @@ glab mr close branch -R another/repo
 
 ## SEE ALSO
 
-* [glab mr](./)  - Create, view and manage merge requests
+- [glab mr](./) - Create, view and manage merge requests

@@ -47,4 +47,4 @@ $ glab release download v1.10.1 --asset-name="*.tar.gz"
 
 ## SEE ALSO
 
-* [glab release](./)  - Manage GitLab releases
+- [glab release](./) - Manage GitLab releases

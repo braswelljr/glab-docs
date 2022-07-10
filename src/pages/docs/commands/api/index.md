@@ -121,4 +121,4 @@ $ glab api graphql --paginate -f query='
 
 ## SEE ALSO
 
-- [glab](../../../)  - A GitLab CLI Tool
+- [glab](../../../) - A GitLab CLI Tool
