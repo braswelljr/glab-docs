@@ -20,4 +20,4 @@ glab user events [flags]
 
 ## SEE ALSO
 
-* [glab user](./)  - Interact with user
+- [glab user](./) - Interact with user

@@ -6,7 +6,7 @@ Clone a Gitlab repository/project
 
 Clone a GitLab repository/project
 
-  Clone supports these shorthands
+Clone supports these shorthands
 
 - repo
 - namespace/repo
@@ -60,4 +60,4 @@ $ GITLAB_HOST=salsa.debian.org glab repo clone myrepo
 
 ## SEE ALSO
 
-- [glab repo](./)  - Work with GitLab repositories and projects
+- [glab repo](./) - Work with GitLab repositories and projects

@@ -26,15 +26,15 @@ glab issue note -m "closing because !123 was merged" <issue number>
 
 ### SEE ALSO
 
-* [glab](../../../)  - A GitLab CLI Tool
-* [glab issue board](issue/board)  - Work with GitLab Issue Boards in the given project.
-* [glab issue close](issue/close)  - Close an issue
-* [glab issue create](issue/create)  - Create an issue
-* [glab issue delete](issue/delete)  - Delete an issue
-* [glab issue list](issue/list)  - List project issues
-* [glab issue note](issue/note)  - Add a comment or note to an issue on GitLab
-* [glab issue reopen](issue/reopen)  - Reopen a closed issue
-* [glab issue subscribe](issue/subscribe)  - Subscribe to an issue
-* [glab issue unsubscribe](issue/unsubscribe)  - Unsubscribe to an issue
-* [glab issue update](issue/update)  - Update issue
-* [glab issue view](issue/view)  - Display the title, body, and other information about an issue.
+- [glab](../../../) - A GitLab CLI Tool
+- [glab issue board](issue/board) - Work with GitLab Issue Boards in the given project.
+- [glab issue close](issue/close) - Close an issue
+- [glab issue create](issue/create) - Create an issue
+- [glab issue delete](issue/delete) - Delete an issue
+- [glab issue list](issue/list) - List project issues
+- [glab issue note](issue/note) - Add a comment or note to an issue on GitLab
+- [glab issue reopen](issue/reopen) - Reopen a closed issue
+- [glab issue subscribe](issue/subscribe) - Subscribe to an issue
+- [glab issue unsubscribe](issue/unsubscribe) - Unsubscribe to an issue
+- [glab issue update](issue/update) - Update issue
+- [glab issue view](issue/view) - Display the title, body, and other information about an issue.

@@ -1,6 +1,6 @@
 # glab release delete
 
-Delete a  GitLab Release
+Delete a GitLab Release
 
 ## Synopsis
 
@@ -43,4 +43,4 @@ $ glab release delete v1.0.1 --with-tag
 
 ## SEE ALSO
 
-* [glab release](./)  - Manage GitLab releases
+- [glab release](./) - Manage GitLab releases

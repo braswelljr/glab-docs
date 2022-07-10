@@ -10,7 +10,7 @@ Create, list and delete aliases
 
 ## SEE ALSO
 
-* [glab](../../../)  - A GitLab CLI Tool
-* [glab alias delete](alias/delete)  - Delete an alias.
-* [glab alias list](alias/list)  - List the available aliases.
-* [glab alias set](alias/set)  - Set an alias.
+- [glab](../../../) - A GitLab CLI Tool
+- [glab alias delete](alias/delete) - Delete an alias.
+- [glab alias list](alias/list) - List the available aliases.
+- [glab alias set](alias/set) - Set an alias.

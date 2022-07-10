@@ -29,6 +29,6 @@ Current respected settings:
 
 ### SEE ALSO
 
-- [glab](../../../)  - A GitLab CLI Tool
-- [glab config get](config/get)  - Prints the value of a given configuration key
-- [glab config set](config/set)  - Updates configuration with the value of a given key
+- [glab](../../../) - A GitLab CLI Tool
+- [glab config get](config/get) - Prints the value of a given configuration key
+- [glab config set](config/set) - Updates configuration with the value of a given key

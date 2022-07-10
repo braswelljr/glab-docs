@@ -43,4 +43,4 @@ $ glab repo view https://gitlab.company.org/user/repo.git
 
 ## SEE ALSO
 
-* [glab repo](./)  - Work with GitLab repositories and projects
+- [glab repo](./) - Work with GitLab repositories and projects

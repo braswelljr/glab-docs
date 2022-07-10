@@ -14,4 +14,4 @@ glab alias delete <alias name> [flags]
 
 ## bash SEE ALSO
 
-* [glab alias](./)  - Create, list and delete aliases
+- [glab alias](./) - Create, list and delete aliases

@@ -39,4 +39,4 @@ $ glab release view v1.0.1
 
 ## SEE ALSO
 
-* [glab release](./)  - Manage GitLab releases
+- [glab release](./) - Manage GitLab releases

@@ -16,10 +16,10 @@ Manage GitLab releases
 
 ## SEE ALSO
 
-* [glab](../../../)  - A GitLab CLI Tool
-* [glab release create](release/create)  - Create a new or update a GitLab Release for a repository
-* [glab release delete](release/delete)  - Delete a  GitLab Release
-* [glab release download](release/download)  - Download asset files from a GitLab Release
-* [glab release list](release/list)  - List releases in a repository
-* [glab release upload](release/upload)  - Upload release asset files or links to GitLab Release
-* [glab release view](release/view)  - View information about a GitLab Release
+- [glab](../../../) - A GitLab CLI Tool
+- [glab release create](release/create) - Create a new or update a GitLab Release for a repository
+- [glab release delete](release/delete) - Delete a GitLab Release
+- [glab release download](release/download) - Download asset files from a GitLab Release
+- [glab release list](release/list) - List releases in a repository
+- [glab release upload](release/upload) - Upload release asset files or links to GitLab Release
+- [glab release view](release/view) - View information about a GitLab Release

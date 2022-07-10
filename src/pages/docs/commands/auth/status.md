@@ -27,4 +27,4 @@ glab auth status [flags]
 
 ## SEE ALSO
 
-* [glab auth](./)  - Manage glab's authentication state
+- [glab auth](./) - Manage glab's authentication state

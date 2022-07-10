@@ -51,4 +51,4 @@ glab mr list -M --per-page 10
 
 ## SEE ALSO
 
-* [glab mr](./)  - Create, view and manage merge requests
+- [glab mr](./) - Create, view and manage merge requests

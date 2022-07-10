@@ -36,4 +36,4 @@ glab config set <key> <value> [flags]
 
 ### SEE ALSO
 
-* [glab config](./)  - Set and get glab settings
+- [glab config](./) - Set and get glab settings

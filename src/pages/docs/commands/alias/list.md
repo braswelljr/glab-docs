@@ -14,4 +14,4 @@ glab alias list [flags]
 
 ## SEE ALSO
 
-* [glab alias](./)  - Create, list and delete aliases
+- [glab alias](./) - Create, list and delete aliases

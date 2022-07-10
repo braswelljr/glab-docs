@@ -11,6 +11,6 @@ Work with GitLab Issue Boards in the given project.
 
 ### SEE ALSO
 
-* [glab issue](./)  - Work with GitLab issues
-* [glab issue board create](issue/board/create)  - Create a project issue board.
-* [glab issue board view](issue/board/view)  - View project issue board.
+- [glab issue](./) - Work with GitLab issues
+- [glab issue board create](issue/board/create) - Create a project issue board.
+- [glab issue board view](issue/board/view) - View project issue board.

@@ -16,6 +16,6 @@ Manage labels on remote
 
 ## SEE ALSO
 
-* [glab](../../../)  - A GitLab CLI Tool
-* [glab label create](label/create)  - Create labels for repository/project
-* [glab label list](label/list)  - List labels in repository
+- [glab](../../../) - A GitLab CLI Tool
+- [glab label create](label/create) - Create labels for repository/project
+- [glab label list](label/list) - List labels in repository
