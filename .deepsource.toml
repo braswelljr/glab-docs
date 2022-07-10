@@ -17,5 +17,5 @@ enabled = true
   module_system = "es-modules"
   dialect = "typescript"
   style_guide = "standard"
-  skip_doc_coverage = ["class-expression", "method-definition", "arrow-function"]
+  skip_doc_coverage = ["class-expression", "method-definition", "arrow-function-expression"]
 
