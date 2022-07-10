@@ -32,4 +32,4 @@ $ glab ci trace 224356863
 
 ## SEE ALSO
 
-* [glab ci](glab_ci.md)  - Work with GitLab CI pipelines and jobs
+- [glab ci](glab_ci.md) - Work with GitLab CI pipelines and jobs

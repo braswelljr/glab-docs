@@ -15,4 +15,4 @@ glab mr todo [<id> | <branch>] [flags]
 
 ## SEE ALSO
 
-* [glab mr](./)  - Create, view and manage merge requests
+- [glab mr](./) - Create, view and manage merge requests

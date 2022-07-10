@@ -40,4 +40,4 @@ $ glab auth login --hostname salsa.debian.org
 
 ## SEE ALSO
 
-* [glab auth](./)  - Manage glab's authentication state
+- [glab auth](./) - Manage glab's authentication state

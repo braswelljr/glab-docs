@@ -15,4 +15,4 @@ glab release list [flags]
 
 ## SEE ALSO
 
-* [glab release](./)  - Manage GitLab releases
+- [glab release](./) - Manage GitLab releases

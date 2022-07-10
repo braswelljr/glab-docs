@@ -21,4 +21,4 @@ glab issue note <issue-id> [flags]
 
 ## SEE ALSO
 
-* [glab issue](./)  - Work with GitLab issues
+- [glab issue](./) - Work with GitLab issues

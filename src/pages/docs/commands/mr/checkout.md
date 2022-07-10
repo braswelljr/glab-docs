@@ -34,4 +34,4 @@ glab mr checkout   # use checked out branch
 
 ## SEE ALSO
 
-* [glab mr](./)  - Create, view and manage merge requests
+- [glab mr](./) - Create, view and manage merge requests

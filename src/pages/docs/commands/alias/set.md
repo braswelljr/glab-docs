@@ -54,4 +54,4 @@ $ glab igrep user foo
 
 ## SEE ALSO
 
-* [glab alias](./)  - Create, list and delete aliases
+- [glab alias](./) - Create, list and delete aliases

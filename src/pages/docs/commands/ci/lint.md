@@ -27,4 +27,4 @@ $ glab ci lint path/to/.gitlab-ci.yml
 
 ### SEE ALSO
 
-* [glab ci](./)  - Work with GitLab CI pipelines and jobs
+- [glab ci](./) - Work with GitLab CI pipelines and jobs

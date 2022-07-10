@@ -30,7 +30,7 @@ module.exports = withPlugins(
     webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
       defaultLoaders.babel.options.cache = false
 
-      config.resolve.modules.push(path.resolve(`./`))
+      config.resolve.modules.push(path.resolve('./'))
 
       // file-loader config
       config.module.rules.push({
@@ -50,7 +50,7 @@ module.exports = withPlugins(
 
       return config
     },
-    async redirects() {
+    async redirects () {
       return require('./redirects.json')
     }
   }

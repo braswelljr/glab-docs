@@ -28,4 +28,4 @@ glab ci delete 12,34,2
 
 ### SEE ALSO
 
-* [glab ci](../../../)  - Work with GitLab CI pipelines and jobs
+- [glab ci](../../../) - Work with GitLab CI pipelines and jobs

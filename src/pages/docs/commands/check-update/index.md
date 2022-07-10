@@ -14,4 +14,4 @@ glab check-update [flags]
 
 ## SEE ALSO
 
-* [glab](../../../)  - A GitLab CLI Tool
+- [glab](../../../) - A GitLab CLI Tool

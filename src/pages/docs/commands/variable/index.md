@@ -16,5 +16,5 @@ Manage GitLab Project and Group Variables
 
 ## SEE ALSO
 
-* [glab](../../)  - A GitLab CLI Tool
-* [glab variable set](variable/set)  - Create a new project or group variable
+- [glab](../../) - A GitLab CLI Tool
+- [glab variable set](variable/set) - Create a new project or group variable
