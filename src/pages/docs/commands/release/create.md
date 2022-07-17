@@ -81,4 +81,4 @@ $ glab release create v1.0.1 --assets-links='
 
 ## SEE ALSO
 
-* [glab release](./)  - Manage GitLab releases
+- [glab release](./) - Manage GitLab releases

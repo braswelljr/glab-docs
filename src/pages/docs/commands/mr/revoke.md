@@ -26,4 +26,4 @@ glab mr revoke 123 branch 456
 
 ## SEE ALSO
 
-* [glab mr](./)  - Create, view and manage merge requests
+- [glab mr](./) - Create, view and manage merge requests

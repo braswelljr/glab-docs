@@ -44,4 +44,4 @@ glab issue list --milestone release-2.0.0 --opened
 
 ## SEE ALSO
 
-* [glab issue](./)  - Work with GitLab issues
+- [glab issue](./) - Work with GitLab issues

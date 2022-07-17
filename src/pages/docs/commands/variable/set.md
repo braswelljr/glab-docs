@@ -39,4 +39,4 @@ cat token.txt | glab variable set GROUP_TOKEN -g mygroup --scope=prod
 
 ## SEE ALSO
 
-* [glab variable](./)  - Manage GitLab Project and Group Variables
+- [glab variable](./) - Manage GitLab Project and Group Variables

@@ -34,4 +34,4 @@ $ glab repo contributors -R gitlab-com/www-gitlab-com
 
 ### SEE ALSO
 
-* [glab repo](./)  - Work with GitLab repositories and projects
+- [glab repo](./) - Work with GitLab repositories and projects

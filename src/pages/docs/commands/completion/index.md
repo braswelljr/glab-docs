@@ -11,7 +11,7 @@ file or immediately evaluated by an interactive shell.
 
 For example, for bash you could add this to your '~/.bash_profile':
 
- eval "$(glab completion -s bash)"
+eval "$(glab completion -s bash)"
 
 When installing glab through a package manager, however, it's possible that
 no additional shell configuration is necessary to gain completion support.
@@ -35,4 +35,4 @@ glab completion [flags]
 
 ### SEE ALSO
 
-* [glab](../../../)  - A GitLab CLI Tool
+- [glab](../../../) - A GitLab CLI Tool

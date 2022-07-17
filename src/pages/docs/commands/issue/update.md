@@ -39,4 +39,4 @@ glab issue update 42 --unlabel working
 
 ### SEE ALSO
 
-* [glab issue](./)  - Work with GitLab issues
+- [glab issue](./) - Work with GitLab issues

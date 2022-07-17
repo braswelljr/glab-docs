@@ -33,4 +33,4 @@ glab ci status   // Get pipeline for current branch
 
 ## SEE ALSO
 
-* [glab ci](./)  - Work with GitLab CI pipelines and jobs
+- [glab ci](./) - Work with GitLab CI pipelines and jobs

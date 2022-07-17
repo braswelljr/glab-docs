@@ -21,4 +21,4 @@ glab mr note [<id> | <branch>] [flags]
 
 ## SEE ALSO
 
-* [glab mr](./)  - Create, view and manage merge requests
+- [glab mr](./) - Create, view and manage merge requests

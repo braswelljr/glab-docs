@@ -39,4 +39,4 @@ glab repo archive profclems/glab --format=zip   # Finds repo for current user an
 
 ## SEE ALSO
 
-- [glab repo](./)  - Work with GitLab repositories and projects
+- [glab repo](./) - Work with GitLab repositories and projects

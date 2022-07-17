@@ -32,4 +32,4 @@ glab mr approve    # Finds open merge request from current branch
 
 ## SEE ALSO
 
-* [glab mr](./)  - Create, view and manage merge requests
+- [glab mr](./) - Create, view and manage merge requests

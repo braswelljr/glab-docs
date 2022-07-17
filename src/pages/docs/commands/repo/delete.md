@@ -37,4 +37,4 @@ $ glab repo delete myorg/mynamespace/dotfiles
 
 ## SEE ALSO
 
-* [glab repo](./)  - Work with GitLab repositories and projects
+- [glab repo](./) - Work with GitLab repositories and projects

@@ -33,4 +33,4 @@ glab ci list --state=failed
 
 ### SEE ALSO
 
-* [glab ci](./)  - Work with GitLab CI pipelines and jobs
+- [glab ci](./) - Work with GitLab CI pipelines and jobs

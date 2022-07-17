@@ -31,4 +31,4 @@ glab label list -R owner/repository
 
 ## SEE ALSO
 
-* [glab label](./)  - Manage labels on remote
+- [glab label](./) - Manage labels on remote

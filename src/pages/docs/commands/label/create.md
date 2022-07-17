@@ -32,4 +32,4 @@ glab label create -R owner/repo
 
 ## SEE ALSO
 
-* [glab label](./)  - Manage labels on remote
+- [glab label](./) - Manage labels on remote

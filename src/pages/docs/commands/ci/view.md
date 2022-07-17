@@ -44,4 +44,4 @@ glab pipeline ci view -b master -R profclems/glab  # Get latest pipeline on mast
 
 ## bash SEE ALSO
 
-* [glab ci](glab_ci.md)  - Work with GitLab CI pipelines and jobs
+- [glab ci](glab_ci.md) - Work with GitLab CI pipelines and jobs
