@@ -1,9 +1,10 @@
-import React from 'react'
+import { useState } from 'react'
+import clsx from 'clsx'
 
 const DocsFooter = () => {
   return (
-    <footer>
-      <div></div>
+    <footer className="">
+      <div className=""></div>
     </footer>
   )
 }

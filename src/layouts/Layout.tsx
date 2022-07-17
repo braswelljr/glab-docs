@@ -8,6 +8,7 @@ import SideNav from '@/components/SideNav'
 import DocsLayout from '@/layouts/DocsLayout'
 import PageMenu from '@/components/PageMenu'
 import PrevNext from '@/components/PrevNext'
+import Footer from '@/components/Footer'
 import documentation from '@/components/documentation'
 import flattenArray from '@/utils/flattenArray'
 
@@ -100,6 +101,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
             {children}
           </section>
         )}
+        <Footer />
       </main>
     </>
   )

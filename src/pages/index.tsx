@@ -1,6 +1,5 @@
 import React from 'react'
 import Terminal from '@/components/Terminal'
-import Footer from '@/components/Footer'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { terminalD, poweredBy } from '@/context/contents'
@@ -120,7 +119,6 @@ function Index() {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   )
 }
