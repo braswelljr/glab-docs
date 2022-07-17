@@ -50,7 +50,7 @@ module.exports = withPlugins(
 
       return config
     },
-    async redirects () {
+    async redirects() {
       return require('./redirects.json')
     }
   }

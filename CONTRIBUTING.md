@@ -46,3 +46,17 @@ yarn run build
 # or
 npm run build
 ```
+
+## SUBMITTING YOUR PULL REQUEST
+
+- Create a new branch for your changes: `git checkout -b branch-name`.
+- Add your changes and make sure there are no breakages in code, builds and dependencies.
+- Submit your pull request.
+
+### COMMIT MESSAGES
+
+**Your commit messages should be semantic**.
+
+A commit message consists of a header, a body and a footer, separated by a blank line.
+
+Any line of the commit message cannot be longer than 100 characters! This allows the message to be easier to read on GitHub as well as in various git tools.
