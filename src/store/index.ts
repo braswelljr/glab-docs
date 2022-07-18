@@ -6,8 +6,8 @@ interface Store {
   setPageStruct: (struct: any) => void
 }
 
-const useStore = zustand(
-  devtools(<T extends Store>(set: SetState<T>) => ({
+const useStore = zustand<Store>()(
+  devtools(set => ({
     pageStruct: undefined,
     setPageStruct: (struct: any) =>
       set(state => ({ ...state, pageStruct: struct }))

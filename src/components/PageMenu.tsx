@@ -1,7 +1,6 @@
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import { HiChevronRight } from 'react-icons/hi'
-import shallow from 'zustand/shallow'
 import useStore from '@/store/index'
 import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayout'
 import documentation from '@/components/documentation'
@@ -16,10 +15,8 @@ function PageMenu({
   setPageList: (pageList: any) => void
 }) {
   const router = useRouter()
-  const [pageStruct, setPageStruct] = useStore(
-    state => [state.pageStruct, state.setPageStruct],
-    shallow
-  )
+  const pageStruct = useStore(state => state.pageStruct)
+  const setPageStruct = useStore(state => state.setPageStruct)
 
   // set page struct on page load
   useIsomorphicLayoutEffect(() => {

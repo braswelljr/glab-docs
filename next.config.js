@@ -1,12 +1,14 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /** @type {import('next').NextConfig} */
 const path = require('path')
+const { createLoader } = require('simple-functional-loader')
 const withPWA = require('next-pwa')
 const runtimeCaching = require('next-pwa/cache')
 const withPlugins = require('next-compose-plugins')
 const withMdx = require('@next/mdx')({
   extension: /\.mdx?$/
 })
+// const Prism = require('prismjs')
 
 module.exports = withPlugins(
   [
@@ -23,6 +25,7 @@ module.exports = withPlugins(
     [withMdx, { pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'] }]
   ],
   {
+    swcMinify: true,
     reactStrictMode: true,
     images: {
       disableStaticImages: true
@@ -46,6 +49,34 @@ module.exports = withPlugins(
             }
           }
         ]
+      })
+
+      config.module.rules.push({
+        test: /\.svg$/,
+        use: [
+          {
+            loader: '@svgr/webpack',
+            options: { svgoConfig: { plugins: { removeViewBox: false } } }
+          },
+          {
+            loader: 'file-loader',
+            options: {
+              publicPath: '/_next',
+              name: 'static/media/[name].[hash].[ext]'
+            }
+          }
+        ]
+      })
+
+      // Remove the 3px deadzone for drag gestures in Framer Motion
+      config.module.rules.push({
+        test: /framer-motion/,
+        use: createLoader(function (source) {
+          return source.replace(
+            /var isDistancePastThreshold = .*?$/m,
+            'var isDistancePastThreshold = true'
+          )
+        })
       })
 
       return config
