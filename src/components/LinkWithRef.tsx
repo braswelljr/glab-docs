@@ -1,23 +1,26 @@
 import { forwardRef, ReactNode } from 'react'
 import Link, { LinkProps } from 'next/link'
 
-type hrefType = string | { pathname: string; query?: { slug: string } }
-
-interface LinkWithRefType {
+interface LinkWithRefType extends LinkProps {
   children?: ReactNode
   className?: string
-  href?: hrefType
   onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void
 }
 
 /**
  * LinkWithRef - A wrapper around next/link that adds a ref to the anchor tag
  * @param {LinkWithRefType} props
- * @returns {JSX.Element}
+ * @property {string} href - The href of the link
+ * @property {string} as - The as of the link
+ * @property {string} className - The className of the link
+ * @property {function} onClick - The onClick handler of the link
+ * @property {ReactNode} children - The children of the link
+ *
+ * @returns {JSX.Element} - A link with a ref to the anchor tag
  */
-const LinkWithRef = forwardRef<HTMLAnchorElement, LinkWithRefType & LinkProps>(
-  ({ children, className, href, onClick }, ref) => (
-    <Link href={href} passHref>
+const LinkWithRef = forwardRef<HTMLAnchorElement, LinkWithRefType>(
+  ({ children, className, as, href, replace, onClick }, ref) => (
+    <Link href={href} as={as} passHref replace={replace}>
       <a
         ref={ref}
         className={className}

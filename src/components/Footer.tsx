@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <>
       {router.pathname === '/' && (
-        <footer className="border-t border-current px-8 py-5 md:px-20 md:text-xl lg:px-32 xl:px-40">
+        <footer className="border-t border-current px-8 py-5 dark:bg-neutral-900 dark:text-yellow-200 md:px-20 md:text-xl lg:px-32 xl:px-40">
           <div className={clsx('mx-auto max-w-2xl text-center text-sm')}>
             © Copyright {new Date().getFullYear()},{' '}
             <a

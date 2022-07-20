@@ -9,6 +9,7 @@ import DocsLayout from '@/layouts/DocsLayout'
 import PageMenu from '@/components/PageMenu'
 import PrevNext from '@/components/PrevNext'
 import Footer from '@/components/Footer'
+import DocsFooter from '@/components/DocsFooter'
 import documentation from '@/components/documentation'
 import flattenArray from '@/utils/flattenArray'
 
@@ -62,6 +63,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
             <DocsLayout>
               {children}
               <PrevNext />
+              <DocsFooter />
             </DocsLayout>
             {pathway && (
               <>

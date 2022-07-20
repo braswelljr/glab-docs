@@ -1,10 +1,4 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true,
-    "jest": true
-  },
   "extends": [
     "next/core-web-vitals",
     "eslint:recommended",
@@ -13,14 +7,28 @@
     "plugin:mdx/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
+  "overrides": [
+    {
+      "files": ["*.mdx"],
+      "parser": "eslint-plugin-mdx",
+      "plugins": ["eslint-plugin-mdx"]
+    }
+  ],
   "parserOptions": {
+    "parser": "@typescript-eslint/parser",
     "ecmaFeatures": {
       "jsx": true
     },
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "mdx/code-blocks": true
+  },
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/no-unescaped-entities": "off",

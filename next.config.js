@@ -22,7 +22,12 @@ module.exports = withPlugins(
         }
       }
     ],
-    [withMdx, { pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'] }]
+    [
+      withMdx,
+      {
+        pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx']
+      }
+    ]
   ],
   {
     swcMinify: true,
