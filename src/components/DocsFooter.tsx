@@ -20,6 +20,8 @@ const DocsFooter = ({ className }: { className?: string }) => {
           href={`https://github.com/braswelljr/glab-docs/edit/main/src/pages${
             router.pathname === '/docs' ? `/docs/index` : router.pathname
           }.mdx`}
+          target="_blank"
+          rel="noreferrer"
           className="inline-flex space-x-1 font-semibold no-underline hover:text-neutral-900 dark:hover:text-neutral-600"
         >
           <span>Edit this page on GitHub</span>
