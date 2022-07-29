@@ -4,15 +4,8 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
-    "plugin:mdx/recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "overrides": [
-    {
-      "files": ["*.mdx"],
-      "parser": "eslint-plugin-mdx",
-      "plugins": ["eslint-plugin-mdx"]
-    }
+    "plugin:@typescript-eslint/recommended",
+    "plugin:mdx/recommended"
   ],
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
@@ -25,10 +18,9 @@
   "settings": {
     "react": {
       "version": "detect"
-    },
-    "mdx/code-blocks": true
+    }
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "prettier", "@typescript-eslint", "mdx"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/no-unescaped-entities": "off",

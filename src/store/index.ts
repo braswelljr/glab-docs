@@ -1,4 +1,4 @@
-import zustand, { SetState } from 'zustand'
+import zustand from 'zustand'
 import { devtools } from 'zustand/middleware'
 
 interface Store {
