@@ -6,7 +6,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 /** @type {import('next').NextConfig} */
-let nextConfig = withBundleAnalyzer({
+const nextConfig = withBundleAnalyzer({
   swcMinify: true,
   reactStrictMode: true,
   images: {
@@ -85,7 +85,7 @@ let nextConfig = withBundleAnalyzer({
 
     return config
   },
-  async redirects() {
+  async redirects () {
     return require('./redirects.json')
   }
 })
