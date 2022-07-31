@@ -8,7 +8,7 @@ const DocsFooter = ({ className }: { className?: string }) => {
   return (
     <footer
       className={clsx(
-        'mt-5 justify-between space-y-2 border-t border-neutral-800/50 pt-8 pb-14 text-sm dark:border-yellow-200/50 sm:flex sm:space-y-0',
+        'mt-5 justify-between space-y-4 border-t border-neutral-800/50 pt-8 pb-14 text-base dark:border-yellow-200/50 sm:flex sm:space-y-0',
         className
       )}
     >
@@ -20,10 +20,12 @@ const DocsFooter = ({ className }: { className?: string }) => {
           href={`https://github.com/braswelljr/glab-docs/edit/main/src/pages${
             router.pathname === '/docs' ? `/docs/index` : router.pathname
           }.mdx`}
-          className="inline-flex space-x-1 font-semibold no-underline hover:text-neutral-900 dark:hover:text-neutral-600"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex space-x-1.5 font-semibold no-underline hover:text-neutral-900 dark:hover:text-neutral-600"
         >
+          <FaGithub className="h-6 w-auto" />
           <span>Edit this page on GitHub</span>
-          <FaGithub className="h-4 w-auto" />
         </a>
       </div>
     </footer>
