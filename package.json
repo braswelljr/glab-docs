@@ -32,8 +32,8 @@
     "@juggle/resize-observer": "^3.3.1",
     "@mdx-js/loader": "^2.1.2",
     "@mdx-js/react": "^2.1.2",
+    "@next/bundle-analyzer": "^12.2.3",
     "@next/mdx": "^12.2.3",
-    "@silvenon/remark-smartypants": "^2.0.0",
     "@svgr/webpack": "^6.2.1",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.4.0",
@@ -55,12 +55,10 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-intersection-observer": "^9.3.4",
-    "rehype-external-links": "^2.0.0",
-    "remark-frontmatter": "^4.0.1",
-    "remark-gfm": "^3.0.1",
     "simple-functional-loader": "^1.2.1",
     "tailwindcss": "^3.1.6",
     "typewriter-effect": "^2.18.2",
+    "unist-util-visit": "^4.1.0",
     "zustand": "^4.0.0-rc.2"
   },
   "devDependencies": {

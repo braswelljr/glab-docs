@@ -1,15 +1,12 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
 const { createLoader } = require('simple-functional-loader')
-const withPWA = require('next-pwa')
-const runtimeCaching = require('next-pwa/cache')
-const withMdx = require('@next/mdx')({
-  extension: /\.mdx?$/
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true'
 })
-// const Prism = require('prismjs')
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+let nextConfig = withBundleAnalyzer({
   swcMinify: true,
   reactStrictMode: true,
   images: {
@@ -17,12 +14,6 @@ const nextConfig = {
   },
   experimental: { esmExternals: true },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-  // pwa config
-  pwa: {
-    dest: 'public',
-    runtimeCaching,
-    disable: process.env.NODE_ENV === 'development'
-  },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     if (!dev) {
       defaultLoaders.babel.options.cache = false
@@ -41,6 +32,23 @@ const nextConfig = {
             esModule: false,
             publicPath: '/_next',
             name: 'static/media/[name].[hash].[ext]'
+          }
+        }
+      ]
+    })
+
+    // mdx loader
+    config.module.rules.push({
+      test: /\.mdx?$/,
+      use: [
+        defaultLoaders.babel,
+        {
+          loader: '@mdx-js/loader',
+          options: {
+            options: {
+              remarkPlugins: [],
+              rehypePlugins: []
+            }
           }
         }
       ]
@@ -80,6 +88,6 @@ const nextConfig = {
   async redirects() {
     return require('./redirects.json')
   }
-}
+})
 
-module.exports = withPWA(withMdx(nextConfig))
+module.exports = nextConfig
