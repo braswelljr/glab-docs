@@ -85,7 +85,7 @@ const nextConfig = withBundleAnalyzer({
 
     return config
   },
-  async redirects () {
+  async redirects() {
     return require('./redirects.json')
   }
 })
