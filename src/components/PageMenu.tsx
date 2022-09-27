@@ -84,7 +84,7 @@ function PageMenu({
                         decodeURI(
                           typeof item === 'object' ? item.title : item
                         ) || router.pathname === '/docs',
-                    '-translate-x-4':
+                    '-translate-x-2':
                       router.pathname.split('/')[4] !==
                         decodeURI(
                           typeof item === 'object' ? item.title : item

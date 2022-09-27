@@ -4,6 +4,10 @@
   color-scheme: dark;
 }
 
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 html {
   height: 100%;
   //font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
