@@ -19,7 +19,7 @@ const SideNav = ({
   return (
     <nav
       className={clsx(
-        'scrollbar-hidden scrollbar-hidden-f fixed inset-0 z-10 h-full w-full transform overflow-y-auto border-current bg-yellow-200 pt-40 pb-5 text-yellow-900 transition-all duration-300 dark:bg-neutral-900 dark:text-yellow-200 md:px-16 lg:relative lg:translate-x-0 lg:border-r lg:bg-white lg:px-0 lg:pt-0',
+        'fixed inset-0 z-10 h-full w-full transform overflow-y-auto border-current bg-yellow-200 pt-40 pb-5 text-yellow-900 transition-all duration-300 dark:bg-neutral-900 dark:text-yellow-200 md:px-16 lg:relative lg:translate-x-0 lg:border-r lg:bg-white lg:px-0 lg:pt-0',
         !doc && '-translate-x-full'
       )}
     >

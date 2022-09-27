@@ -1,0 +1,36 @@
+# glab snippet create
+
+Create new snippet
+
+```
+glab snippet create [path] [flags]
+```
+
+## Examples
+
+```
+$ glab snippet create script.py --title "Title of the snippet"
+$ echo "package main" | glab snippet new --title "Title of the snippet" --filename "main.go"
+$ glab snippet create main.go -t Title -f "different.go" -d Description
+
+```
+
+## Options
+
+```
+  -d, --description string   Description of the snippet
+  -f, --filename string      Filename of the snippet in GitLab
+  -t, --title string         Title of the snippet
+  -v, --visibility string    Limit by visibility {public, internal, or private} (default "private")
+```
+
+### Options inherited from parent commands
+
+```
+      --help              Show help for command
+  -R, --repo OWNER/REPO   Select another repository using the OWNER/REPO or `GROUP/NAMESPACE/REPO` format or full URL or git URL
+```
+
+## SEE ALSO
+
+- [glab snippet](./) - Create, view and manage snippets

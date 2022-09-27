@@ -2,95 +2,111 @@ const documentation = {
   'getting-started': ['introduction', 'installation'],
   Commands: {
     alias: [
-      { title: 'delete', commands: [] },
-      { title: 'list', commands: [] },
-      { title: 'set', commands: [] }
+      { title: 'delete', commands: [], tags: [] },
+      { title: 'list', commands: [], tags: [] },
+      { title: 'set', commands: [], tags: [] }
     ],
     api: [],
     auth: [
-      { title: 'login', commands: [] },
-      { title: 'status', commands: [] }
+      { title: 'login', commands: [], tags: [] },
+      { title: 'status', commands: [], tags: [] }
     ],
     'check-update': [],
     ci: [
-      { title: 'delete', commands: [] },
-      { title: 'lint', commands: [] },
-      { title: 'list', commands: [] },
-      { title: 'run', commands: [] },
-      { title: 'status', commands: [] },
-      { title: 'trace', commands: [] },
-      { title: 'view', commands: [] }
+      { title: 'artifact', commands: [], tags: [] },
+      { title: 'delete', commands: [], tags: [] },
+      { title: 'lint', commands: [], tags: [] },
+      { title: 'list', commands: [], tags: [] },
+      { title: 'retry', commands: [], tags: [] },
+      { title: 'run', commands: [], tags: [] },
+      { title: 'status', commands: [], tags: [] },
+      { title: 'trace', commands: [], tags: [] },
+      { title: 'view', commands: [], tags: [] }
     ],
     completion: [],
     config: [
-      { title: 'get', commands: [] },
-      { title: 'set', commands: [] }
+      { title: 'get', commands: [], tags: [] },
+      { title: 'set', commands: [], tags: [] }
     ],
     issue: [
       {
         title: 'board',
         commands: [
-          { title: 'create', commands: [] },
-          { title: 'view', commands: [] }
+          { title: 'create', commands: [], tags: [] },
+          { title: 'view', commands: [], tags: [] }
         ]
       },
-      { title: 'close', commands: [] },
-      { title: 'create', commands: [] },
-      { title: 'delete', commands: [] },
-      { title: 'list', commands: [] },
-      { title: 'note', commands: [] },
-      { title: 'reopen', commands: [] },
-      { title: 'subscribe', commands: [] },
-      { title: 'unsubscribe', commands: [] },
-      { title: 'update', commands: [] },
-      { title: 'view', commands: [] }
+      { title: 'close', commands: [], tags: [] },
+      { title: 'create', commands: [], tags: [] },
+      { title: 'delete', commands: [], tags: [] },
+      { title: 'list', commands: [], tags: [] },
+      { title: 'note', commands: [], tags: [] },
+      { title: 'reopen', commands: [], tags: [] },
+      { title: 'subscribe', commands: [], tags: [] },
+      { title: 'unsubscribe', commands: [], tags: [] },
+      { title: 'update', commands: [], tags: [] },
+      { title: 'view', commands: [], tags: [] }
     ],
     label: [
-      { title: 'create', commands: [] },
-      { title: 'list', commands: [] }
+      { title: 'create', commands: [], tags: [] },
+      { title: 'list', commands: [], tags: [] }
     ],
     mr: [
-      { title: 'approve', commands: [] },
-      { title: 'approvers', commands: [] },
-      { title: 'checkout', commands: [] },
-      { title: 'close', commands: [] },
-      { title: 'create', commands: [] },
-      { title: 'delete', commands: [] },
-      { title: 'diff', commands: [] },
-      { title: 'for', commands: [] },
-      { title: 'issues', commands: [] },
-      { title: 'list', commands: [] },
-      { title: 'merge', commands: [] },
-      { title: 'note', commands: [] },
-      { title: 'rebase', commands: [] },
-      { title: 'reopen', commands: [] },
-      { title: 'revoke', commands: [] },
-      { title: 'subscribe', commands: [] },
-      { title: 'todo', commands: [] },
-      { title: 'unsubscribe', commands: [] },
-      { title: 'update', commands: [] },
-      { title: 'view', commands: [] }
+      { title: 'approve', commands: [], tags: [] },
+      { title: 'approvers', commands: [], tags: [] },
+      { title: 'checkout', commands: [], tags: [] },
+      { title: 'close', commands: [], tags: [] },
+      { title: 'create', commands: [], tags: [] },
+      { title: 'delete', commands: [], tags: [] },
+      { title: 'diff', commands: [], tags: [] },
+      // { title: 'for', commands: [],tags: [] },
+      { title: 'issues', commands: [], tags: [] },
+      { title: 'list', commands: [], tags: [] },
+      { title: 'merge', commands: [], tags: [] },
+      { title: 'note', commands: [], tags: [] },
+      { title: 'rebase', commands: [], tags: [] },
+      { title: 'reopen', commands: [], tags: [] },
+      { title: 'revoke', commands: [], tags: [] },
+      { title: 'subscribe', commands: [], tags: [] },
+      { title: 'todo', commands: [], tags: [] },
+      { title: 'unsubscribe', commands: [], tags: [] },
+      { title: 'update', commands: [], tags: [] },
+      { title: 'view', commands: [], tags: [] }
+    ],
+    snippet: [{ title: 'create', commands: [], tags: [] }],
+    'ssh-key': [
+      { title: 'add', commands: [], tags: [] },
+      { title: 'get', commands: [], tags: [] },
+      { title: 'list', commands: [], tags: [] }
     ],
     release: [
-      { title: 'create', commands: [] },
-      { title: 'delete', commands: [] },
-      { title: 'download', commands: [] },
-      { title: 'list', commands: [] },
-      { title: 'upload', commands: [] },
-      { title: 'view', commands: [] }
+      { title: 'create', commands: [], tags: [] },
+      { title: 'delete', commands: [], tags: [] },
+      { title: 'download', commands: [], tags: [] },
+      { title: 'list', commands: [], tags: [] },
+      { title: 'upload', commands: [], tags: [] },
+      { title: 'view', commands: [], tags: [] }
     ],
     repo: [
-      { title: 'archive', commands: [] },
-      { title: 'clone', commands: [] },
-      { title: 'contributors', commands: [] },
-      { title: 'create', commands: [] },
-      { title: 'delete', commands: [] },
-      { title: 'fork', commands: [] },
-      { title: 'search', commands: [] },
-      { title: 'view', commands: [] }
+      { title: 'archive', commands: [], tags: [] },
+      { title: 'clone', commands: [], tags: [] },
+      { title: 'contributors', commands: [], tags: [] },
+      { title: 'create', commands: [], tags: [] },
+      { title: 'delete', commands: [], tags: [] },
+      { title: 'fork', commands: [], tags: [] },
+      { title: 'list', commands: [], tags: [] },
+      { title: 'mirror', commands: [], tags: [] },
+      { title: 'search', commands: [], tags: [] },
+      { title: 'transfer', commands: [], tags: [] },
+      { title: 'view', commands: [], tags: [] }
     ],
-    user: [{ title: 'events', commands: [] }],
-    variable: [{ title: 'set', commands: [] }],
+    user: [{ title: 'events', commands: [], tags: [] }],
+    variable: [
+      { title: 'delete', commands: [], tags: [] },
+      { title: 'list', commands: [], tags: [] },
+      { title: 'set', commands: [], tags: [] },
+      { title: 'update', commands: [], tags: [] }
+    ],
     version: []
   }
   // Help: []
