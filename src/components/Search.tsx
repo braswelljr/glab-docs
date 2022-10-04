@@ -35,7 +35,7 @@ const Search = ({
 
   useEffect(() => {
     function onKeyClose(e: KeyboardEvent) {
-      if (e.which !== 27) {
+      if (e.key !== 'Escape') {
         return
       }
       e.preventDefault()
@@ -73,8 +73,8 @@ const Search = ({
               initialQuery={searchQuery}
               initialScrollY={window.scrollY}
               onClose={onClose}
-              appId="BH4D9OD16A"
-              apiKey="66cb338ddd0c4cce7d12b456c59390a6"
+              appId="R7G66ZFNS9" // BH4D9OD16A
+              apiKey="614eb4a74f6c4dc56eebea6e5a4aae79" // 66cb338ddd0c4cce7d12b456c59390a6
               indexName="glab"
               navigator={{
                 navigate({ itemUrl }) {
