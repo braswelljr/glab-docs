@@ -73,8 +73,8 @@ const Search = ({
               initialQuery={searchQuery}
               initialScrollY={window.scrollY}
               onClose={onClose}
-              appId="BH4D9OD16A"
-              apiKey="66cb338ddd0c4cce7d12b456c59390a6"
+              appId="R7G66ZFNS9"
+              apiKey="eaa491a915e73056851c21e8cead8d59"
               indexName="glab"
               navigator={{
                 navigate({ itemUrl }) {
