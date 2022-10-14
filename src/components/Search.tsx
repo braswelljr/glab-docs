@@ -35,7 +35,7 @@ const Search = ({
 
   useEffect(() => {
     function onKeyClose(e: KeyboardEvent) {
-      if (e.which !== 27) {
+      if (e.key !== 'Escape') {
         return
       }
       e.preventDefault()
