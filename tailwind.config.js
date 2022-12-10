@@ -33,7 +33,8 @@ module.exports = {
       fontFamily: {
         sans: ["'Jetbrains Mono'", ...defaultTheme.fontFamily.sans],
         serif: ["'Mulish'", ...defaultTheme.fontFamily.serif],
-        mono: ["'Ubuntu'", ...defaultTheme.fontFamily.mono]
+        mono: ["'Ubuntu'", ...defaultTheme.fontFamily.mono],
+        sen: ["'Sen'", 'sans-serif']
       },
       gridTemplateColumns: {
         nav: 'minmax(auto, 1.5fr) minmax(0, 6.5fr) minmax(auto, 2fr)'

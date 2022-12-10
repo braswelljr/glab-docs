@@ -4,7 +4,6 @@ import type { NextPage } from 'next'
 import { ReactElement, ReactNode } from 'react'
 import Router from 'next/router'
 import ProgressBar from '@badrap/bar-of-progress'
-import { ResizeObserver } from '@juggle/resize-observer'
 import useTheme from '@/hooks/useTheme'
 import Layout from '@/layouts/Layout'
 
@@ -14,10 +13,6 @@ type NextPageWithLayout = NextPage & {
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
-}
-
-if (typeof window !== 'undefined' && !('ResizeObserver' in window)) {
-  window.ResizeObserver = ResizeObserver
 }
 
 const progress = new ProgressBar({

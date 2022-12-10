@@ -19,19 +19,18 @@ interface LinkWithRefType extends LinkProps {
  * @returns {JSX.Element} - A link with a ref to the anchor tag
  */
 const LinkWithRef = forwardRef<HTMLAnchorElement, LinkWithRefType>(
-  ({ children, className, as, href, replace, onClick }, ref) => (
-    <Link href={href} as={as} passHref replace={replace}>
-      <a
-        ref={ref}
-        className={className}
-        onClick={() => {
-          onClick &&
-            (document.documentElement.scrollTop = 0) &&
-            (document.body.scrollTop = 0)
-        }}
-      >
-        {children ?? ``}
-      </a>
+  ({ children, className, as, href, replace, shallow, onClick }, ref) => (
+    <Link
+      href={href}
+      ref={ref}
+      className={className}
+      as={as}
+      passHref
+      replace={replace}
+      shallow={shallow}
+      onClick={onClick}
+    >
+      {children ?? ``}
     </Link>
   )
 )

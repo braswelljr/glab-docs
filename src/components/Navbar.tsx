@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useMemo } from 'react'
-import Link from 'next/link'
+import LinkWithRef from '@/components/LinkWithRef'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import { FaGithub, FaTwitter } from 'react-icons/fa'
@@ -72,16 +72,16 @@ const Navbar = ({
         )}
       >
         <div className="flex items-center">
-          <Link href="/">
-            <a className="inline-flex w-auto items-center">
+          <LinkWithRef href="/">
+            <span className="inline-flex w-auto items-center">
               <img
                 src={require('@/img/glab.png')}
                 alt="glab icon"
                 className="inline h-8 w-auto"
               />
               <h1 className="inline w-auto text-xl font-black">GLab</h1>
-            </a>
-          </Link>
+            </span>
+          </LinkWithRef>
         </div>
         <div
           className={clsx(
@@ -96,7 +96,7 @@ const Navbar = ({
               ),
               dark: <HiMoon className={clsx('h-5 w-auto sm:h-6')} />,
               light: <HiSun className={clsx('h-5 w-auto sm:h-6')} />
-            }).map(([key, value]) => {
+            }).map(([key, value], i, self) => {
               return (
                 <motion.li
                   key={key}
@@ -109,7 +109,9 @@ const Navbar = ({
                     <motion.div
                       layoutId="themeLayoutId"
                       className={clsx(
-                        'absolute inset-0 rounded-full bg-brown-800/30 dark:bg-yellow-200/30'
+                        'absolute inset-0 bg-brown-800/30 dark:bg-yellow-200/30',
+                        i === 0 && 'rounded-l-md',
+                        i === self.length - 1 && 'rounded-r-md'
                       )}
                     />
                   )}
@@ -124,19 +126,18 @@ const Navbar = ({
         <div className="col-span-full flex flex-col justify-between space-y-3 lg:col-start-2 lg:col-end-3 lg:flex-row-reverse lg:items-center lg:space-y-0">
           <div className="flex items-center justify-between">
             <div className="space-x-1 font-semibold lg:ml-2">
-              <Link href="/docs">
-                <a
-                  className={clsx(
-                    'cursor-pointer rounded px-3 py-2 text-sm hover:bg-yellow-200/20',
-                    {
-                      'bg-yellow-200 dark:text-yellow-800':
-                        router.pathname.split('/')[1] === 'docs'
-                    }
-                  )}
-                >
-                  Docs
-                </a>
-              </Link>
+              <LinkWithRef
+                href="/docs"
+                className={clsx(
+                  'cursor-pointer rounded px-3 py-2 text-sm hover:bg-yellow-200/20',
+                  {
+                    'bg-yellow-200 dark:text-yellow-800':
+                      router.pathname.split('/')[1] === 'docs'
+                  }
+                )}
+              >
+                Docs
+              </LinkWithRef>
               <a
                 href="https://opencollective.com/glab"
                 target="_blank"
