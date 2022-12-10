@@ -125,7 +125,7 @@ const Search = ({
               hitComponent={({ hit, children }) => {
                 return (
                   <LinkWithRef href={hit.url} className={clsx({})}>
-                    {children}
+                    <div className="">{children}</div>
                   </LinkWithRef>
                 )
               }}

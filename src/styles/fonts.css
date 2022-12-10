@@ -29,3 +29,11 @@
   font-weight: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Sen';
+  src: url('/fonts/sen.ttf');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}

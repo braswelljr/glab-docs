@@ -1,6 +1,5 @@
 import React from 'react'
 import Terminal from '@/components/Terminal'
-import Link from 'next/link'
 import clsx from 'clsx'
 import { terminalD, poweredBy } from '@/context/contents'
 import LinkWithRef from '@/components/LinkWithRef'
@@ -69,11 +68,12 @@ function Index() {
             <div key={feat.title} className="space-y-2 text-center">
               <h3 className="text-xl font-black">{feat.title}</h3>
               <p className="">{feat.workflow}.</p>
-              <Link href={feat.link}>
-                <a className="link-underline inline-block text-yellow-500">
-                  {feat.name} →{' '}
-                </a>
-              </Link>
+              <LinkWithRef
+                href={feat.link}
+                className="link-underline inline-block text-yellow-500"
+              >
+                {feat.name} →
+              </LinkWithRef>
             </div>
           ))}
         </div>
