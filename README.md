@@ -7,6 +7,10 @@ Inspired by [`gh`](https://github.com/cli/cli), the official GitHub CLI tool.
 
 `glab` is available for repositories hosted on GitLab.com and self-hosted GitLab Instances. `glab` supports multiple authenticated GitLab instances and automatically detects the authenticated hostname from the remotes available in the working git directory.
 
+## DOCUMENTATION NOTICE
+
+Visit [GitLab](https://docs.gitlab.com/ee/integration/glab/) for documentation.
+
 ## To Run Locally
 
 ### Clone repository
