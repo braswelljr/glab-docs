@@ -41,7 +41,7 @@
     "autoprefixer": "^10.4.13",
     "clsx": "^1.2.1",
     "file-loader": "^6.2.0",
-    "framer-motion": "^8.0.1",
+    "framer-motion": "^9.0.1",
     "front-matter": "^4.0.2",
     "gsap": "^3.11.3",
     "next": "^13.0.6",
