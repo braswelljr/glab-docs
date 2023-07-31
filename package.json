@@ -39,7 +39,7 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.8",
     "autoprefixer": "^10.4.13",
-    "clsx": "^1.2.1",
+    "clsx": "^2.0.0",
     "file-loader": "^6.2.0",
     "framer-motion": "^10.0.0",
     "front-matter": "^4.0.2",
