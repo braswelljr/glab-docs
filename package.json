@@ -78,7 +78,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.2",
     "prettier": "^3.0.0",
-    "prettier-plugin-tailwindcss": "^0.4.1",
+    "prettier-plugin-tailwindcss": "^0.5.2",
     "typescript": "^5.0.3"
   }
 }
