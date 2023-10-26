@@ -32,7 +32,7 @@
     "@juggle/resize-observer": "^3.4.0",
     "@mdx-js/loader": "^2.1.5",
     "@mdx-js/react": "^2.1.5",
-    "@next/bundle-analyzer": "^13.0.6",
+    "@next/bundle-analyzer": "^14.0.0",
     "@next/mdx": "^13.0.6",
     "@svgr/webpack": "^8.0.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
