@@ -17,7 +17,7 @@ jobs:
       pull-requests: write
 
     steps:
-    - uses: actions/stale@v9
+    - uses: actions/stale@v10
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         stale-issue-message: "This issue has been automatically marked as stale because it has not had recent activity. We haven't had the time to address it yet, but we want to keep it open. This message is just a reminder for us to help triage issues."
