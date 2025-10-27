@@ -1,0 +1,50 @@
+{
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.fixAll.prettier": "always",
+    "source.fixAll.markdownlint": "always"
+  },
+  "editor.formatOnSave": true,
+  "eslint.options": {},
+  "eslint.validate": ["javascript", "mdx", "markdown", "typescript", "html", "vue", "javascriptreact", "typescriptreact"],
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "diffEditor.wordWrap": "on",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.autoClosingQuotes": "always",
+  "tailwindCSS.experimental.classRegex": [
+    "tw`([^`]*)", // tw`...`
+    "tw=\"([^\"]*)", // <div tw="..." />
+    "tw={\"([^\"}]*)", // <div tw={"..."} />
+    "tw\\.\\w+`([^`]*)", // tw.xxx`...`
+    "tw\\(.*?\\)`([^`]*)", // tw(Component)`...`,
+    "style={tw\\('([^']*)'\\)}", // style={tw('...')}
+    "tw\\(([^,)]*),.*?\\)`([^`]*)",
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    // for react pdf
+    // "\\tw\\(cn\\(['\"]([^'\"]+)['\"]\\)\\)",
+    "\\bstyle\\s*=\\s*\\{[\\s\n]*tw\\(\\s*'([^']*)'\\s*\\)[\\s\n]*\\}",
+    // classNames={{ ... }} // any stings inside {{ ... }}, otherObject: { classNames: ...}
+    ["classNames=\\{\\{([^}]*)\\}\\}", "[\"'`]([^\"'`]*).*?[\"'`]", "g"],
+    ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript",
+    "plaintext": "html"
+  },
+  // "tailwindCSS.experimental.configFile": {
+  //   "src/styles/main.css": ["src/**"]
+  // },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

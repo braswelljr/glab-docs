@@ -3,7 +3,7 @@ HASESLINT := $(shell which eslint 2> /dev/null)
 # check for prettier
 HASPRETTIER := $(shell which prettier 2> /dev/null)
 # check for stylelint
-# HASSTYLELINT := $(shell which stylelint 2> /dev/null)
+HASSTYLELINT := $(shell which stylelint 2> /dev/null)
 
 # check for eslint
 ifdef HASESLINT
@@ -19,31 +19,47 @@ else
 	PRETTIER := npx prettier
 endif
 
-# ifeq ($(HASSTYLELINT),)
-# $(error "No stylelint in PATH, please install stylelint")
-# endif
+# check for stylelint
+ifdef HASSTYLELINT
+	STYLELINT := stylelint
+else
+	STYLELINT := npx stylelint
+endif
+
+# List of files and directories to be removed
+WEB_TEMP_FILES = .next/ .turbo/ dist/ public/sw.js public/sw.js.map \
+            public/workbox-*.js public/workbox-*.js.map yarn-error.log \
+            .swc/ .eslintcache .prettiercache .contentlayercache \
+            .contentlayercache.lock .contentlayer .content-collections \
+            .stylelintignorecache .stylelintignorecache.lock .stylelintcache
+
 
 .PHONY: dev
 dev: # clean previous build files
 	@make clean
-	yarn run dev
+	pnpm run dev
 
 .PHONY: build
 build:
-	yarn run build
+	pnpm run build
 
 .PHONY:lint
 lint:
-	yarn run lint
+	pnpm run lint
 
 .PHONY: format
 format:
-	yarn run format
+	pnpm run format
 
 .PHONY: clean
 clean:
-	rm -rf .next/ dist/ public/sw.js public/sw.js.map public/workbox-*.js public/workbox-*.js.map yarn-error.log .swc/
+	rm -rf $(WEB_TEMP_FILES)
 
-.PHONY: verbose-clean
-verbose-clean:
-	rm -rf node_modules/ .next/ dist/ public/sw.js public/sw.js.map public/workbox-*.js public/workbox-*.js.map yarn-error.log .swc/
+.PHONY: cleanup
+cleanup:
+	@make clean
+	rm -rf node_modules/
+
+.PHONY: lint/fix
+lint/fix:
+	pnpm run lint:fix

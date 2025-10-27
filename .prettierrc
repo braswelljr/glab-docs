@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "endOfLine": "auto",
+  "trailingComma": "none",
+  "semi": true,
+  "singleQuote": true,
+  "bracketSameLine": false,
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "useTabs": false,
+  "quoteProps": "as-needed",
+  "singleAttributePerLine": true,
+  "htmlWhitespaceSensitivity": "css",
+  "printWidth": 150,
+  "tabWidth": 2,
+  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
+  "importOrder": [
+    "^react(/.*)?$",
+    "^next(/.*)?$",
+    "<THIRD_PARTY_MODULES>",
+
+    "^lib(/.*)?$",
+    "^types(/.*)?$",
+    "^schema(/.*)?$",
+
+    "^content/source(/.*)?$",
+
+    "^([~@])(?!react)(/.*)?$",
+
+    "^[./](?!.*\\.css$)",
+
+    "^([~@])/.*\\.css$",
+    "^[./].*\\.css$",
+    "^[.]"
+  ],
+  "tailwindFunctions": ["cn", "classnames", "classNames", "clsx", "ctl", "cva", "tv"],
+  "overrides": [
+    {
+      "files": "Makefile",
+      "options": {
+        "tabWidth": 4
+      }
+    }
+  ]
+}

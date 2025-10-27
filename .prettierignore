@@ -3,7 +3,6 @@
 
 # next compiled
 /.next/
-#**/*.mdx
 
 # Ignore artifacts:
 build
