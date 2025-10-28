@@ -21,36 +21,32 @@ The command uses the following order when choosing the editor to use:
 2. 'VISUAL' environment variable
 3. 'EDITOR' environment variable
 
-```plaintext
+```bash title="terminal"
 glab config edit [flags]
 ```
 
 ## Examples
 
-```console
+```bash title="terminal"
 Open the configuration file with the default editor
 - glab config edit
-
 Open the configuration file with vim
 - EDITOR=vim glab config edit
-
 Set vim to be used for all future 'glab config edit' invocations
 - glab config set editor vim
 - glab config edit
-
 Open the local configuration file with the default editor
 - glab config edit -l
-
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -l, --local   Open '.git/glab-cli/config.yml' file instead of the global '~/.config/glab-cli/config.yml' file.
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```

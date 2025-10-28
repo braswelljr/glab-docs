@@ -16,13 +16,13 @@ Update selected kubeconfig.
 
 Update selected `kubeconfig` for use with a GitLab agent for Kubernetes.
 
-```plaintext
+```bash title="terminal"
 glab cluster agent update-kubeconfig [flags]
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -a, --agent int                        The numeric agent ID to create the kubeconfig entry for.
   -c, --cache-mode string                Mode to use for caching the token. Allowed values: keyring-filesystem-fallback, force-keyring, force-filesystem, no (default "force-keyring")
       --check-revoked                    Check if a cached token is revoked. Requires an API call to GitLab, which adds latency every time a cached token is accessed.
@@ -33,7 +33,7 @@ glab cluster agent update-kubeconfig [flags]
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

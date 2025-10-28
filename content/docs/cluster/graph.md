@@ -73,44 +73,44 @@ Read more about what experimental features mean at
 
 Use experimental features at your own risk.
 
-```plaintext
+```bash title="terminal"
 glab cluster graph [flags]
 ```
 
 ## Examples
 
-```console
+```bash title="terminal"
 # Run the default query for agent 123
-$ glab cluster graph -R user/project -a 123
+glab cluster graph -R user/project -a 123
 
 # Show common resources from the core and RBAC groups
-$ glab cluster graph -R user/project -a 123 --core --rbac
+glab cluster graph -R user/project -a 123 --core --rbac
 
 # Show certain resources
-$ glab cluster graph -R user/project -a 123 --resource=pods --resource=configmaps
+glab cluster graph -R user/project -a 123 --resource=pods --resource=configmaps
 
 # Same as above, but more compact
-$ glab cluster graph -R user/project -a 123 -r={pods,configmaps}
+glab cluster graph -R user/project -a 123 -r={pods,configmaps}
 
 # Select a certain namespace
-$ glab cluster graph -R user/project -a 123 -n={my-ns,my-stuff}
+glab cluster graph -R user/project -a 123 -n={my-ns,my-stuff}
 
 # Select all namespaces that have a certain annotation
-$ glab cluster graph -R user/project -a 123 --ns-expression='"my-annotation" in annotations'
+glab cluster graph -R user/project -a 123 --ns-expression='"my-annotation" in annotations'
 
 # Advanced usage - pass the full query directly via stdin.
 # The query below watches service accounts in all namespaces except for the kube-system.
-$ Q='{"queries":[{"include":{"resource_selector_expression":"resource == \"serviceaccounts\""}}],"namespaces":{"object_selector_expression":"name != \"kube-system\""}}'
+Q='{"queries":[{"include":{"resource_selector_expression":"resource == \"serviceaccounts\""}}],"namespaces":{"object_selector_expression":"name != \"kube-system\""}}'
 
-$ echo -n "$Q" | glab cluster graph -R user/project -a 123 --stdin
+echo -n "$Q" | glab cluster graph -R user/project -a 123 --stdin
 
 # Roots filtering
-$ glab cluster graph -R user/project -a 123 --root-expression 'group == "" && resource == "pods"'
+glab cluster graph -R user/project -a 123 --root-expression 'group == "" && resource == "pods"'
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -a, --agent int                     The numerical Agent ID to connect to.
       --apps                          Watch deployments, replicasets, daemonsets, and statefulsets in apps/v1 group.
       --batch                         Watch jobs and cronjobs in the batch/v1 group.
@@ -133,7 +133,7 @@ $ glab cluster graph -R user/project -a 123 --root-expression 'group == "" && re
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

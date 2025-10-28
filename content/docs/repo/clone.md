@@ -21,41 +21,41 @@ Clone supports these shorthand references:
 - org/group/repo
 - project ID
 
-```plaintext
+```bash title="terminal"
 glab repo clone <repo> [flags] [<dir>] [-- <gitflags>...]
 glab repo clone -g <group> [flags] [<dir>] [-- <gitflags>...]
 ```
 
 ## Examples
 
-```console
+```bash title="terminal"
 # Clones repository into current directory
-$ glab repo clone gitlab-org/cli
-$ glab repo clone https://gitlab.com/gitlab-org/cli
+glab repo clone gitlab-org/cli
+
+glab repo clone https://gitlab.com/gitlab-org/cli
 
 # Clones repository into 'mydirectory'
-$ glab repo clone gitlab-org/cli mydirectory
+glab repo clone gitlab-org/cli mydirectory
 
 # Clones repository 'glab' for current user
-$ glab repo clone glab
+glab repo clone glab
 
 # Finds the project by the ID provided and clones it
-$ glab repo clone 4356677
+glab repo clone 4356677
 
 # Clones all repos in a group
-$ glab repo clone -g everyonecancontribute --paginate
+glab repo clone -g everyonecancontribute --paginate
 
 # Clones all non-archived repos in a group
-$ glab repo clone -g everyonecancontribute --archived=false --paginate
+glab repo clone -g everyonecancontribute --archived=false --paginate
 
 # Clones from a GitLab Self-Managed or GitLab Dedicated instance
-$ GITLAB_HOST=salsa.debian.org glab repo clone myrepo
-
+GITLAB_HOST=salsa.debian.org glab repo clone myrepo
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -g, --group string          Specify the group to clone repositories from.
   -p, --preserve-namespace    Clone the repository in a subdirectory based on namespace.
   -a, --archived              Limit by archived status. Use with '-a=false' to exclude archived repositories. Used with the --group flag.
@@ -72,6 +72,6 @@ $ GITLAB_HOST=salsa.debian.org glab repo clone myrepo
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```

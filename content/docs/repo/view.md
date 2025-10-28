@@ -16,32 +16,34 @@ View a project or repository.
 
 Display the description and README of a project, or open it in the browser.
 
-```plaintext
+```bash title="terminal"
 glab repo view [repository] [flags]
 ```
 
 ## Examples
 
-```console
+```bash title="terminal"
 # View project information for the current directory.
 # Must be a Git repository.
-$ glab repo view
+glab repo view
 
 # View project information of specified name.
 # glab repo view my-project
-$ glab repo view user/repo
-$ glab repo view group/namespace/repo
+glab repo view user/repo
+
+glab repo view group/namespace/repo
 
 # Specify repository by full [Git] URL.
-$ glab repo view git@gitlab.com:user/repo.git
-$ glab repo view https://gitlab.company.org/user/repo
-$ glab repo view https://gitlab.company.org/user/repo.git
+glab repo view git@gitlab.com:user/repo.git
 
+glab repo view https://gitlab.company.org/user/repo
+
+glab repo view https://gitlab.company.org/user/repo.git
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -b, --branch string   View a specific branch of the repository.
   -F, --output string   Format output as: text, json. (default "text")
   -w, --web             Open a project in the browser.
@@ -49,6 +51,6 @@ $ glab repo view https://gitlab.company.org/user/repo.git
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```

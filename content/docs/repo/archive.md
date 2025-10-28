@@ -20,35 +20,34 @@ Clone supports these shorthand references:
 - namespace/repo
 - namespace/group/repo
 
-```plaintext
+```bash title="terminal"
 glab repo archive <command> [flags]
 ```
 
 ## Examples
 
-```console
-$ glab repo archive profclems/glab
+```bash title="terminal"
+glab repo archive profclems/glab
 
 # Downloads zip file of current repository
-$ glab repo archive
+glab repo archive
 
 # Downloads repo zip file into mydirectory
-$ glab repo archive profclems/glab mydirectory
+glab repo archive profclems/glab mydirectory
 
 # Finds repo for current user and download in ZIP format
-$ glab repo archive profclems/glab --format=zip
-
+glab repo archive profclems/glab --format=zip
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -f, --format string   Optional. Specify format if you want a downloaded archive: tar.gz, tar.bz2, tbz, tbz2, tb2, bz2, tar, zip. (default "zip")
   -s, --sha string      The commit SHA to download. A tag, branch reference, or SHA can be used. Defaults to the tip of the default branch if not specified.
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```

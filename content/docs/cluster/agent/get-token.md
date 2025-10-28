@@ -19,13 +19,13 @@ Create and return a k8s_proxy-scoped personal access token to authenticate with 
 This command creates a personal access token that is valid until the end of the current day.
 You might receive an email from your GitLab instance that a new personal access token has been created.
 
-```plaintext
+```bash title="terminal"
 glab cluster agent get-token [flags]
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -a, --agent int                        The numerical Agent ID to connect to.
   -c, --cache-mode string                Mode to use for caching the token. Allowed values: keyring-filesystem-fallback, force-keyring, force-filesystem, no (default "force-keyring")
       --check-revoked                    Check if a cached token is revoked. This requires an API call to GitLab which adds latency every time a cached token is accessed.
@@ -34,7 +34,7 @@ glab cluster agent get-token [flags]
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

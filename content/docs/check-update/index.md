@@ -21,18 +21,18 @@ To override the recheck behavior and force an update check, set the GLAB_CHECK_U
 To disable the update check entirely, run 'glab config set check_update false'.
 To re-enable the update check, run 'glab config set check_update true'.
 
-```plaintext
+```bash title="terminal"
 glab check-update [flags]
 ```
 
 ## Aliases
 
-```plaintext
+```bash title="terminal"
 update
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```

@@ -30,41 +30,39 @@ themselves (@me). These tokens must use the scope 'k8s_proxy'. For more
 information, see the GitLab documentation for the
 [User tokens API](https://docs.gitlab.com/api/user_tokens/#create-a-personal-access-token).
 
-```plaintext
+```bash title="terminal"
 glab token create <name> [flags]
 ```
 
 ## Aliases
 
-```plaintext
+```bash title="terminal"
 create
 new
 ```
 
 ## Examples
 
-```console
+```bash title="terminal"
 # Create project access token for current project
-$ glab token create --access-level developer --scope read_repository --scope read_registry my-project-token
+glab token create --access-level developer --scope read_repository --scope read_registry my-project-token
 
 # Create project access token for a specific project
-$ glab token create --repo user/my-repo --access-level owner --scope api my-project-token --description "example description"
+glab token create --repo user/my-repo --access-level owner --scope api my-project-token --description "example description"
 
 # Create a group access token
-$ glab token create --group group/sub-group --access-level owner --scope api my-group-token
+glab token create --group group/sub-group --access-level owner --scope api my-group-token
 
 # Create a personal access token for current user
-$ glab token create --user @me --scope k8s_proxy my-personal-token
+glab token create --user @me --scope k8s_proxy my-personal-token
 
 # (administrator only) Create a personal access token for another user
-$ glab token create --user johndoe --scope api johns-personal-token
-
-
+glab token create --user johndoe --scope api johns-personal-token
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -A, --access-level AccessLevel   Access level of the token: one of 'guest', 'reporter', 'developer', 'maintainer', 'owner'. (default no)
       --description string         Sets the token's description. (default "description")
   -D, --duration duration          Sets the token duration, in hours. Maximum of 8760. Examples: 24h, 168h, 504h. (default 720h0m0s)
@@ -78,6 +76,6 @@ $ glab token create --user johndoe --scope api johns-personal-token
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```

@@ -16,26 +16,26 @@ Generate Git commands from natural language.
 
 Generate Git commands from natural language.
 
-```plaintext
+```bash title="terminal"
 glab duo ask <prompt> [flags]
 ```
 
 ## Examples
 
-```console
-$ glab duo ask list last 10 commit titles
-> A list of Git commands to show the titles of the latest 10 commits with an explanation and an option to execute the commands.
+```bash title="terminal"
+glab duo ask list last 10 commit titles
 
+# :-> A list of Git commands to show the titles of the latest 10 commits with an explanation and an option to execute the commands.
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
       --git   Ask a question about Git. (default true)
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```

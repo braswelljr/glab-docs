@@ -22,41 +22,39 @@ revoked token. The normal text output is a description of the revoked token name
 
 Administrators can revoke personal access tokens belonging to other users.
 
-```plaintext
+```bash title="terminal"
 glab token revoke <token-name|token-id> [flags]
 ```
 
 ## Aliases
 
-```plaintext
+```bash title="terminal"
 revoke
 rm
 ```
 
 ## Examples
 
-```console
+```bash title="terminal"
 # Revoke a project access token of current project
-$ glab token revoke my-project-token
+glab token revoke my-project-token
 
 # Revoke a project access token of a specific project
-$ glab token revoke --repo user/my-repo my-project-token
+glab token revoke --repo user/my-repo my-project-token
 
 # Revoke a group access token
-$ glab token revoke --group group/sub-group my-group-token
+glab token revoke --group group/sub-group my-group-token
 
 # Revoke my personal access token
-$ glab token revoke --user @me my-personal-token
+glab token revoke --user @me my-personal-token
 
 # Revoke a personal access token of another user (administrator only)
-$ glab token revoke --user johndoe johns-personal-token
-
-
+glab token revoke --user johndoe johns-personal-token
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -g, --group string      Revoke group access token. Ignored if a user or repository argument is set.
   -F, --output string     Format output as: text, json. 'text' provides the name and ID of the revoked token; 'json' outputs the token with metadata. (default "text")
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
@@ -65,6 +63,6 @@ $ glab token revoke --user johndoe johns-personal-token
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```

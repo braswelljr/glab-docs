@@ -101,19 +101,19 @@ When installing glab through a package manager, however, you might not need
 more shell configuration to support completions.
 For Homebrew, see [brew shell completion](https://docs.brew.sh/Shell-Completion)
 
-```plaintext
+```bash title="terminal"
 glab completion [flags]
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
       --no-desc        Do not include shell completion description.
   -s, --shell string   Shell type: bash, zsh, fish, powershell. (default "bash")
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```

@@ -1,5 +1,5 @@
 // Auto-generated file tree. Do not edit manually.
-// Generated on 2025-10-27T22:24:54.391Z
+// Generated on 2025-10-28T02:31:34.118Z
 
 export const fileTree = [
   {
@@ -211,6 +211,25 @@ export const fileTree = [
         path: 'cluster/agent/index.md',
         children: [
           {
+            name: 'Token',
+            href: '/docs/cluster/agent/token',
+            path: 'cluster/agent/token/index.md',
+            children: [
+              {
+                name: 'List',
+                path: 'cluster/agent/token/list.md',
+                href: '/docs/cluster/agent/token/list',
+                children: []
+              },
+              {
+                name: 'Revoke',
+                path: 'cluster/agent/token/revoke.md',
+                href: '/docs/cluster/agent/token/revoke',
+                children: []
+              }
+            ]
+          },
+          {
             name: 'Bootstrap',
             path: 'cluster/agent/bootstrap.md',
             href: '/docs/cluster/agent/bootstrap',
@@ -233,25 +252,6 @@ export const fileTree = [
             path: 'cluster/agent/list.md',
             href: '/docs/cluster/agent/list',
             children: []
-          },
-          {
-            name: 'Token',
-            href: '/docs/cluster/agent/token',
-            path: 'cluster/agent/token/index.md',
-            children: [
-              {
-                name: 'List',
-                path: 'cluster/agent/token/list.md',
-                href: '/docs/cluster/agent/token/list',
-                children: []
-              },
-              {
-                name: 'Revoke',
-                path: 'cluster/agent/token/revoke.md',
-                href: '/docs/cluster/agent/token/revoke',
-                children: []
-              }
-            ]
           },
           {
             name: 'Update Kubeconfig',
@@ -392,12 +392,6 @@ export const fileTree = [
         children: []
       }
     ]
-  },
-  {
-    name: 'Docs',
-    path: 'index.md',
-    href: '/docs',
-    children: []
   },
   {
     name: 'Issue',
@@ -676,12 +670,6 @@ export const fileTree = [
     path: 'opentofu/index.md',
     children: [
       {
-        name: 'Init',
-        path: 'opentofu/init.md',
-        href: '/docs/opentofu/init',
-        children: []
-      },
-      {
         name: 'State',
         href: '/docs/opentofu/state',
         path: 'opentofu/state/index.md',
@@ -717,6 +705,12 @@ export const fileTree = [
             children: []
           }
         ]
+      },
+      {
+        name: 'Init',
+        path: 'opentofu/init.md',
+        href: '/docs/opentofu/init',
+        children: []
       }
     ]
   },
@@ -769,6 +763,19 @@ export const fileTree = [
     path: 'repo/index.md',
     children: [
       {
+        name: 'Publish',
+        href: '/docs/repo/publish',
+        path: 'repo/publish/index.md',
+        children: [
+          {
+            name: 'Catalog',
+            path: 'repo/publish/catalog.md',
+            href: '/docs/repo/publish/catalog',
+            children: []
+          }
+        ]
+      },
+      {
         name: 'Archive',
         path: 'repo/archive.md',
         href: '/docs/repo/archive',
@@ -815,19 +822,6 @@ export const fileTree = [
         path: 'repo/mirror.md',
         href: '/docs/repo/mirror',
         children: []
-      },
-      {
-        name: 'Publish',
-        href: '/docs/repo/publish',
-        path: 'repo/publish/index.md',
-        children: [
-          {
-            name: 'Catalog',
-            path: 'repo/publish/catalog.md',
-            href: '/docs/repo/publish/catalog',
-            children: []
-          }
-        ]
       },
       {
         name: 'Search',
@@ -1143,6 +1137,12 @@ export const fileTree = [
     name: 'Version',
     href: '/docs/version',
     path: 'version/index.md',
+    children: []
+  },
+  {
+    name: 'Docs',
+    path: 'index.md',
+    href: '/docs',
     children: []
   }
 ] as const;

@@ -24,27 +24,27 @@ Use experimental features at your own risk.
 
 ## Aliases
 
-```plaintext
+```bash title="terminal"
 stacks
 ```
 
 ## Examples
 
-```console
-$ glab stack create cool-new-feature
-$ glab stack sync
+```bash title="terminal"
+glab stack create cool-new-feature
 
+glab stack sync
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```
 

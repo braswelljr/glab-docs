@@ -22,28 +22,30 @@ Read more about what experimental features mean at
 
 Use experimental features at your own risk.
 
-```plaintext
+```bash title="terminal"
 glab stack amend [flags]
 ```
 
 ## Examples
 
-```console
-$ glab stack amend modifiedfile
-$ glab stack amend . -m "fixed a function"
-$ glab stack amend newfile -d "forgot to add this"
+```bash title="terminal"
+glab stack amend modifiedfile
+
+glab stack amend . -m "fixed a function"
+
+glab stack amend newfile -d "forgot to add this"
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -d, --description string   a description of the change
   -m, --message string       alias for the description flag
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

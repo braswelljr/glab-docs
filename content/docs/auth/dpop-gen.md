@@ -34,28 +34,28 @@ Read more about what experimental features mean at
 
 Use experimental features at your own risk.
 
-```plaintext
+```bash title="terminal"
 glab auth dpop-gen [flags]
 ```
 
 ## Examples
 
-```console
+```bash title="terminal"
 # Generate a DPoP JWT for authentication to GitLab
-$ glab auth dpop-gen [flags]
-$ glab auth dpop-gen --private-key "~/.ssh/id_rsa" --pat "glpat-xxxxxxxxxxxxxxxxxxxx"
+glab auth dpop-gen [flags]
+
+glab auth dpop-gen --private-key "~/.ssh/id_rsa" --pat "glpat-xxxxxxxxxxxxxxxxxxxx"
 
 # No PAT required if you previously used the 'glab auth login' command with a PAT
-$ glab auth dpop-gen --private-key "~/.ssh/id_rsa"
+glab auth dpop-gen --private-key "~/.ssh/id_rsa"
 
 # Generate a DPoP JWT for a different GitLab instance
-$ glab auth dpop-gen --private-key "~/.ssh/id_rsa" --hostname "https://gitlab.com"
-
+glab auth dpop-gen --private-key "~/.ssh/id_rsa" --hostname "https://gitlab.com"
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
       --hostname string      The hostname of the GitLab instance to authenticate with. Defaults to 'gitlab.com'. (default "gitlab.com")
       --pat string           Personal Access Token (PAT) to generate a DPoP proof for. Defaults to the token set with 'glab auth login'. Returns an error if both are empty.
   -p, --private-key string   Location of the private SSH key on the local system.
@@ -63,6 +63,6 @@ $ glab auth dpop-gen --private-key "~/.ssh/id_rsa" --hostname "https://gitlab.co
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```

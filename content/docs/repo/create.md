@@ -21,34 +21,34 @@ provide either:
 - A `GITLAB_HOST` environment variable.
 - A full URL for the project.
 
-```plaintext
+```bash title="terminal"
 glab repo create [path] [flags]
 ```
 
 ## Examples
 
-```console
+```bash title="terminal"
 # Create a repository under your account using the current directory name.
-$ glab repo create
+glab repo create
 
 # Create a repository under a group using the current directory name.
-$ glab repo create --group glab-cli
+glab repo create --group glab-cli
 
 # Create a repository with a specific name.
-$ glab repo create my-project
+glab repo create my-project
 
 # Create a repository for a group.
-$ glab repo create glab-cli/my-project
+glab repo create glab-cli/my-project
 
 # Create on a host other than gitlab.com.
-$ GITLAB_HOST=example.com glab repo create
-$ glab repo create <host>/path/to/repository
+GITLAB_HOST=example.com glab repo create
 
+glab repo create <host>/path/to/repository
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
       --defaultBranch master   Default branch of the project. Defaults to master if not provided.
   -d, --description string     Description of the new project.
   -g, --group string           Namespace or group for the new project. Defaults to the current user's namespace.
@@ -64,6 +64,6 @@ $ glab repo create <host>/path/to/repository
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```

@@ -29,40 +29,40 @@ To create a release from an annotated Git tag:
 
    To override this behavior, use `--ref`. The `ref`
    can be a commit SHA, another tag name, or a branch name.
-
 4. Optional. To fetch the new tag locally after the release, run
    `git fetch --tags origin`.
 
-```plaintext
+```bash title="terminal"
 glab release create <tag> [<files>...] [flags]
 ```
 
 ## Examples
 
-```console
+```bash title="terminal"
 # Create a release interactively
-$ glab release create v1.0.1
+glab release create v1.0.1
 
 # Create a release non-interactively by specifying a note
-$ glab release create v1.0.1 --notes "bugfix release"
+glab release create v1.0.1 --notes "bugfix release"
 
 # Use release notes from a file
-$ glab release create v1.0.1 -F changelog.md
+glab release create v1.0.1 -F changelog.md
 
 # Upload a release asset with a display name (type will default to 'other')
-$ glab release create v1.0.1 '/path/to/asset.zip#My display label'
+glab release create v1.0.1 '/path/to/asset.zip#My display label'
 
 # Upload a release asset with a display name and type
-$ glab release create v1.0.1 '/path/to/asset.png#My display label#image'
+glab release create v1.0.1 '/path/to/asset.png#My display label#image'
 
 # Upload all assets in a specified folder (types default to 'other')
-$ glab release create v1.0.1 ./dist/*
+glab release create v1.0.1 ./dist/*
 
 # Upload all tarballs in a specified folder (types default to 'other')
-$ glab release create v1.0.1 ./dist/*.tar.gz
+glab release create v1.0.1 ./dist/*.tar.gz
 
 # Create a release with assets specified as JSON object
-$ glab release create v1.0.1 --assets-links='
+glab release create v1.0.1 --assets-links='
+
   [
     {
       "name": "Asset1",
@@ -71,31 +71,25 @@ $ glab release create v1.0.1 --assets-links='
       "direct_asset_path": "path/to/file"
     }
   ]'
-
 # (EXPERIMENTAL) Create a release and publish it to the GitLab CI/CD catalog
 # Requires the feature flag `ci_release_cli_catalog_publish_option` to be enabled
 # for this project in your GitLab instance. Do NOT run this manually. Use it as part
 # of a CI/CD pipeline with the "release" keyword:
-#
 # - It retrieves components from the current repository by searching for
 #   `yml` files within the "templates" directory and its subdirectories.
 # - It fails if the feature flag `ci_release_cli_catalog_publish_option`
 #   is not enabled for this project in your GitLab instance.
-
 # Components can be defined:
-
 # - In single files ending in `.yml` for each component, like `templates/secret-detection.yml`.
 # - In subdirectories containing `template.yml` files as entry points,
 #   for components that bundle together multiple related files. For example,
 #   `templates/secret-detection/template.yml`.
-
-$ glab release create v1.0.1 --publish-to-catalog
-
+glab release create v1.0.1 --publish-to-catalog
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -a, --assets-links string    JSON string representation of assets links. See documentation for example.
   -m, --milestone strings      The title of each milestone the release is associated with.
   -n, --name string            The release name or title.
@@ -113,7 +107,7 @@ $ glab release create v1.0.1 --publish-to-catalog
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

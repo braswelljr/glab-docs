@@ -224,14 +224,17 @@
   --color-primary-900: #892313;
   --color-primary-950: #4b0e04;
 
-  --color-sidebar: var(--sidebar);
+  --color-fd-primary: var(--color-primary);
+  /* --color-fd-secondary: var(--color-secondary); */
+
+  /* --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
   --color-sidebar-accent: var(--sidebar-accent);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-ring: var(--sidebar-ring); */
 
   /* animation */
   --animate-accordion-down: accordion-down 0.2s ease-out;
@@ -340,8 +343,13 @@
   }
 }
 
+.dark {
+  --color-fd-primary: var(--color-secondary);
+  /* --color-fd-secondary: var(--color-primary); */
+}
+
 @utility container {
-  @apply 2xl:w-fd-container mx-auto px-8;
+  @apply mx-auto px-8 2xl:w-fd-container;
 }
 
 .scrollbars-hidden {

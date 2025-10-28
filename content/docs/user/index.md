@@ -14,7 +14,7 @@ Interact with a GitLab user account.
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```
 

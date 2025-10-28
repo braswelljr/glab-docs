@@ -14,20 +14,19 @@ Work with GitLab incidents.
 
 ## Examples
 
-```console
-$ glab incident list
-
+```bash title="terminal"
+glab incident list
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```
 

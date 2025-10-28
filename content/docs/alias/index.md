@@ -14,7 +14,7 @@ Create, list, and delete aliases.
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```
 

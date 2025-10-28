@@ -66,18 +66,23 @@ no more pages of results remain. For GraphQL requests:
 - The original query must accept an `$endCursor: String` variable.
 - The query must fetch the `pageInfo{ hasNextPage, endCursor }` set of fields from a collection.
 
-```plaintext
+```bash title="terminal"
 glab api <endpoint> [flags]
 ```
 
 ## Examples
 
-```console
-$ glab api projects/:fullpath/releases
-$ glab api projects/gitlab-com%2Fwww-gitlab-com/issues
-$ glab api issues --paginate
-$ glab api graphql -f query="query { currentUser { username } }"
-$ glab api graphql -f query='
+```bash title="terminal"
+glab api projects/:fullpath/releases
+
+glab api projects/gitlab-com%2Fwww-gitlab-com/issues
+
+glab api issues --paginate
+
+glab api graphql -f query="query { currentUser { username } }"
+
+glab api graphql -f query='
+
   query {
     project(fullPath: "gitlab-org/gitlab-docs") {
       name
@@ -94,9 +99,8 @@ $ glab api graphql -f query='
       }
     }
   }
-'
+glab api graphql --paginate -f query='
 
-$ glab api graphql --paginate -f query='
   query($endCursor: String) {
     project(fullPath: "gitlab-org/graphql-sandbox") {
       name
@@ -113,12 +117,11 @@ $ glab api graphql --paginate -f query='
       }
     }
   }'
-
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -F, --field stringArray       Add a parameter of inferred type. Changes the default HTTP method to "POST".
   -H, --header stringArray      Add an additional HTTP request header.
       --hostname string         The GitLab hostname for the request. Defaults to 'gitlab.com', or the authenticated host in the current Git directory.
@@ -132,6 +135,6 @@ $ glab api graphql --paginate -f query='
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```

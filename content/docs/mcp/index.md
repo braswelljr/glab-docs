@@ -28,14 +28,13 @@ Use experimental features at your own risk.
 
 ## Examples
 
-```console
-$ glab mcp serve
-
+```bash title="terminal"
+glab mcp serve
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```
 

@@ -14,20 +14,20 @@ Work with the OpenTofu or Terraform integration.
 
 ## Aliases
 
-```plaintext
+```bash title="terminal"
 terraform
 tf
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```
 

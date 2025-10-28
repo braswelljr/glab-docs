@@ -19,36 +19,35 @@ You can pass in a token on standard input by using `--stdin`.
 The minimum required scopes for the token are: `api`, `write_repository`.
 Configuration and credentials are stored in the global configuration file (default `~/.config/glab-cli/config.yml`)
 
-```plaintext
+```bash title="terminal"
 glab auth login [flags]
 ```
 
 ## Examples
 
-```console
+```bash title="terminal"
 # Start interactive setup
-$ glab auth login
+glab auth login
 
 # Authenticate against `gitlab.com` by reading the token from a file
-$ glab auth login --stdin < myaccesstoken.txt
+glab auth login --stdin < myaccesstoken.txt
 
 # Authenticate with GitLab Self-Managed or GitLab Dedicated
-$ glab auth login --hostname salsa.debian.org
+glab auth login --hostname salsa.debian.org
 
 # Non-interactive setup
-$ glab auth login --hostname gitlab.example.org --token glpat-xxx --api-host gitlab.example.org:3443 --api-protocol https --git-protocol ssh
+glab auth login --hostname gitlab.example.org --token glpat-xxx --api-host gitlab.example.org:3443 --api-protocol https --git-protocol ssh
 
 # Non-interactive setup reading token from a file
-$ glab auth login --hostname gitlab.example.org --api-host gitlab.example.org:3443 --api-protocol https --git-protocol ssh  --stdin < myaccesstoken.txt
+glab auth login --hostname gitlab.example.org --api-host gitlab.example.org:3443 --api-protocol https --git-protocol ssh  --stdin < myaccesstoken.txt
 
 # Non-interactive CI/CD setup
-$ glab auth login --hostname $CI_SERVER_HOST --job-token $CI_JOB_TOKEN
-
+glab auth login --hostname $CI_SERVER_HOST --job-token $CI_JOB_TOKEN
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -a, --api-host string       API host url.
   -p, --api-protocol string   API protocol: https, http
   -g, --git-protocol string   Git protocol: ssh, https, http
@@ -61,6 +60,6 @@ $ glab auth login --hostname $CI_SERVER_HOST --job-token $CI_JOB_TOKEN
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```

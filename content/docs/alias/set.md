@@ -37,35 +37,42 @@ For Windows users only:
   shell aliases might not work for you.
 - Always use quotation marks when defining a command, as in the examples.
 
-```plaintext
+```bash title="terminal"
 glab alias set <alias name> '<command>' [flags]
 ```
 
 ## Examples
 
-```console
-$ glab alias set mrv 'mr view'
-$ glab mrv -w 123
-> glab mr view -w 123
+```bash title="terminal"
+glab alias set mrv 'mr view'
 
-$ glab alias set createissue 'glab create issue --title "$1"'
-$ glab createissue "My Issue" --description "Something is broken."
-> glab create issue --title "My Issue" --description "Something is broken."
+glab mrv -w 123
 
-$ glab alias set --shell igrep 'glab issue list --assignee="$1" | grep $2'
-$ glab igrep user foo
-> glab issue list --assignee="user" | grep "foo"
+# :-> glab mr view -w 123
 
+
+glab alias set createissue 'glab create issue --title "$1"'
+
+glab createissue "My Issue" --description "Something is broken."
+
+# :-> glab create issue --title "My Issue" --description "Something is broken."
+
+
+glab alias set --shell igrep 'glab issue list --assignee="$1" | grep $2'
+
+glab igrep user foo
+
+# :-> glab issue list --assignee="user" | grep "foo"
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -s, --shell   Declare an alias to be passed through a shell interpreter.
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```

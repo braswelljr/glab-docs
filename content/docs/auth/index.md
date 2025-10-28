@@ -14,7 +14,7 @@ Manage glab's authentication state.
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```
 

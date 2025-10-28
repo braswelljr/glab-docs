@@ -30,19 +30,19 @@ Current respected settings:
 
 ## Aliases
 
-```plaintext
+```bash title="terminal"
 conf
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -g, --global   Use global config file.
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```
 

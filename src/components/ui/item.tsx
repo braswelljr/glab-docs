@@ -27,7 +27,7 @@ function ItemSeparator({ className, ...props }: React.ComponentProps<typeof Sepa
 }
 
 const itemVariants = cva(
-  'group/item flex flex-wrap items-center rounded-md border border-neutral-200 border-transparent text-sm transition-colors duration-100 outline-none focus-visible:border-neutral-950 focus-visible:ring-[3px] focus-visible:ring-neutral-950/50 dark:border-neutral-800 dark:focus-visible:border-neutral-300 dark:focus-visible:ring-neutral-300/50 [a]:transition-colors [a]:hover:bg-neutral-100/50 dark:[a]:hover:bg-neutral-800/50',
+  'group/item flex flex-wrap items-center rounded-md border border-neutral-200 text-sm transition-colors duration-100 outline-none focus-visible:border-neutral-950 focus-visible:ring-[3px] focus-visible:ring-neutral-950/50 dark:border-neutral-800 dark:focus-visible:border-neutral-300 dark:focus-visible:ring-neutral-300/50 [a]:transition-colors [a]:hover:bg-neutral-100/50 dark:[a]:hover:bg-neutral-800/50',
   {
     variants: {
       variant: {
@@ -67,7 +67,7 @@ function Item({
 }
 
 const itemMediaVariants = cva(
-  'flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:translate-y-0.5 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none',
+  'flex shrink-0 items-center justify-center gap-2 group-has-data-[slot=item-description]/item:translate-y-0.5 group-has-data-[slot=item-description]/item:self-start [&_svg]:pointer-events-none',
   {
     variants: {
       variant: {

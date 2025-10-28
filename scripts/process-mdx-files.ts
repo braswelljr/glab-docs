@@ -17,6 +17,7 @@ type RenameResult = {
   renamed: string[];
   updated: string[];
   processed: string[];
+  cleanedDirs: string[];
   errors: string[];
 };
 
@@ -30,6 +31,7 @@ type FileNode = {
 type ProcessOptions = {
   generateFileTree?: boolean;
   fileTreeOutput?: string;
+  cleanEmptyDirs?: boolean;
 };
 
 /* -------------------------------------------------------------------------- */
@@ -53,6 +55,46 @@ const safeStat = (fp: string) => {
     return null;
   }
 };
+
+/**
+ * Check if a directory is empty (ignoring certain files)
+ */
+function isEmptyDirectory(dir: string, ignoreFiles: string[] = ['.DS_Store', 'Thumbs.db']): boolean {
+  try {
+    const entries = fs.readdirSync(dir);
+    const filteredEntries = entries.filter((entry) => !ignoreFiles.includes(entry));
+    return filteredEntries.length === 0;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Recursively remove empty directories
+ */
+function removeEmptyDirectories(dir: string, baseDir: string, result: RenameResult): void {
+  const entries = safeReadDir(dir);
+
+  // First, recursively process subdirectories
+  entries.forEach((entry) => {
+    const fullPath = path.join(dir, entry);
+    const stat = safeStat(fullPath);
+    if (stat?.isDirectory()) {
+      removeEmptyDirectories(fullPath, baseDir, result);
+    }
+  });
+
+  // Check if current directory is empty (after processing subdirectories)
+  if (isEmptyDirectory(dir) && dir !== baseDir) {
+    try {
+      fs.rmdirSync(dir);
+      result.cleanedDirs.push(dir);
+      console.log(`🧹 Removed empty directory: ${path.relative(baseDir, dir)}`);
+    } catch (error) {
+      result.errors.push(`❌ Failed to remove empty directory ${dir}: ${(error as Error).message}`);
+    }
+  }
+}
 
 /**
  * Format a human-readable name from a file or folder path.
@@ -201,6 +243,86 @@ function handleLinkUpdate(filePath: string, baseDir: string, generatedDir: strin
     }
   } catch (error) {
     result.errors.push(`❌ Failed to update links in ${filePath}: ${(error as Error).message}`);
+  }
+}
+
+type CodeBlockMatch = {
+  fullMatch: string;
+  language: string;
+  codeBody: string;
+};
+
+function findCodeBlocks(content: string): CodeBlockMatch[] {
+  const codeBlockRegex = /```(console|plaintext|bash|ps1)\n([\s\S]*?)```/g;
+  const matches: CodeBlockMatch[] = [];
+  let match;
+
+  while ((match = codeBlockRegex.exec(content)) !== null) {
+    matches.push({
+      fullMatch: match[0],
+      language: match[1],
+      codeBody: match[2]
+    });
+  }
+
+  return matches;
+}
+
+/**
+ * Transforms code blocks of ```console``` or ```plaintext``` into ```bash twoslash
+ * and replaces:
+ *  - `$` lines = commands
+ *  - `>` lines = expands/results
+ */
+function transformConsoleBlocks(content: string): string {
+  const blocks = findCodeBlocks(content);
+  let transformedContent = content;
+
+  blocks.forEach((block: CodeBlockMatch) => {
+    const transformedLines = block.codeBody
+      .split('\n')
+      .map((line: string): string => {
+        const trimmedLine = line.trim();
+
+        if (trimmedLine.startsWith('$')) {
+          return `${line.replace(/^\$\s?/, '').trim()}\n`;
+        }
+
+        if (trimmedLine.startsWith('>')) {
+          const text = line.replace(/^>\s?/, '').trim();
+          return `# :-> ${text}\n\n`;
+        }
+
+        return line;
+      })
+      .filter((line: string) => line.length > 1)
+      .join('\n')
+      .trimEnd();
+
+    const replacement = `\`\`\`bash title="terminal"\n${transformedLines}\n\`\`\``;
+    transformedContent = transformedContent.replace(block.fullMatch, replacement);
+  });
+
+  return transformedContent;
+}
+
+export function updateConsoleToBashCode(filePath: string, _baseDir: string, _generatedDir: string, result: RenameResult) {
+  if (!isMarkdownFile(filePath)) return;
+
+  try {
+    const content = fs.readFileSync(filePath, 'utf8');
+    const updated = transformConsoleBlocks(content);
+
+    if (updated !== content) {
+      fs.writeFileSync(filePath, updated, 'utf8');
+      result.updated.push(filePath);
+      result.processed.push(filePath);
+      console.log(`💻 Updated console blocks in: ${filePath}`);
+    } else {
+      result.processed.push(filePath);
+    }
+  } catch (error) {
+    result.errors.push(`❌ Failed to update console blocks in ${filePath}: ${(error as Error).message}`);
   }
 }
 
@@ -394,16 +516,34 @@ export type FileTree = typeof fileTree;
 /*                                   Main                                     */
 /* -------------------------------------------------------------------------- */
 
-export async function cleanMarkdownFiles(rootDir: string, generatedDir?: string): Promise<RenameResult> {
-  const result: RenameResult = { renamed: [], updated: [], processed: [], errors: [] };
+export async function cleanMarkdownFiles(rootDir: string, generatedDir?: string, options: ProcessOptions = {}): Promise<RenameResult> {
+  const result: RenameResult = {
+    renamed: [],
+    updated: [],
+    processed: [],
+    cleanedDirs: [],
+    errors: []
+  };
+
   // Use rootDir as baseDir and generatedDir, or provided generatedDir
   const baseDir = rootDir;
   const finalGeneratedDir = generatedDir || rootDir;
 
   try {
+    // Step 1: Process files (rename, update links, transform code blocks)
     processDirectory(rootDir, baseDir, finalGeneratedDir, handleRename, result);
     processDirectory(rootDir, baseDir, finalGeneratedDir, handleLinkUpdate, result);
-    console.log(`✅ Cleaned ${result.processed.length} files (${result.renamed.length} renamed, ${result.updated.length} links updated).`);
+    processDirectory(rootDir, baseDir, finalGeneratedDir, updateConsoleToBashCode, result);
+
+    // Step 2: Clean empty directories (if enabled)
+    if (options.cleanEmptyDirs !== false) {
+      console.log('🧹 Cleaning empty directories...');
+      removeEmptyDirectories(rootDir, baseDir, result);
+    }
+
+    console.log(
+      `✅ Cleaned ${result.processed.length} files (${result.renamed.length} renamed, ${result.updated.length} links updated, ${result.cleanedDirs.length} empty directories removed).`
+    );
   } catch (error) {
     result.errors.push(`Fatal: ${(error as Error).message}`);
   }
@@ -424,7 +564,8 @@ export async function main(
   dirs: GeneratorDir[],
   options: ProcessOptions = {
     generateFileTree: true,
-    fileTreeOutput: 'index.ts'
+    fileTreeOutput: 'index.ts',
+    cleanEmptyDirs: true
   }
 ) {
   // Normalize directory entries
@@ -441,9 +582,9 @@ export async function main(
 
   const allProcessedPaths: string[] = [];
 
-  // 🧩 Step 1: Clean markdown files
+  // 🧩 Step 1: Clean markdown files (including empty directory removal)
   for (const dir of validDirs) {
-    const result = await cleanMarkdownFiles(dir.base, dir.generated);
+    const result = await cleanMarkdownFiles(dir.base, dir.generated, options);
     if (Array.isArray(result.processed)) {
       allProcessedPaths.push(...result.processed);
     }
@@ -469,4 +610,8 @@ export async function main(
 }
 
 // Example usage:
-main(['content/docs', 'content/blog'], { generateFileTree: true, fileTreeOutput: 'index.ts' });
+main(['content/docs', 'content/blog'], {
+  generateFileTree: true,
+  fileTreeOutput: 'index.ts',
+  cleanEmptyDirs: true
+});

@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { HiArrowRight } from 'react-icons/hi2';
 import { cn } from 'lib/utils';
-import { AnimatedSpan, Terminal, TypingAnimation } from '@/components/ui/terminal';
+import { Terminal, TypingAnimation } from '@/components/ui/terminal';
 
 export default function Page() {
   return (
     <div className="flex h-full flex-1 flex-col p-5">
       <section className="bg-tictac -mx-5 -mt-10 bg-primary-50 px-5 dark:bg-stone-950">
-        <div className="mx-auto max-w-md space-y-12 py-30">
+        <div className="mx-auto max-w-3xl space-y-12 py-30">
           <h3 className="mx-auto text-center font-mono text-3xl font-bold tracking-wide md:text-5xl">Take GitLab to the command line</h3>
           <p className="mx-auto text-center text-xl font-medium md:text-2xl">
             GLab is an open source GitLab CLI tool bringing GitLab to your terminal next to where you are already working with git and your code.
@@ -49,27 +49,31 @@ export default function Page() {
       </section>
 
       <section className="">
-        <div className="mx-auto max-w-md space-y-12 py-30">
+        <div className="mx-auto max-w-3xl space-y-12 py-30">
           <Terminal
             startOnView
-            className="min-h-72"
+            className={cn(
+              'min-h-72 w-full max-w-2xl bg-stone-50 shadow',
+              '*:data-terminal-header:border-stone-300',
+              '**:data-terminal-code:*:not-first:ml-4'
+            )}
           >
             <TypingAnimation>$ glab alias</TypingAnimation>
-            <AnimatedSpan className="text-blue-500">Create, list, and delete aliases.</AnimatedSpan>
+            <TypingAnimation className="text-blue-500">Create, list, and delete aliases.</TypingAnimation>
 
-            <AnimatedSpan className="mt-4">USAGE</AnimatedSpan>
-            <AnimatedSpan className="pl-5 text-primary">glab alias [command] [flags]</AnimatedSpan>
+            <TypingAnimation className="mt-4">USAGE</TypingAnimation>
+            <TypingAnimation className="pl-5 text-secondary-300">glab alias [command] [flags]</TypingAnimation>
 
-            <AnimatedSpan className="mt-4">CORE COMMANDS</AnimatedSpan>
-            <AnimatedSpan className="pl-5 text-primary">delete: Delete an alias.</AnimatedSpan>
-            <AnimatedSpan className="pl-5 text-primary">list: List the available aliases.</AnimatedSpan>
-            <AnimatedSpan className="pl-5 text-primary">set: Set an alias for a longer command.</AnimatedSpan>
+            <TypingAnimation className="mt-4">CORE COMMANDS</TypingAnimation>
+            <TypingAnimation className="pl-5 text-secondary-300">delete: Delete an alias.</TypingAnimation>
+            <TypingAnimation className="pl-5 text-secondary-300">list: List the available aliases.</TypingAnimation>
+            <TypingAnimation className="pl-5 text-secondary-300">set: Set an alias for a longer command.</TypingAnimation>
           </Terminal>
 
           <div className="flex justify-center py-10">
             <Link
               href="/docs"
-              className="flex items-center justify-center text-center text-xl font-semibold"
+              className="flex items-center justify-center text-center text-xl font-semibold hocus:text-primary dark:hocus:text-secondary"
             >
               View all GitLab CLI Commands <HiArrowRight className="ml-2" />
             </Link>

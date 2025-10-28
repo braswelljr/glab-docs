@@ -14,20 +14,19 @@ Create, view and manage snippets.
 
 ## Examples
 
-```console
-$ glab snippet create --title "Title of the snippet" --filename "main.go"
-
+```bash title="terminal"
+glab snippet create --title "Title of the snippet" --filename "main.go"
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```
 

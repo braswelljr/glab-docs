@@ -208,7 +208,10 @@ export const Terminal = ({ children, className, sequence = true, startOnView = t
         className
       )}
     >
-      <div className="flex flex-row justify-between gap-2 border-b border-neutral-200 p-4 dark:border-neutral-800">
+      <div
+        data-terminal-header
+        className="flex flex-row justify-between gap-2 border-b border-neutral-200 p-4 dark:border-neutral-800"
+      >
         <div className="flex items-center gap-2">
           <TerminalIcon className="size-4" /> <span className="font-bold">Terminal</span>
         </div>
@@ -218,8 +221,16 @@ export const Terminal = ({ children, className, sequence = true, startOnView = t
           <div className="h-2 w-2 rounded-full bg-green-500"></div>
         </div>
       </div>
-      <pre className="p-4">
-        <code className="grid gap-y-1 overflow-auto">{wrappedChildren}</code>
+      <pre
+        data-terminal-body
+        className="p-4"
+      >
+        <code
+          data-terminal-code
+          className="grid gap-y-1 overflow-auto"
+        >
+          {wrappedChildren}
+        </code>
       </pre>
     </div>
   );

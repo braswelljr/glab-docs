@@ -45,19 +45,18 @@ Read more about what experimental features mean at
 
 Use experimental features at your own risk.
 
-```plaintext
+```bash title="terminal"
 glab mcp serve [flags]
 ```
 
 ## Examples
 
-```console
-$ glab mcp serve
-
+```bash title="terminal"
+glab mcp serve
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```

@@ -14,13 +14,13 @@ Work with GitLab repositories and projects.
 
 ## Aliases
 
-```plaintext
+```bash title="terminal"
 project
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```
 

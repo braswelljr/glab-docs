@@ -22,20 +22,19 @@ Read more about what experimental features mean at
 
 Use experimental features at your own risk.
 
-```plaintext
+```bash title="terminal"
 glab stack prev [flags]
 ```
 
 ## Examples
 
-```console
-$ glab stack prev
-
+```bash title="terminal"
+glab stack prev
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

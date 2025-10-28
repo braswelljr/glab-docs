@@ -29,37 +29,36 @@ Use arrow keys to navigate jobs and logs.
 - `Ctrl+Space` to suspend application and view the logs. Similar to `glab pipeline ci trace`.
 - Supports `vi` style bindings and arrow keys for navigating jobs and logs.
 
-```plaintext
+```bash title="terminal"
 glab ci view [branch/tag] [flags]
 ```
 
 ## Examples
 
-```console
+```bash title="terminal"
 # Uses current branch
-$ glab pipeline ci view
+glab pipeline ci view
 
 # Get latest pipeline on main branch
-$ glab pipeline ci view main
+glab pipeline ci view main
 
 # Just like the second example
-$ glab pipeline ci view -b main
+glab pipeline ci view -b main
 
 # Get latest pipeline on main branch of myusername/glab repo
-$ glab pipeline ci view -b main -R myusername/glab
-
+glab pipeline ci view -b main -R myusername/glab
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -b, --branch string   Check pipeline status for a branch or tag. Defaults to the current branch.
   -w, --web             Open pipeline in a browser. Uses default browser, or browser specified in BROWSER variable.
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

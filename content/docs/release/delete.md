@@ -18,34 +18,33 @@ Delete release assets to GitLab release. Requires the Maintainer role or higher.
 
 Deleting a release does not delete the associated tag, unless you specify `--with-tag`.
 
-```plaintext
+```bash title="terminal"
 glab release delete <tag> [flags]
 ```
 
 ## Examples
 
-```console
+```bash title="terminal"
 # Delete a release (with a confirmation prompt)
-$ glab release delete v1.1.0
+glab release delete v1.1.0
 
 # Skip the confirmation prompt and force delete
-$ glab release delete v1.0.1 -y
+glab release delete v1.0.1 -y
 
 # Delete release and associated tag
-$ glab release delete v1.0.1 --with-tag
-
+glab release delete v1.0.1 --with-tag
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -t, --with-tag   Delete the associated tag.
   -y, --yes        Skip the confirmation prompt.
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

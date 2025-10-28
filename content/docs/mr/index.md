@@ -14,22 +14,23 @@ Create, view, and manage merge requests.
 
 ## Examples
 
-```console
-$ glab mr create --fill --label bugfix
-$ glab mr merge 123
-$ glab mr note -m "needs to do X before it can be merged" branch-foo
+```bash title="terminal"
+glab mr create --fill --label bugfix
 
+glab mr merge 123
+
+glab mr note -m "needs to do X before it can be merged" branch-foo
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```
 

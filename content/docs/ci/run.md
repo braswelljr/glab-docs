@@ -42,44 +42,51 @@ Value arguments containing parentheses should be escaped from the shell with
 quotes. For example, `--input key:array(foo,bar)` should be written as
 `--input 'key:array(foo,bar)'`.
 
-```plaintext
+```bash title="terminal"
 glab ci run [flags]
 ```
 
 ## Aliases
 
-```plaintext
+```bash title="terminal"
 create
 ```
 
 ## Examples
 
-```console
-$ glab ci run
-$ glab ci run --variables \"key1:value,with,comma\"
-$ glab ci run -b main
-$ glab ci run --web
-$ glab ci run --mr
+```bash title="terminal"
+glab ci run
+
+glab ci run --variables \"key1:value,with,comma\"
+
+glab ci run -b main
+
+glab ci run --web
+
+glab ci run --mr
 
 # Specify CI variables
-$ glab ci run -b main --variables-env key1:val1
-$ glab ci run -b main --variables-env key1:val1,key2:val2
-$ glab ci run -b main --variables-env key1:val1 --variables-env key2:val2
-$ glab ci run -b main --variables-file MYKEY:file1 --variables KEY2:some_value
+glab ci run -b main --variables-env key1:val1
+
+glab ci run -b main --variables-env key1:val1,key2:val2
+
+glab ci run -b main --variables-env key1:val1 --variables-env key2:val2
+
+glab ci run -b main --variables-file MYKEY:file1 --variables KEY2:some_value
 
 # Specify CI inputs
-$ glab ci run -b main --input key1:val1 --input key2:val2
-$ glab ci run -b main --input "replicas:int(3)" --input "debug:bool(false)" --input "regions:array(us-east,eu-west)"
+glab ci run -b main --input key1:val1 --input key2:val2
+
+glab ci run -b main --input "replicas:int(3)" --input "debug:bool(false)" --input "regions:array(us-east,eu-west)"
 
 // For an example of 'glab ci run -f' with a variables file, see
 // [Run a CI/CD pipeline with variables from a file](https://docs.gitlab.com/editor_extensions/gitlab_cli/#run-a-cicd-pipeline-with-variables-from-a-file)
 // in the GitLab documentation.
-
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -b, --branch string            Create pipeline on branch/ref <string>.
   -i, --input stringArray        Pass inputs to pipeline in format '<key>:<value>'. Cannot be used for merge request pipelines. See documentation for examples.
       --mr                       Run merge request pipeline instead of branch pipeline.
@@ -92,7 +99,7 @@ $ glab ci run -b main --input "replicas:int(3)" --input "debug:bool(false)" --in
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

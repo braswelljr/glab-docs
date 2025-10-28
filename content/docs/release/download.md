@@ -20,34 +20,33 @@ If no tag is specified, downloads assets from the latest release.
 To specify a file name to download from the release assets, use `--asset-name`.
 `--asset-name` flag accepts glob patterns.
 
-```plaintext
+```bash title="terminal"
 glab release download <tag> [flags]
 ```
 
 ## Examples
 
-```console
+```bash title="terminal"
 # Download all assets from the latest release
-$ glab release download
+glab release download
 
 # Download all assets from the specified release tag
-$ glab release download v1.1.0
+glab release download v1.1.0
 
 # Download assets with names matching the glob pattern
-$ glab release download v1.10.1 --asset-name="*.tar.gz"
-
+glab release download v1.10.1 --asset-name="*.tar.gz"
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -n, --asset-name stringArray   Download only assets that match the name or a glob pattern.
   -D, --dir string               Directory to download the release assets to. (default ".")
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

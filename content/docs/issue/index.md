@@ -14,23 +14,25 @@ Work with GitLab issues.
 
 ## Examples
 
-```console
-$ glab issue list
-$ glab issue create --label --confidential
-$ glab issue view --web 123
-$ glab issue note -m "closing because !123 was merged" <issue number>
+```bash title="terminal"
+glab issue list
 
+glab issue create --label --confidential
+
+glab issue view --web 123
+
+glab issue note -m "closing because !123 was merged" <issue number>
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```
 

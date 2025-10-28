@@ -22,40 +22,40 @@ output, but displays the integer value in JSON.
 
 Administrators can list tokens of other users.
 
-```plaintext
+```bash title="terminal"
 glab token list [flags]
 ```
 
 ## Aliases
 
-```plaintext
+```bash title="terminal"
 ls
 ```
 
 ## Examples
 
-```console
+```bash title="terminal"
 # List the current project's access tokens
-$ glab token list
-$ glab token list --output json
+glab token list
+
+glab token list --output json
 
 # List the project access tokens of a specific project
-$ glab token list --repo user/my-repo
+glab token list --repo user/my-repo
 
 # List group access tokens
-$ glab token list --group group/sub-group
+glab token list --group group/sub-group
 
 # List my personal access tokens
-$ glab token list --user @me
+glab token list --user @me
 
 # Administrators only: list the personal access tokens of another user
-$ glab token list --user johndoe
-
+glab token list --user johndoe
 ```
 
 ## Options
 
-```plaintext
+```bash title="terminal"
   -a, --active            List only the active tokens.
   -g, --group string      List group access tokens. Ignored if a user or repository argument is set.
   -F, --output string     Format output as: text, json. text provides a readable table, json outputs the tokens with metadata. (default "text")
@@ -65,6 +65,6 @@ $ glab token list --user johndoe
 
 ## Options inherited from parent commands
 
-```plaintext
+```bash title="terminal"
   -h, --help   Show help for this command.
 ```
