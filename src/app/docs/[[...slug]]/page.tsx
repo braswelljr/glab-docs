@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/page';
-import { getMDXComponents } from '@/mdx-components';
+import { getMDXComponents } from '@/components/mdx-components';
 import { getPageImage, source } from '@/utils/source';
 
 export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
@@ -17,7 +17,7 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
       toc={page.data.toc}
       full={page.data.full}
     >
-      <DocsTitle>{page.data.title}</DocsTitle>
+      <DocsTitle className="text-primary dark:text-secondary">{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
         <MDX

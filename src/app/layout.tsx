@@ -47,10 +47,10 @@ export default function Layout({ children }: LayoutProps<'/'>) {
   return (
     <html
       lang="en"
-      className={cn(Satoshi.className, Inter.variable, JetbrainsMono.variable, AbyssinicaSIL.variable, Cascadia.variable)}
+      className={cn(Satoshi.variable, Inter.variable, JetbrainsMono.variable, AbyssinicaSIL.variable, Cascadia.className)}
       suppressHydrationWarning
     >
-      <body className="flex min-h-dvh flex-col scroll-smooth bg-white font-sans text-neutral-900 antialiased dark:bg-neutral-900 dark:text-white">
+      <body className="flex min-h-dvh flex-col scroll-smooth font-mono antialiased">
         <BaseProvider>{children}</BaseProvider>
       </body>
     </html>

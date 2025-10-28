@@ -34,6 +34,7 @@
     "^[.]"
   ],
   "tailwindFunctions": ["cn", "classnames", "classNames", "clsx", "ctl", "cva", "tv"],
+  "tailwindConfig": "./src/styles/main.css",
   "overrides": [
     {
       "files": "Makefile",

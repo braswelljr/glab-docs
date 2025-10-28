@@ -2,11 +2,14 @@
 @import 'fumadocs-ui/css/style.css';
 @import 'fumadocs-ui/css/shiki.css';
 @import 'fumadocs-ui/css/shadcn.css';
+@import 'fumadocs-twoslash/twoslash.css';
 
 @import 'tw-animate-css';
 /*! purgecss start ignore */
 /* custom css files here to prevent purging needed classes */
 /* @import './mdx.css'; */
+@import './backgrounds.css';
+/*! purgecss end ignore */
 
 @plugin 'tailwindcss-hocus';
 @plugin 'tailwindcss-animate';
@@ -128,7 +131,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply scroll-smooth bg-stone-50 text-stone-950 antialiased dark:bg-stone-950 dark:text-stone-50;
   }
 
   * {
@@ -195,30 +198,31 @@
   --max-width-11xl: 112rem;
   --max-width-12xl: 120rem;
 
-  --color-primary: #e63819;
+  --color-secondary: #ff9c08;
+  --color-secondary-50: #fffbea;
+  --color-secondary-100: #fff2c5;
+  --color-secondary-200: #ffe585;
+  --color-secondary-300: #ffd246;
+  --color-secondary-400: #ffbc1b;
+  --color-secondary-500: #ff9c08;
+  --color-secondary-600: #e27100;
+  --color-secondary-700: #bb4d02;
+  --color-secondary-800: #983b08;
+  --color-secondary-900: #7c310b;
+  --color-secondary-950: #481700;
+
+  --color-primary: #ff4e32;
   --color-primary-50: #fff3f1;
-  --color-primary-100: #ffe5e0;
-  --color-primary-200: #ffcfc7;
-  --color-primary-300: #ffaea0;
-  --color-primary-400: #ff8069;
-  --color-primary-500: #f9573a;
-  --color-primary-600: #e63819;
-  --color-primary-700: #c22d13;
-  --color-primary-800: #a02914;
-  --color-primary-900: #852817;
-  --color-primary-950: #481107;
-  --color-secondary: #ff8d22;
-  --color-secondary-50: #fff8ed;
-  --color-secondary-100: #fff0d4;
-  --color-secondary-200: #ffdda8;
-  --color-secondary-300: #ffc570;
-  --color-secondary-400: #ffa037;
-  --color-secondary-500: #ff8d22;
-  --color-secondary-600: #f06706;
-  --color-secondary-700: #c74d07;
-  --color-secondary-800: #9e3d0e;
-  --color-secondary-900: #7f340f;
-  --color-secondary-950: #451805;
+  --color-primary-100: #ffe3df;
+  --color-primary-200: #ffccc4;
+  --color-primary-300: #ffaa9c;
+  --color-primary-400: #ff7863;
+  --color-primary-500: #ff4e32;
+  --color-primary-600: #f03a1d;
+  --color-primary-700: #ca250b;
+  --color-primary-800: #a6230e;
+  --color-primary-900: #892313;
+  --color-primary-950: #4b0e04;
 
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
@@ -337,7 +341,7 @@
 }
 
 @utility container {
-  @apply px-8 2xl:w-fd-container mx-auto;
+  @apply 2xl:w-fd-container mx-auto px-8;
 }
 
 .scrollbars-hidden {
@@ -377,7 +381,7 @@
 }
 
 .playlist-card {
-  @apply p-0.5 relative overflow-hidden duration-500 perspective-[50px] perspective-origin-bottom hover:-skew-x-3 focus:-skew-x-3;
+  @apply relative overflow-hidden p-0.5 duration-500 perspective-[50px] perspective-origin-bottom hover:-skew-x-3 focus:-skew-x-3;
 
   &:hover::before,
   &:focus::before {

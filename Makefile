@@ -30,7 +30,7 @@ endif
 WEB_TEMP_FILES = .next/ .turbo/ dist/ public/sw.js public/sw.js.map \
             public/workbox-*.js public/workbox-*.js.map yarn-error.log \
             .swc/ .eslintcache .prettiercache .contentlayercache \
-            .contentlayercache.lock .contentlayer .content-collections \
+            .contentlayercache.lock .contentlayer .content-collections .source  \
             .stylelintignorecache .stylelintignorecache.lock .stylelintcache
 
 
@@ -63,3 +63,7 @@ cleanup:
 .PHONY: lint/fix
 lint/fix:
 	pnpm run lint:fix
+
+.PHONY: process/docs
+process/docs:
+	pnpm run process:docs
