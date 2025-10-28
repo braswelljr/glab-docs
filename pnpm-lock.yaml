@@ -123,6 +123,9 @@ importers:
       '@tanstack/eslint-plugin-query':
         specifier: ^5
         version: 5.91.2(eslint@9.38.0(jiti@2.6.1))(typescript@5.9.3)
+      '@types/mdast':
+        specifier: ^4.0.4
+        version: 4.0.4
       '@types/mdx':
         specifier: ^2.0.13
         version: 2.0.13
