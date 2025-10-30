@@ -2,6 +2,7 @@ import { type Metadata } from 'next';
 import LocalFont from 'next/font/local';
 import { siteConfig } from '@/config/site';
 import '@/styles/main.css';
+import { Analytics } from '@vercel/analytics/next';
 import { cn } from 'lib/utils';
 import BaseProvider from '@/providers/base';
 
@@ -52,6 +53,7 @@ export default function Layout({ children }: LayoutProps<'/'>) {
     >
       <body className="flex min-h-dvh flex-col scroll-smooth font-mono antialiased">
         <BaseProvider>{children}</BaseProvider>
+        <Analytics />
       </body>
     </html>
   );
