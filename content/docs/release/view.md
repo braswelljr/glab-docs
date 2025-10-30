@@ -18,13 +18,13 @@ View information about a GitLab release.
 
 Without an explicit tag name argument, shows the latest release in the project.
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab release view <tag> [flags]
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 # View the latest release of a GitLab repository
 glab release view
 
@@ -34,13 +34,13 @@ glab release view v1.0.1
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -w, --web   Open the release in the browser.
 ```
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

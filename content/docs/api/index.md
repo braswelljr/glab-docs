@@ -66,13 +66,13 @@ no more pages of results remain. For GraphQL requests:
 - The original query must accept an `$endCursor: String` variable.
 - The query must fetch the `pageInfo{ hasNextPage, endCursor }` set of fields from a collection.
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab api <endpoint> [flags]
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab api projects/:fullpath/releases
 
 glab api projects/gitlab-com%2Fwww-gitlab-com/issues
@@ -121,7 +121,7 @@ glab api graphql --paginate -f query='
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -F, --field stringArray       Add a parameter of inferred type. Changes the default HTTP method to "POST".
   -H, --header stringArray      Add an additional HTTP request header.
       --hostname string         The GitLab hostname for the request. Defaults to 'gitlab.com', or the authenticated host in the current Git directory.
@@ -135,6 +135,6 @@ glab api graphql --paginate -f query='
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```

@@ -16,13 +16,13 @@ Generate Git commands from natural language.
 
 Generate Git commands from natural language.
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab duo ask <prompt> [flags]
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab duo ask list last 10 commit titles
 
 # :-> A list of Git commands to show the titles of the latest 10 commits with an explanation and an option to execute the commands.
@@ -30,12 +30,12 @@ glab duo ask list last 10 commit titles
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
       --git   Ask a question about Git. (default true)
 ```
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```

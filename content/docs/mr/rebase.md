@@ -16,13 +16,13 @@ Rebase the source branch of a merge request against its target branch.
 
 If you don't have permission to push to the merge request's source branch, you'll get a 403 Forbidden response.
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab mr rebase [<id> | <branch>] [flags]
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 # Rebase merge request 123
 glab mr rebase 123
 
@@ -37,13 +37,13 @@ glab mr rebase branch --skip-ci
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
       --skip-ci   Rebase merge request while skipping CI/CD pipeline.
 ```
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

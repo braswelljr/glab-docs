@@ -19,13 +19,13 @@ You can pass in a token on standard input by using `--stdin`.
 The minimum required scopes for the token are: `api`, `write_repository`.
 Configuration and credentials are stored in the global configuration file (default `~/.config/glab-cli/config.yml`)
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab auth login [flags]
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 # Start interactive setup
 glab auth login
 
@@ -47,7 +47,7 @@ glab auth login --hostname $CI_SERVER_HOST --job-token $CI_JOB_TOKEN
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -a, --api-host string       API host url.
   -p, --api-protocol string   API protocol: https, http
   -g, --git-protocol string   Git protocol: ssh, https, http
@@ -60,6 +60,6 @@ glab auth login --hostname $CI_SERVER_HOST --job-token $CI_JOB_TOKEN
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```

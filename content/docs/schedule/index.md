@@ -14,20 +14,20 @@ Work with GitLab CI/CD schedules.
 
 ## Aliases
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 sched
 skd
 ```
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```
 

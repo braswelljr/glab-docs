@@ -23,13 +23,13 @@ Read more about what experimental features mean at
 
 Use experimental features at your own risk.
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab cluster agent check_manifest_usage [flags]
 ```
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -a, --agent-page int       Page number for projects. (default 1)
   -A, --agent-per-page int   Number of projects to list per page. (default 30)
   -g, --group string         Group ID to check.
@@ -40,7 +40,7 @@ glab cluster agent check_manifest_usage [flags]
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

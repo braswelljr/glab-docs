@@ -186,16 +186,22 @@ function handleRename(filePath: string, _baseDir: string, _generatedDir: string,
   const fileName = path.basename(filePath);
   if (!isMarkdownFile(fileName)) return;
 
-  // Special handling for _index.md files - rename to index.md
+  const dir = path.dirname(filePath);
+
+  // Handle _index.md → index.md
   if (fileName === '_index.md') {
-    const newPath = path.join(path.dirname(filePath), 'index.md');
+    const newPath = path.join(dir, 'index.md');
 
+    // If index.md already exists, skip renaming and keep _index.md
+    if (fs.existsSync(newPath)) {
+      result.errors.push(`⚠️ Skipped renaming "${fileName}" in ${dir} — "index.md" already exists (maintaining both).`);
+      result.processed.push(filePath);
+      console.log(`⚠️ Kept both: index.md and _index.md in ${dir}`);
+      return;
+    }
+
+    // Otherwise, safe to rename
     try {
-      if (fs.existsSync(newPath)) {
-        result.errors.push(`⚠️ Skipped (exists): ${newPath}`);
-        return;
-      }
-
       fs.renameSync(filePath, newPath);
       result.renamed.push(`${filePath} → ${newPath}`);
       result.processed.push(newPath);
@@ -203,13 +209,14 @@ function handleRename(filePath: string, _baseDir: string, _generatedDir: string,
     } catch (error) {
       result.errors.push(`❌ Failed to rename ${filePath}: ${(error as Error).message}`);
     }
+
     return;
   }
 
-  // Regular handling for other files starting with underscore
+  // Handle other files starting with underscore
   if (!fileName.startsWith('_')) return;
 
-  const newPath = path.join(path.dirname(filePath), fileName.slice(1));
+  const newPath = path.join(dir, fileName.slice(1));
 
   try {
     if (fs.existsSync(newPath)) {
@@ -253,7 +260,7 @@ type CodeBlockMatch = {
 };
 
 function findCodeBlocks(content: string): CodeBlockMatch[] {
-  const codeBlockRegex = /```(console|plaintext|bash|ps1)\n([\s\S]*?)```/g;
+  const codeBlockRegex = /```(console|plaintext|bash)\n([\s\S]*?)```/g;
   const matches: CodeBlockMatch[] = [];
   let match;
 
@@ -299,7 +306,7 @@ function transformConsoleBlocks(content: string): string {
       .join('\n')
       .trimEnd();
 
-    const replacement = `\`\`\`bash title="terminal"\n${transformedLines}\n\`\`\``;
+    const replacement = `\`\`\`bash twoslash title="Terminal"\n${transformedLines}\n\`\`\``;
     transformedContent = transformedContent.replace(block.fullMatch, replacement);
   });
 

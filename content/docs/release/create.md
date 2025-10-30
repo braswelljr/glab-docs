@@ -32,13 +32,13 @@ To create a release from an annotated Git tag:
 4. Optional. To fetch the new tag locally after the release, run
    `git fetch --tags origin`.
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab release create <tag> [<files>...] [flags]
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 # Create a release interactively
 glab release create v1.0.1
 
@@ -89,7 +89,7 @@ glab release create v1.0.1 --publish-to-catalog
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -a, --assets-links string    JSON string representation of assets links. See documentation for example.
   -m, --milestone strings      The title of each milestone the release is associated with.
   -n, --name string            The release name or title.
@@ -107,7 +107,7 @@ glab release create v1.0.1 --publish-to-catalog
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

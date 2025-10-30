@@ -30,20 +30,20 @@ themselves (@me). These tokens must use the scope 'k8s_proxy'. For more
 information, see the GitLab documentation for the
 [User tokens API](https://docs.gitlab.com/api/user_tokens/#create-a-personal-access-token).
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab token create <name> [flags]
 ```
 
 ## Aliases
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 create
 new
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 # Create project access token for current project
 glab token create --access-level developer --scope read_repository --scope read_registry my-project-token
 
@@ -62,7 +62,7 @@ glab token create --user johndoe --scope api johns-personal-token
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -A, --access-level AccessLevel   Access level of the token: one of 'guest', 'reporter', 'developer', 'maintainer', 'owner'. (default no)
       --description string         Sets the token's description. (default "description")
   -D, --duration duration          Sets the token duration, in hours. Maximum of 8760. Examples: 24h, 168h, 504h. (default 720h0m0s)
@@ -76,6 +76,6 @@ glab token create --user johndoe --scope api johns-personal-token
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```

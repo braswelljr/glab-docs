@@ -37,19 +37,19 @@ This command consists of multiple idempotent steps:
 8. Commit and Push the created Flux Helm resources to the manifest path.
 9. Trigger Flux reconciliation of GitLab Agent HelmRelease (unless `--no-reconcile`).
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab cluster agent bootstrap agent-name [flags]
 ```
 
 ## Aliases
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 bs
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 # Bootstrap "my-agent" to the root of the Git project in CWD, and trigger reconciliation
 glab cluster agent bootstrap my-agent
 
@@ -89,7 +89,7 @@ glab cluster agent bootstrap my-agent --use-api-commit-author
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
       --commit-author-email string                   The Git commit author email to use. Conflicts with the --use-api-commit-author flag. (default "noreply@glab.gitlab.com")
       --commit-author-name string                    The Git commit author name to use. Conflicts with the --use-api-commit-author flag. (default "glab")
       --create-environment                           Create an environment for the GitLab Agent. (default true)
@@ -122,7 +122,7 @@ glab cluster agent bootstrap my-agent --use-api-commit-author
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

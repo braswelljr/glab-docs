@@ -18,13 +18,13 @@ Update the configuration by setting a key to a value.
 Use 'glab config set --global' to set a global config.
 Specifying the '--hostname' flag also saves in the global configuration file.
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab config set <key> <value> [flags]
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 - glab config set editor vim
 - glab config set token xxxxx -h gitlab.com
 - glab config set check_update false --global
@@ -32,13 +32,13 @@ glab config set <key> <value> [flags]
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -g, --global        Write to global '~/.config/glab-cli/config.yml' file rather than the repository's '.git/glab-cli/config.yml' file.
       --host string   Set per-host setting.
 ```
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```

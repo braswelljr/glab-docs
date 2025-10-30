@@ -73,13 +73,13 @@ Read more about what experimental features mean at
 
 Use experimental features at your own risk.
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab cluster graph [flags]
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 # Run the default query for agent 123
 glab cluster graph -R user/project -a 123
 
@@ -110,7 +110,7 @@ glab cluster graph -R user/project -a 123 --root-expression 'group == "" && reso
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -a, --agent int                     The numerical Agent ID to connect to.
       --apps                          Watch deployments, replicasets, daemonsets, and statefulsets in apps/v1 group.
       --batch                         Watch jobs and cronjobs in the batch/v1 group.
@@ -133,7 +133,7 @@ glab cluster graph -R user/project -a 123 --root-expression 'group == "" && reso
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

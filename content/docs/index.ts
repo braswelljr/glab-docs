@@ -1,5 +1,5 @@
 // Auto-generated file tree. Do not edit manually.
-// Generated on 2025-10-28T02:31:34.118Z
+// Generated on 2025-10-30T21:13:41.198Z
 
 export const fileTree = [
   {
@@ -340,6 +340,37 @@ export const fileTree = [
         name: 'Ask',
         path: 'duo/ask.md',
         href: '/docs/duo/ask',
+        children: []
+      }
+    ]
+  },
+  {
+    name: 'Gpg Key',
+    href: '/docs/gpg-key',
+    path: 'gpg-key/index.md',
+    children: [
+      {
+        name: 'Add',
+        path: 'gpg-key/add.md',
+        href: '/docs/gpg-key/add',
+        children: []
+      },
+      {
+        name: 'Delete',
+        path: 'gpg-key/delete.md',
+        href: '/docs/gpg-key/delete',
+        children: []
+      },
+      {
+        name: 'Get',
+        path: 'gpg-key/get.md',
+        href: '/docs/gpg-key/get',
+        children: []
+      },
+      {
+        name: 'List',
+        path: 'gpg-key/list.md',
+        href: '/docs/gpg-key/list',
         children: []
       }
     ]
@@ -816,6 +847,31 @@ export const fileTree = [
         path: 'repo/list.md',
         href: '/docs/repo/list',
         children: []
+      },
+      {
+        name: 'Members',
+        href: '/docs/repo/members',
+        path: 'repo/members/index.md',
+        children: [
+          {
+            name: 'Add',
+            path: 'repo/members/add.md',
+            href: '/docs/repo/members/add',
+            children: []
+          },
+          {
+            name: 'Remove',
+            path: 'repo/members/remove.md',
+            href: '/docs/repo/members/remove',
+            children: []
+          },
+          {
+            name: 'Members',
+            path: 'repo/members/_index.md',
+            href: '/docs/repo/members',
+            children: []
+          }
+        ]
       },
       {
         name: 'Mirror',

@@ -18,13 +18,13 @@ Creates a new deploy key.
 
 Requires the '--title' flag.
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab deploy-key add [key-file] [flags]
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 # Read deploy key from stdin and upload.
 glab deploy-key add -t "my title"
 
@@ -37,7 +37,7 @@ glab deploy-key add ~/.ssh/id_ed25519.pub -t "my title" --can-push true
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -c, --can-push            If true, deploy keys can be used for pushing code to the repository.
   -e, --expires-at string   The expiration date of the deploy key, using the ISO-8601 format: YYYY-MM-DDTHH:MM:SSZ.
   -t, --title string        New deploy key's title.
@@ -45,7 +45,7 @@ glab deploy-key add ~/.ssh/id_ed25519.pub -t "my title" --can-push true
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

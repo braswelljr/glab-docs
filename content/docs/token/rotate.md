@@ -25,20 +25,20 @@ rotated token.
 
 Administrators can rotate personal access tokens belonging to other users.
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab token rotate <token-name|token-id> [flags]
 ```
 
 ## Aliases
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 rotate
 rot
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 # Rotate project access token of current project
 glab token rotate  my-project-token
 
@@ -57,7 +57,7 @@ glab token rotate --user johndoe johns-personal-token
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -D, --duration duration   Sets the token duration, in hours. Maximum of 8760. Examples: 24h, 168h, 504h. (default 720h0m0s)
   -E, --expires-at DATE     Sets the token's expiration date and time, in YYYY-MM-DD format. If not specified, --duration is used. (default 0001-01-01)
   -g, --group string        Rotate group access token. Ignored if a user or repository argument is set.
@@ -68,6 +68,6 @@ glab token rotate --user johndoe johns-personal-token
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```

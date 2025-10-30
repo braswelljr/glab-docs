@@ -37,13 +37,13 @@ For Windows users only:
   shell aliases might not work for you.
 - Always use quotation marks when defining a command, as in the examples.
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab alias set <alias name> '<command>' [flags]
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab alias set mrv 'mr view'
 
 glab mrv -w 123
@@ -67,12 +67,12 @@ glab igrep user foo
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -s, --shell   Declare an alias to be passed through a shell interpreter.
 ```
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```

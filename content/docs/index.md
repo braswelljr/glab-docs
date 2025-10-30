@@ -61,7 +61,7 @@ in the main README.
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help      Show help for this command.
   -v, --version   show glab version information
 ```
@@ -79,6 +79,7 @@ in the main README.
 - [`glab config`](/docs/config)
 - [`glab deploy-key`](/docs/deploy-key)
 - [`glab duo`](/docs/duo)
+- [`glab gpg-key`](/docs/gpg-key)
 - [`glab incident`](/docs/incident)
 - [`glab issue`](/docs/issue)
 - [`glab iteration`](/docs/iteration)

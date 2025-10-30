@@ -33,18 +33,18 @@ Components can be defined:
   for components that bundle together multiple related files. For example,
   `templates/secret-detection/template.yml`.
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab repo publish catalog <tag-name> [flags]
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 - glab repo publish catalog v1.2.3
 ```
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```

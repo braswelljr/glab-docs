@@ -34,13 +34,13 @@ Read more about what experimental features mean at
 
 Use experimental features at your own risk.
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab auth dpop-gen [flags]
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 # Generate a DPoP JWT for authentication to GitLab
 glab auth dpop-gen [flags]
 
@@ -55,7 +55,7 @@ glab auth dpop-gen --private-key "~/.ssh/id_rsa" --hostname "https://gitlab.com"
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
       --hostname string      The hostname of the GitLab instance to authenticate with. Defaults to 'gitlab.com'. (default "gitlab.com")
       --pat string           Personal Access Token (PAT) to generate a DPoP proof for. Defaults to the token set with 'glab auth login'. Returns an error if both are empty.
   -p, --private-key string   Location of the private SSH key on the local system.
@@ -63,6 +63,6 @@ glab auth dpop-gen --private-key "~/.ssh/id_rsa" --hostname "https://gitlab.com"
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```

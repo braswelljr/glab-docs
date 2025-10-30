@@ -30,19 +30,19 @@ Current respected settings:
 
 ## Aliases
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 conf
 ```
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -g, --global   Use global config file.
 ```
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```
 

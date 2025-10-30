@@ -14,13 +14,13 @@ Work with GitLab repositories and projects.
 
 ## Aliases
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 project
 ```
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```
 
@@ -33,6 +33,7 @@ project
 - [`delete`](/docs/repo/delete)
 - [`fork`](/docs/repo/fork)
 - [`list`](/docs/repo/list)
+- [`members`](/docs/repo/members)
 - [`mirror`](/docs/repo/mirror)
 - [`publish`](/docs/repo/publish)
 - [`search`](/docs/repo/search)

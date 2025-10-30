@@ -24,13 +24,13 @@ Use experimental features at your own risk.
 
 ## Aliases
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 stacks
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab stack create cool-new-feature
 
 glab stack sync
@@ -38,13 +38,13 @@ glab stack sync
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```
 

@@ -3,7 +3,8 @@ import { defineConfig, defineDocs, frontmatterSchema, metaSchema } from 'fumadoc
 import { transformerTwoslash } from 'fumadocs-twoslash';
 import { createFileSystemTypesCache } from 'fumadocs-twoslash/cache-fs';
 import { z } from 'zod';
-import { remarkConsoleToTerminal } from 'lib/remark-console-to-terminal';
+
+// import { remarkConsoleToTerminal } from 'lib/remark-console-to-terminal';
 
 const docsMetaSchema = {
   title: z.string().min(1),
@@ -38,6 +39,8 @@ export default defineConfig({
       inline: 'tailing-curly-colon',
       transformers: [...(rehypeCodeDefaultOptions.transformers ?? []), transformerTwoslash({ typesCache: createFileSystemTypesCache() })]
     },
-    remarkPlugins: [remarkConsoleToTerminal]
+    remarkPlugins: [
+      // remarkConsoleToTerminal
+    ]
   }
 });

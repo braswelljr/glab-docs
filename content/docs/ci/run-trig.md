@@ -37,19 +37,19 @@ Value arguments containing parentheses should be escaped from the shell with
 quotes. For example, `--input key:array(foo,bar)` should be written as
 `--input 'key:array(foo,bar)'`.
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab ci run-trig [flags]
 ```
 
 ## Aliases
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 run-trig
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab ci run-trig -t xxxx
 
 glab ci run-trig -t xxxx -b main
@@ -69,7 +69,7 @@ glab ci run-trig -t xxxx -b main --input "replicas:int(3)" --input "debug:bool(f
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -b, --branch string        Create pipeline on branch or reference <string>.
   -i, --input stringArray    Pass inputs to pipeline in format '<key>:<value>'. Cannot be used for merge request pipelines. See documentation for examples.
   -t, --token CI_JOB_TOKEN   Pipeline trigger token. Can be omitted only if the CI_JOB_TOKEN environment variable is set.
@@ -78,7 +78,7 @@ glab ci run-trig -t xxxx -b main --input "replicas:int(3)" --input "debug:bool(f
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

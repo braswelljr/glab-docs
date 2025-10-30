@@ -14,7 +14,7 @@ Create, view, and manage merge requests.
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab mr create --fill --label bugfix
 
 glab mr merge 123
@@ -24,13 +24,13 @@ glab mr note -m "needs to do X before it can be merged" branch-foo
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```
 

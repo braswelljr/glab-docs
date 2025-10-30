@@ -21,14 +21,14 @@ Clone supports these shorthand references:
 - org/group/repo
 - project ID
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab repo clone <repo> [flags] [<dir>] [-- <gitflags>...]
 glab repo clone -g <group> [flags] [<dir>] [-- <gitflags>...]
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 # Clones repository into current directory
 glab repo clone gitlab-org/cli
 
@@ -55,7 +55,7 @@ GITLAB_HOST=salsa.debian.org glab repo clone myrepo
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -g, --group string          Specify the group to clone repositories from.
   -p, --preserve-namespace    Clone the repository in a subdirectory based on namespace.
   -a, --archived              Limit by archived status. Use with '-a=false' to exclude archived repositories. Used with the --group flag.
@@ -72,6 +72,6 @@ GITLAB_HOST=salsa.debian.org glab repo clone myrepo
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```

@@ -45,18 +45,18 @@ Read more about what experimental features mean at
 
 Use experimental features at your own risk.
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab mcp serve [flags]
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab mcp serve
 ```
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```

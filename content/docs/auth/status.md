@@ -18,19 +18,19 @@ Verifies and displays information about your authentication state.
 
 This command tests the authentication states of all known GitLab instances in the configuration file and reports issues, if any.
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab auth status [flags]
 ```
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
       --hostname string   Check a specific instance's authentication status.
   -t, --show-token        Display the authentication token.
 ```
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```

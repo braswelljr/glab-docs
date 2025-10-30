@@ -23,19 +23,19 @@ Read more about what experimental features mean at
 
 Use experimental features at your own risk.
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab stack switch <stack-name> [flags]
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab stack switch <stack-name>
 ```
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help              Show help for this command.
   -R, --repo OWNER/REPO   Select another repository. Can use either OWNER/REPO or `GROUP/NAMESPACE/REPO` format. Also accepts full URL or Git URL.
 ```

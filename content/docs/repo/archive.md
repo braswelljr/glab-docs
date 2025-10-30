@@ -20,13 +20,13 @@ Clone supports these shorthand references:
 - namespace/repo
 - namespace/group/repo
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab repo archive <command> [flags]
 ```
 
 ## Examples
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
 glab repo archive profclems/glab
 
 # Downloads zip file of current repository
@@ -41,13 +41,13 @@ glab repo archive profclems/glab --format=zip
 
 ## Options
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -f, --format string   Optional. Specify format if you want a downloaded archive: tar.gz, tar.bz2, tbz, tbz2, tb2, bz2, tar, zip. (default "zip")
   -s, --sha string      The commit SHA to download. A tag, branch reference, or SHA can be used. Defaults to the tip of the default branch if not specified.
 ```
 
 ## Options inherited from parent commands
 
-```bash title="terminal"
+```bash twoslash title="Terminal"
   -h, --help   Show help for this command.
 ```
