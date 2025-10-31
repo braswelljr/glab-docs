@@ -4,6 +4,7 @@ import * as FilesComponents from 'fumadocs-ui/components/files';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 import type { MDXComponents } from 'mdx/types';
 import { cn } from 'lib/utils';
+import { icons } from '@/components/icons';
 
 export const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -62,7 +63,10 @@ export const components = {
   ),
   a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
     <a
-      className={cn('font-medium text-primary underline decoration-current! underline-offset-4 dark:text-secondary', className)}
+      className={cn(
+        'font text-primary! underline decoration-current! underline-offset-4 dark:text-secondary! prose-a:text-primary! dark:prose-a:text-secondary!',
+        className
+      )}
       {...props}
     />
   ),
@@ -87,7 +91,8 @@ export const components = {
   pre: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => {
     return (
       <CodeBlock.CodeBlock
-        lang="bash"
+        // lang="bash"
+        date-code-block="true"
         className={cn('prose font-mono', className)}
         {...props}
       >
@@ -103,6 +108,7 @@ export function getMDXComponents(comps?: MDXComponents): MDXComponents {
     ...Twoslash,
     ...FilesComponents,
     ...components,
+    ...icons,
     ...comps
   };
 }

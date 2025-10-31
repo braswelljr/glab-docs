@@ -276,7 +276,7 @@ function findCodeBlocks(content: string): CodeBlockMatch[] {
 }
 
 /**
- * Transforms code blocks of ```console``` or ```plaintext``` into ```bash twoslash
+ * Transforms code blocks of ```console``` or ```plaintext``` or ```shell``` into ```bash twoslash
  * and replaces:
  *  - `$` lines = commands
  *  - `>` lines = expands/results

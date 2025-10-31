@@ -8,6 +8,7 @@ export function baseOptions(): BaseLayoutProps {
       mode: 'light-dark-system'
     },
     nav: {
+      transparentMode: 'always',
       title: (
         <span className="flex items-center gap-2">
           <Avatar className="">
@@ -17,15 +18,15 @@ export function baseOptions(): BaseLayoutProps {
           <span>{siteConfig.name}</span>
         </span>
       )
-    },
-    links: [
-      {
-        type: 'main',
-        text: 'Documentation',
-        description: 'Learn to use GLab',
-        url: '/docs'
-      }
-    ]
+    }
+    // links: [
+    //   {
+    //     type: 'main',
+    //     text: 'Documentation',
+    //     description: 'Learn to use GLab',
+    //     url: '/docs'
+    //   }
+    // ]
   };
 
   return config;
