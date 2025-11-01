@@ -69,7 +69,7 @@ module.exports = tseslint.config(
         version: 'detect'
       },
       tailwindcss: {
-        callees: ['cn', 'clsx', 'ctl', 'cva', 'tv']
+        callees: ['classNames', 'classnames', 'class', 'cn', 'clsx', 'ctl', 'cva', 'tv']
       }
     }
   },
