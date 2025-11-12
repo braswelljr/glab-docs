@@ -129,9 +129,6 @@
 } */
 
 @layer base {
-  * {
-    /* @apply border-border outline-ring/50; */
-  }
   body {
     @apply scroll-smooth bg-stone-50 text-stone-950 antialiased dark:bg-stone-950 dark:text-stone-50;
   }

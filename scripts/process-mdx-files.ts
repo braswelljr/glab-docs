@@ -617,7 +617,7 @@ export async function main(
 }
 
 // Example usage:
-main(['content/docs', 'content/blog'], {
+main(['content/docs'], {
   generateFileTree: true,
   fileTreeOutput: 'index.ts',
   cleanEmptyDirs: true
