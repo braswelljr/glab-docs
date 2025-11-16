@@ -8,6 +8,7 @@ export default function Layout({ children }: LayoutProps<'/docs'>) {
     <DocsLayout
       tree={source.pageTree}
       nav={{ ...nav }}
+      githubUrl="https://github.com/braswelljr/glab-docs"
       {...base}
     >
       {children}

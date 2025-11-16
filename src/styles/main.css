@@ -386,38 +386,3 @@
   }
 }
 
-.link-underline {
-  border-bottom-width: 0;
-  background-image: linear-gradient(transparent, transparent), linear-gradient(to right, var(--color-primary));
-  background-size: 0 3px;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  transition:
-    background-size 0.25s ease-in-out,
-    background-image 0.25s ease-in-out;
-
-  .dark & {
-    background-image: linear-gradient(transparent, transparent), linear-gradient(to right, var(--color-secondary));
-  }
-
-  &:hover {
-    background-size: 100% 3px;
-    /* background-position: 0 100%; */
-  }
-}
-
-.playlist-card {
-  @apply relative overflow-hidden p-0.5 duration-500 perspective-[50px] perspective-origin-bottom hover:-skew-x-3 focus:-skew-x-3;
-
-  &:hover::before,
-  &:focus::before {
-    background-image: conic-gradient(#ff8d22 0deg, #ff2600 0deg, transparent 80deg);
-
-    @apply absolute top-[-25%] left-[-25%] h-[150%] w-[150%] animate-[spin_2s_linear] content-[''];
-  }
-}
-
-.dark .playlist-card:hover::before,
-.dark .playlist-card:focus::before {
-  background-image: conic-gradient(#ff2600 0deg, #ff8d22 0deg, transparent 80deg);
-}

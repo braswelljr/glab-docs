@@ -88,10 +88,9 @@ export const components = {
       {...props}
     />
   ),
-  pre: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => {
+  pre: ({ className, ...props }: React.ComponentProps<'pre'>) => {
     return (
       <CodeBlock.CodeBlock
-        // lang="bash"
         date-code-block="true"
         className={cn('prose font-mono', className)}
         {...props}
